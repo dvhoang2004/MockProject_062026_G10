@@ -7,7 +7,6 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      {/* Left */}
       <div className="navbar-left">
         <div className="logo">
           <h2>NHMS</h2>
@@ -15,7 +14,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Right */}
       <div className="navbar-right">
         {/* Action Icons */}
         <div className="navbar-actions">
@@ -30,7 +28,7 @@ const Navbar = () => {
           <span>System Admin</span>
         </div>
 
-        {/* User Menu */}
+        {/* Menu */}
         <div className="user-menu">
           <button
             type="button"
@@ -40,7 +38,7 @@ const Navbar = () => {
             ▼
           </button>
 
-          {/* Dropdown (show/hide later) */}
+          {/* Dropdown (show/hide menu) */}
           {isMenuOpen && (
             <div className="dropdown-menu">
               <button type="button">Profile</button>

@@ -1,0 +1,319 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: #f4f6fb;
+    color: #222;
+}
+
+.review-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 32px;
+}
+
+.review-container {
+    max-width: 1400px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 24px;
+}
+
+
+
+.breadcrumb {
+    font-size: 14px;
+    color: #808080;
+    margin-bottom: 10px;
+}
+
+.title-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.title-row h1 {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.status {
+    background: #fff5d7;
+    color: #d38b00;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.sub-title {
+    color: #777;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+
+
+.card {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #e4e7ee;
+    padding: 22px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.card h4 {
+    margin: 15px 0;
+    font-size: 17px;
+}
+
+.card ul {
+    padding-left: 20px;
+}
+
+.card li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.card p {
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 15px;
+}
+
+
+
+textarea {
+    width: 100%;
+    resize: none;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    padding: 12px;
+    outline: none;
+    font-size: 15px;
+}
+
+textarea:focus {
+    border-color: #2563eb;
+}
+
+
+
+.review-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-right label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.review-right input {
+    width: 18px;
+    height: 18px;
+}
+
+.complete {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 14px;
+    border-radius: 30px;
+    background: #dcfce7;
+    color: green;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.signed {
+    background: #dcfce7;
+    color: green;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+
+.approve,
+.reject {
+    width: 100%;
+    height: 46px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.approve {
+    border: none;
+    color: white;
+    background: #2563eb;
+    margin-bottom: 15px;
+}
+
+.approve:hover {
+    background: #1d4ed8;
+}
+
+.reject {
+    border: 1px solid #ef4444;
+    background: white;
+    color: #ef4444;
+}
+
+.reject:hover {
+    background: #ef4444;
+    color: white;
+}
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+
+    .review-page {
+        padding: 24px;
+    }
+
+    .review-container {
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+    }
+
+    .title-row h1 {
+        font-size: 30px;
+    }
+
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .review-page {
+        padding: 20px;
+    }
+
+    .review-container {
+        grid-template-columns: 1fr;
+    }
+
+    .review-right {
+        margin-top: 20px;
+    }
+
+    .title-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .title-row h1 {
+        font-size: 28px;
+    }
+
+}
+
+
+@media screen and (max-width: 640px) {
+
+    .card {
+        padding: 18px;
+    }
+
+    .title-row h1 {
+        font-size: 24px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+    }
+
+    .card p,
+    .card li,
+    .review-right label {
+        font-size: 14px;
+    }
+
+    .approve,
+    .reject {
+        height: 44px;
+        font-size: 14px;
+    }
+
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .review-page {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    textarea {
+        font-size: 14px;
+    }
+
+    .status {
+        font-size: 12px;
+    }
+
+}
+
+
+@media screen and (max-width: 320px) {
+
+    .review-page {
+        padding: 10px;
+    }
+
+    .title-row h1 {
+        font-size: 20px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    .card h3 {
+        font-size: 16px;
+    }
+
+    .approve,
+    .reject {
+        height: 40px;
+        font-size: 13px;
+    }
+
+}

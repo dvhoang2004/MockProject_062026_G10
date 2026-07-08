@@ -1,6 +1,7 @@
 import React from "react";
-import Routing from "./routes/Routing/Routing"; // Đường dẫn gọi file Routing bạn vừa sửa lúc nãy
-import "./App.css"; // Giữ lại dòng này nếu muốn dùng CSS chung của dự án
+
+import Routing from "./routes/Routing/Routing"; // The path to the routing file you just edited.
+import "./App.css"; 
 
 function App() {
   return (

@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 
 import Dashboard from "../../pages/Dashboard/dashboard-nurse";
-import Review from "../../pages/CarePlanning/Review";
+import Review from "../../pages/CarePlanning/Review/Review";
 
 const Routing = () => {
   return (

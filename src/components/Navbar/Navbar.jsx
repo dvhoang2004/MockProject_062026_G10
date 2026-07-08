@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FiBell, FiHelpCircle, FiChevronDown } from "react-icons/fi";
+import { FaUserCircle } from "react-icons/fa";
 
 import "./Navbar.css";
 
@@ -8,6 +10,7 @@ const Navbar = ({ isLoggedIn }) => {
   if (!isLoggedIn) {
     return null;
   }
+
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -20,9 +23,15 @@ const Navbar = ({ isLoggedIn }) => {
       <div className="navbar-right">
         {/* Action Icons */}
         <div className="navbar-actions">
-          <button type="button">🔔</button>
-          <button type="button">❓</button>
-          <button type="button">👤</button>
+          <button type="button" className="icon-btn">
+            <FiBell size={20} />
+          </button>
+          <button type="button" className="icon-btn">
+            <FiHelpCircle size={20} />
+          </button>
+          <button type="button" className="icon-btn">
+            <FaUserCircle size={22} />
+          </button>
         </div>
 
         {/* User Info */}
@@ -38,10 +47,13 @@ const Navbar = ({ isLoggedIn }) => {
             className="menu-button"
             onClick={() => setIsMenuOpen((prev) => !prev)}
           >
-            ▼
+            <FiChevronDown
+              size={18}
+              className={`chevron ${isMenuOpen ? "open" : ""}`}
+            />
           </button>
 
-          {/* Dropdown (show/hide menu) */}
+          {/* Menu dropdown */}
           {isMenuOpen && (
             <div className="dropdown-menu">
               <button type="button">Profile</button>

@@ -19,14 +19,9 @@ const Verification = () => {
 
         {/* OTP */}
         <div className="otp-inputs">
-          <input
-            type="text"
-            maxLength="1"
-            defaultValue="4"
-            className="active"
-          />
-          <input type="text" maxLength="1" defaultValue="1" />
-          <input type="text" maxLength="1" defaultValue="7" />
+          <input type="text" maxLength="1" className="active" />
+          <input type="text" maxLength="1" />
+          <input type="text" maxLength="1" />
           <input type="text" maxLength="1" />
           <input type="text" maxLength="1" />
           <input type="text" maxLength="1" />

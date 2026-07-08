@@ -1,9 +1,14 @@
 import React from "react";
-
+// Sửa lại dòng này
+import Routing from "./routes/Routing/Routing";
 import "./App.css";
 
 const App = () => {
-  return <div></div>;
+  return (
+    <>
+      <Routing />
+    </>
+  );
 };
 
 export default App;

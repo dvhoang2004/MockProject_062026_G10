@@ -1,4 +1,5 @@
 import React from "react";
+
 // Add the import statements for the router components below:
 import {
   BrowserRouter as Router,
@@ -9,10 +10,18 @@ import {
 
 import Dashboard from "../../pages/Dashboard/dashboard-nurse";
 import Review from "../../pages/CarePlanning/Review";
+import UserList from "../../pages/UserList/UserList";
+import Login from "../../pages/Auth/Login/Login";
+import AccountActivation from "../../pages/Auth/AccountActivation/AccountActivation";
+import Verification from "../../pages/Auth/Verification/Verification";
 
 const Routing = () => {
   return (
     <Routes>
+      <Route path="/user-list" element={<UserList />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/account-activation" element={<AccountActivation />} />
+      <Route path="/verification" element={<Verification />} />
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/Review" element={<Review />} />

@@ -2,7 +2,10 @@ import React from "react";
 
 import "./Sidebar.css";
 
-const Sidebar = () => {
+const Sidebar = ({ isLoggedIn }) => {
+  if (!isLoggedIn) {
+    return null;
+  }
   return (
     <div className="sidebar">
       <ul>

@@ -2,9 +2,12 @@ import React, { useState } from "react";
 
 import "./Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ isLoggedIn }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  if (!isLoggedIn) {
+    return null;
+  }
   return (
     <nav className="navbar">
       <div className="navbar-left">

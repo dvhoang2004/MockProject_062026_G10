@@ -8,7 +8,7 @@ const Login = () => {
       <form className="login-form">
         {/* Header */}
         <div className="login-header">
-          <p>Icon</p>
+          <p>N</p>
           <h2>Sign in to NHMS</h2>
           <p>Nursing Home Management System</p>
         </div>

@@ -1,14 +1,4 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
-
-// 1. Đổi tên import
-import ResidentList from "../../pages/resident/ResidentList";
-
 // Add the import statements for the router components below:
 import {
   BrowserRouter as Router,
@@ -17,6 +7,7 @@ import {
   Navigate,
 } from "react-router-dom";
 
+import ResidentList from "../../pages/resident/ResidentList";
 import Dashboard from "../../pages/Dashboard/dashboard-nurse";
 import Review from "../../pages/CarePlanning/Review/Review";
 import UserList from "../../pages/UserList/UserList";
@@ -33,6 +24,7 @@ const Routing = () => {
       <Route path="/verification" element={<Verification />} />
       <Route path="/" element={<Navigate to="/resident-list" replace />} />
       <Route path="/resident-list" element={<ResidentList />} />
+      <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/Review" element={<Review />} />
     </Routes>
   );

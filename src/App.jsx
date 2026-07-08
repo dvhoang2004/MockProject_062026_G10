@@ -1,5 +1,6 @@
 import React from "react";
-
+// Sửa lại dòng này
+import Routing from "./routes/Routing/Routing";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";

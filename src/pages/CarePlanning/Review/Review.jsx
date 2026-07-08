@@ -1,11 +1,14 @@
+import { useState } from "react";
 import "./Review.css";
-
+import ESignatureModal from "../Review/ESignatureModal";
 function Review() {
-    return (
+
+    const [openModal, setOpenModal] = useState(false);
+    return (<>
         <div className="review-page">
             <div className="review-container">
 
-                {/* Left */}
+
                 <div className="review-left">
 
                     {/* <div className="breadcrumb">
@@ -110,8 +113,11 @@ function Review() {
                     <div className="card">
                         <h3>Decision</h3>
 
-                        <button className="approve">
-                            Approve &amp; e-Sign
+                        <button
+                            className="approve"
+                            onClick={() => setOpenModal(true)}
+                        >
+                            Approve & e-Sign
                         </button>
 
                         <button className="reject">
@@ -123,7 +129,14 @@ function Review() {
 
             </div>
         </div>
+        <ESignatureModal
+            open={openModal}
+            onClose={() => setOpenModal(false)}
+        />
+    </>
+
     );
+
 }
 
 export default Review;

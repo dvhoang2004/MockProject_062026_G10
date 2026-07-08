@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 
 import Dashboard from "../../pages/Dashboard/dashboard-nurse";
-import Review from "../../pages/CarePlanning/Review";
+import Review from "../../pages/CarePlanning/Review/Review";
 import UserList from "../../pages/UserList/UserList";
 import Login from "../../pages/Auth/Login/Login";
 import AccountActivation from "../../pages/Auth/AccountActivation/AccountActivation";

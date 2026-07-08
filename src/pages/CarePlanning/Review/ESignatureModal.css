@@ -1,0 +1,142 @@
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:999;
+}
+
+.esign-modal{
+    width:430px;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.18);
+}
+
+.modal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 22px 12px;
+}
+
+.modal-header h2{
+    font-size:20px;
+    font-weight:700;
+}
+
+.close-btn{
+    border:none;
+    background:none;
+    font-size:24px;
+    cursor:pointer;
+    color:#777;
+}
+
+.modal-subtitle{
+    padding:0 22px 18px;
+    color:#666;
+    font-size:14px;
+}
+
+.form-group{
+    padding:0 22px 18px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.form-group input{
+    width:100%;
+    height:42px;
+
+    border:1px solid #d8dce6;
+    border-radius:8px;
+
+    padding:0 14px;
+    font-size:14px;
+}
+
+.form-group input:focus{
+    outline:none;
+    border-color:#2563eb;
+}
+
+.remember{
+    display:flex;
+    gap:10px;
+    align-items:center;
+
+    padding:0 22px;
+    margin-bottom:18px;
+
+    font-size:14px;
+}
+
+.signature-time{
+    padding:0 22px 20px;
+    color:#666;
+    font-size:13px;
+}
+
+.signature-time span{
+    display:block;
+    margin-top:4px;
+    color:#111;
+    font-weight:600;
+}
+
+.modal-footer{
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+
+    border-top:1px solid #eee;
+
+    padding:18px 22px;
+}
+
+.cancel-btn{
+    width:100px;
+    height:42px;
+
+    border:1px solid #d1d5db;
+    border-radius:8px;
+
+    background:#fff;
+    cursor:pointer;
+}
+
+.sign-btn{
+    width:150px;
+    height:42px;
+
+    border:none;
+    border-radius:8px;
+
+    background:#2563eb;
+    color:#fff;
+    font-weight:600;
+
+    cursor:pointer;
+}
+
+.sign-btn:hover{
+    background:#1d4ed8;
+}
+
+.cancel-btn:hover{
+    background:#f3f4f6;
+}

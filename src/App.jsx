@@ -1,15 +1,25 @@
 import React from "react";
 
-import Routing from "./routes/Routing/Routing"; // The path to the routing file you just edited.
-import "./App.css"; 
+import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Routing from "./routes/Routing/Routing";
 
-function App() {
+const App = () => {
+  const isLoggedIn = true; // Placeholder for authentication state
+
   return (
     <>
-      {/* Gọi component Routing để quản lý việc hiển thị trang Dashboard */}
-      <Routing />
+      <Navbar isLoggedIn={isLoggedIn} />
+
+      <div className="app-container">
+        <Sidebar isLoggedIn={isLoggedIn} />
+        <main className={`main-content ${isLoggedIn ? "" : "logged-out"}`}>
+          <Routing />
+        </main>
+      </div>
     </>
   );
-}
+};
 
 export default App;

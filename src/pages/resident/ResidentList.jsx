@@ -16,8 +16,10 @@ import {
   MdPersonOutline,
   MdAccessTime,
   MdArrowDropDown,
+  MdBloodtype,
 } from "react-icons/md";
 import "./ResidentList.css";
+import { Link } from "react-router-dom";
 
 const ResidentList = () => {
   const residentsData = [
@@ -114,42 +116,54 @@ const ResidentList = () => {
         {/* SIDEBAR TRÁI */}
         <aside className="nhms-sidebar">
           <ul className="sidebar-menu">
-            <li className="menu-item">
-              <div className="menu-item-content">
-                <MdDashboard size={20} /> Dashboard
-              </div>
-            </li>
-            <li className="menu-item active">
-              <div className="menu-item-content">
-                <MdPeopleOutline size={20} /> Residents
-              </div>
-            </li>
-            <li className="menu-item">
-              <div className="menu-item-content">
-                <MdAssignment size={20} /> Care Planning
-              </div>
-            </li>
-            <li className="menu-item">
-              <div className="menu-item-content">
-                <MdAssignment size={20} /> eMAR
-              </div>
-              <span className="badge-soon">soon</span>
-            </li>
-            <li className="menu-item">
-              <div className="menu-item-content">
-                <MdShield size={20} /> Incident & Risk
-              </div>
-            </li>
-            <li className="menu-item">
-              <div className="menu-item-content">
-                <MdBarChart size={20} /> Reports
-              </div>
-            </li>
+            <Link to="/dashboard-nurse" className="menu-link">
+              <li className="menu-item">
+                <div className="menu-item-content">
+                  <MdDashboard size={20} /> Dashboard
+                </div>
+              </li>
+            </Link>
+            <Link to="/resident-list" className="menu-link">
+              <li className="menu-item active">
+                <div className="menu-item-content">
+                  <MdPeopleOutline size={18} /> Residents
+                </div>
+              </li>
+            </Link>
+            <Link to="/care-planning" className="menu-link">
+              <li className="menu-item">
+                <div className="menu-item-content">
+                  <MdAssignment size={18} /> Care Planning
+                </div>
+              </li>
+            </Link>
+            <Link to="/eMAR" className="menu-link">
+              <li className="menu-item disabled">
+                <div className="menu-item-content">
+                  <MdBloodtype size={18} /> eMAR
+                </div>
+                <span className="badge-soon">soon</span>
+              </li>
+            </Link>
+            <Link to="/incident-risk" className="menu-link">
+              <li className="menu-item">
+                <div className="menu-item-content">
+                  <MdShield size={18} /> Incident & Risk
+                </div>
+              </li>
+            </Link>
+            <Link to="/reports" className="menu-link">
+              <li className="menu-item">
+                <div className="menu-item-content">
+                  <MdBarChart size={18} /> Reports
+                </div>
+              </li>
+            </Link>
           </ul>
           <div className="sidebar-footer">
             <span className="menu-item">
               <div className="menu-item-content">
-                <MdLogout size={20} /> Logout
+                <MdLogout size={18} /> Logout
               </div>
             </span>
           </div>

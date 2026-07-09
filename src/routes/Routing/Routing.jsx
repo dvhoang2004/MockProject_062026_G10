@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 
 import ResidentList from "../../pages/resident/ResidentList";
-import Dashboard from "../../pages/Dashboard/dashboard-nurse";
+import DashboardNurse from "../../pages/Dashboard/DashboardNurse";
 import Review from "../../pages/CarePlanning/Review/Review";
 import UserList from "../../pages/UserList/UserList";
 import Login from "../../pages/Auth/Login/Login";
@@ -24,7 +24,7 @@ const Routing = () => {
       <Route path="/verification" element={<Verification />} />
       <Route path="/" element={<Navigate to="/resident-list" replace />} />
       <Route path="/resident-list" element={<ResidentList />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/dashboard-nurse" element={<DashboardNurse />} />
       <Route path="/Review" element={<Review />} />
     </Routes>
   );

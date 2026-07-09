@@ -135,15 +135,29 @@ body {
   margin: 0;
 }
 
+.menu-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Để vùng bấm phủ kín toàn bộ hàng */
+  width: 100%;
+}
+
 .menu-item {
-  display: flex;
-  align-items: center;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
   gap: 12px;
   padding: 12px 24px;
   color: var(--text-gray);
   font-weight: 500;
   cursor: pointer;
   font-size: 14px;
+  border-radius: 8px; /* Bo góc */
+  transition: all 0.2s ease; /* Tạo hiệu ứng */
+}
+
+.menu-item:hover {
+  color: #2563eb; /*  */
 }
 
 .menu-item svg {

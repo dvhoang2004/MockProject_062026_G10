@@ -1,0 +1,161 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f7f7f7;
+    font-family:Arial;
+}
+
+.daily-task{
+    width:95%;
+    margin:30px auto;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:25px;
+}
+
+.breadcrumb{
+    color:#888;
+    font-size:14px;
+}
+
+.sub{
+    color:#777;
+    margin-top:8px;
+}
+
+.progress-card{
+    width:280px;
+    background:white;
+    border:1px solid #ddd;
+    border-radius:12px;
+    padding:15px;
+}
+
+.progress{
+    margin-top:10px;
+    width:100%;
+    height:10px;
+    background:#ddd;
+    border-radius:20px;
+}
+
+.progress-fill{
+    height:100%;
+    background:#3cb371;
+    border-radius:20px;
+}
+
+.resident-card{
+    margin-top:20px;
+    background:white;
+    border-radius:10px;
+    border:1px solid #ddd;
+}
+
+.resident-header{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+}
+
+.resident-status{
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:13px;
+}
+
+.active{
+    background:#dcfce7;
+    color:#15803d;
+}
+
+.draft{
+    background:#eee;
+    color:#666;
+}
+
+.task-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px;
+    border-top:1px solid #eee;
+}
+
+.task-title{
+    width:35%;
+}
+
+.task-time{
+    width:15%;
+    color:#666;
+}
+
+.actions{
+    display:flex;
+    gap:10px;
+}
+
+.btn{
+    padding:7px 15px;
+    border-radius:20px;
+    border:1px solid #ccc;
+    background:white;
+    cursor:pointer;
+}
+
+.btn.active.done{
+    background:#dcfce7;
+    color:#15803d;
+}
+
+.btn.active.missed{
+    background:#f1f5f9;
+}
+
+.btn.active.refused{
+    background:#fef3c7;
+    color:#d97706;
+}
+
+.warning{
+    margin-left:5px;
+    color:red;
+}
+
+.empty-plan{
+    padding:40px;
+    text-align:center;
+    color:#999;
+}
+@media (max-width: 1024px) {
+    .daily-task { width: 95%; }
+}
+
+@media (max-width: 768px) {
+    .header { flex-direction: column; gap: 15px; }
+    .progress-card { width: 100%; }
+}
+
+
+@media (max-width: 640px) {
+    .task-row { flex-wrap: wrap; gap: 10px; }
+    .task-title { width: 100%; font-weight: bold; }
+    .task-time { width: 40%; }
+    .actions { width: 100%; justify-content: flex-start; }
+}
+
+
+@media (max-width: 480px) {
+    .resident-header { flex-direction: column; align-items: flex-start; }
+    .btn { padding: 5px 10px; font-size: 12px; }
+}

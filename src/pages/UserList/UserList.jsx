@@ -1,5 +1,6 @@
 import React from "react";
 import { FaUsers, FaCheckCircle, FaClock, FaMinusSquare } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 import "./UserList.css";
 import UserCard from "../../components/UserCard/UserCard";
@@ -37,6 +38,7 @@ const UserList = () => {
       u.status === "Inactive" ||
       u.status === "Deactivated",
   ).length;
+  const navigate = useNavigate();
 
   return (
     <div className="user-list-page">
@@ -96,7 +98,12 @@ const UserList = () => {
         <select className="filter-select">
           <option>Status: All</option>
         </select>
-        <button className="add-user-button">+ Add User</button>
+        <button
+          className="add-user-button"
+          onClick={() => navigate("/user-list/add-user")}
+        >
+          + Add User
+        </button>
       </div>
 
       <div className="table-header">

@@ -11,6 +11,7 @@ import ResidentList from "../../pages/resident/ResidentList";
 import Dashboard from "../../pages/Dashboard/dashboard-nurse";
 import Review from "../../pages/CarePlanning/Review/Review";
 import UserList from "../../pages/UserList/UserList";
+import AddUser from "../../pages/AddUser/AddUser";
 import Login from "../../pages/Auth/Login/Login";
 import AccountActivation from "../../pages/Auth/AccountActivation/AccountActivation";
 import Verification from "../../pages/Auth/Verification/Verification";
@@ -19,6 +20,7 @@ const Routing = () => {
   return (
     <Routes>
       <Route path="/user-list" element={<UserList />} />
+      <Route path="/user-list/add-user" element={<AddUser />} />
       <Route path="/login" element={<Login />} />
       <Route path="/account-activation" element={<AccountActivation />} />
       <Route path="/verification" element={<Verification />} />

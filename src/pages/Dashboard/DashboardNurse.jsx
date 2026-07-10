@@ -13,7 +13,8 @@ import {
   MdKeyboardArrowDown,
   MdAdd,
 } from "react-icons/md";
-import "./dashboard-nurse.css"; // Import file CSS bên dưới
+import "./DashboardNurse.css"; // Import file CSS bên dưới
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   // Data giả lập cho các thẻ thống kê (Top Cards)
@@ -141,24 +142,36 @@ const Dashboard = () => {
         {/* --- SIDEBAR --- */}
         <aside className="nhms-sidebar">
           <ul className="sidebar-menu">
-            <li className="menu-item active">
-              <MdDashboard /> Dashboard
-            </li>
-            <li className="menu-item">
-              <MdPeople /> Residents
-            </li>
-            <li className="menu-item">
-              <MdAssignment /> Care Planning
-            </li>
-            <li className="menu-item disabled">
-              <MdBloodtype /> eMAR <span className="badge-soon">soon</span>
-            </li>
-            <li className="menu-item">
-              <MdReportProblem /> Incident & Risk
-            </li>
-            <li className="menu-item">
-              <MdBarChart /> Reports
-            </li>
+            <Link to="/dashboard-nurse" className="menu-link">
+              <li className="menu-item active">
+                <MdDashboard /> Dashboard
+              </li>
+            </Link>
+            <Link to="/resident-list" className="menu-link">
+              <li className="menu-item">
+                <MdPeople /> Residents
+              </li>
+            </Link>
+            <Link to="/care-planning" className="menu-link">
+              <li className="menu-item">
+                <MdAssignment /> Care Planning
+              </li>
+            </Link>
+            <Link to="/eMAR" className="menu-link">
+              <li className="menu-item disabled">
+                <MdBloodtype /> eMAR <span className="badge-soon">soon</span>
+              </li>
+            </Link>
+            <Link to="/incident-risk" className="menu-link">
+              <li className="menu-item">
+                <MdReportProblem /> Incident & Risk
+              </li>
+            </Link>
+            <Link to="/reports" className="menu-link">
+              <li className="menu-item">
+                <MdBarChart /> Reports
+              </li>
+            </Link>
           </ul>
           <div className="sidebar-footer">
             <div className="menu-item">

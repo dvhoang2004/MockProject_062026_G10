@@ -126,6 +126,13 @@
   margin: 0;
 }
 
+.menu-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Để vùng bấm phủ kín toàn bộ hàng */
+  width: 100%;
+}
+
 .menu-item {
   padding: 12px 24px;
   cursor: pointer;
@@ -137,11 +144,20 @@
   justify-content: space-between;
 }
 
+.menu-item:hover {
+  color: #2563eb; /*  */
+}
+
 .menu-item.active {
   background-color: #eff6ff;
   color: var(--primary-color);
   border-radius: 0 24px 24px 0;
   font-weight: 600;
+}
+
+.menu-item.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .badge-soon {

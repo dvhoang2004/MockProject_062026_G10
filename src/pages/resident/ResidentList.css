@@ -203,7 +203,7 @@
 .search-icon {
   position: absolute;
   left: 12px;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
   color: var(--text-muted);
   font-size: 20px;
@@ -211,10 +211,11 @@
 
 .search-input {
   width: 100%;
-  padding: 10px 10px 10px 40px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  padding: 10px 10px 10px 50px !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 15px !important;
   outline: none;
+  box-sizing: border-box;
 }
 
 .dropdown-filter {
@@ -349,6 +350,11 @@
   border: none;
   font-weight: 700;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-view:hover {
+  text-decoration: underline;
 }
 
 /* Sidebar Menu */

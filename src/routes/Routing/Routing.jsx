@@ -17,6 +17,8 @@ import AccountActivation from "../../pages/Auth/AccountActivation/AccountActivat
 import Verification from "../../pages/Auth/Verification/Verification";
 import Dailytask from "../../pages/CarePlanning/Dailytask/Dailytasklist";
 import ResidentProfileDetail from "../../pages/ResidentProfileDetail/ResidentProfileDetail";
+import RecordVitals from"../../pages/BedsideVital/RecordVitals"
+
 const Routing = () => {
   return (
     <Routes>
@@ -31,6 +33,8 @@ const Routing = () => {
       <Route path="/Review" element={<Review />} />
       <Route path="/Dailytask" element={<Dailytask />} />
       <Route path="/resident/detail" element={<ResidentProfileDetail />} />
+      <Route path="/RecordVital" element={<RecordVitals />} />
+
     </Routes>
   );
 };

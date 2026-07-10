@@ -12,15 +12,17 @@ import DashboardNurse from "../../pages/Dashboard/DashboardNurse";
 import Review from "../../pages/CarePlanning/Review/Review";
 import UserList from "../../pages/UserList/UserList";
 import AddUser from "../../pages/AddUser/AddUser";
+import Roles from "../../pages/Roles/Roles";
 import Login from "../../pages/Auth/Login/Login";
 import AccountActivation from "../../pages/Auth/AccountActivation/AccountActivation";
 import Verification from "../../pages/Auth/Verification/Verification";
-import Dailytask from"../../pages/CarePlanning/Dailytask/Dailytasklist"
+import Dailytask from "../../pages/CarePlanning/Dailytask/Dailytasklist";
 const Routing = () => {
   return (
     <Routes>
       <Route path="/user-list" element={<UserList />} />
       <Route path="/user-list/add-user" element={<AddUser />} />
+      <Route path="/roles" element={<Roles />} />
       <Route path="/login" element={<Login />} />
       <Route path="/account-activation" element={<AccountActivation />} />
       <Route path="/verification" element={<Verification />} />
@@ -29,7 +31,6 @@ const Routing = () => {
       <Route path="/dashboard-nurse" element={<DashboardNurse />} />
       <Route path="/Review" element={<Review />} />
       <Route path="/Dailytask" element={<Dailytask />} />
-
     </Routes>
   );
 };

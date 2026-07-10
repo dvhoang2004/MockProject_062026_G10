@@ -1,4 +1,6 @@
-const dailyTasks = {
+// data.js
+
+export const dailyTasks = {
   date: "Thursday, 2026-07-02",
   shift: "Day shift",
 
@@ -38,7 +40,6 @@ const dailyTasks = {
         },
       ],
     },
-
     {
       id: 2,
       name: "Elena Ramos",
@@ -46,13 +47,11 @@ const dailyTasks = {
       status: "Draft",
       tasks: [],
     },
-
     {
       id: 3,
       name: "David Nguyen",
       room: "222A",
       status: "Active",
-
       tasks: [
         {
           id: 1,
@@ -72,11 +71,6 @@ const dailyTasks = {
     },
   ],
 };
-
-export default dailyTasks;
-
- 
-// data.js
 
 export const recordVitalsData = {
   patient: {
@@ -110,3 +104,48 @@ export const recordVitalsData = {
       "Saving will alert Anna Lee, RN and flags this record.",
   },
 };
+
+export const reassessmentData = [
+  {
+    id: 1,
+    name: "Robert Hayes · 204B",
+    trigger: "90-day cycle",
+    dueDate: "2026-06-28",
+    overdue: "4 days",
+    status: "Review Due",
+    statusClass: "review",
+    action: "Start",
+  },
+  {
+    id: 2,
+    name: "James Porter · 210B",
+    trigger: "90-day cycle",
+    dueDate: "2026-07-03",
+    overdue: "2 days",
+    status: "Review Due",
+    statusClass: "review",
+    action: "Start",
+  },
+  {
+    id: 3,
+    name: "Susan Wright · 114B",
+    trigger: "Significant Change (SCS)",
+    dueDate: "—",
+    overdue: "—",
+    status: "Needs Update",
+    statusClass: "update",
+    action: "Start",
+  },
+  {
+    id: 4,
+    name: "Mary Coleman · 118A",
+    trigger: "90-day cycle",
+    dueDate: "2026-07-20",
+    overdue: "—",
+    status: "Active",
+    statusClass: "active",
+    action: "View",
+  },
+];
+
+export default dailyTasks; recordVitalsData;reassessmentData;

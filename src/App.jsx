@@ -6,7 +6,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Routing from "./routes/Routing/Routing";
 
 const App = () => {
-  const isLoggedIn = true; // Placeholder for authentication state
+  const isLoggedIn = false; // Placeholder for authentication state
 
   return (
     <>

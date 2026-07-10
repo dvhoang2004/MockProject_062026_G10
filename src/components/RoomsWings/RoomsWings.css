@@ -1,0 +1,83 @@
+.rooms-wings-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.rooms-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.rooms-count {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.add-room-button {
+  background: #2f5bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.add-room-button:hover {
+  background: #2447d1;
+}
+
+.rooms-table-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.6fr 1.2fr 1.2fr 1.6fr;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+}
+
+.room-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.6fr 1.2fr 1.2fr 1.6fr;
+  align-items: center;
+  padding: 0.8rem;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 0.9rem;
+}
+
+.room-row:last-child {
+  border-bottom: none;
+}
+
+.room-row .room {
+  font-weight: 700;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.badge.green {
+  background: #e6f7ec;
+  color: #1e9e5a;
+}
+
+.badge.blue {
+  background: #e8edff;
+  color: #2f5bff;
+}
+
+.badge.gray {
+  background: #eee;
+  color: #888;
+}

@@ -1,0 +1,52 @@
+.info-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.info-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.info-card-header h2 {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.tab-tag {
+  background: #f0f0f0;
+  color: #888;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 0.9rem;
+}
+
+.info-row:last-of-type {
+  border-bottom: none;
+}
+
+.info-label {
+  color: #888;
+}
+
+.info-value {
+  font-weight: 600;
+}
+
+.info-footnote {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 1rem;
+}

@@ -13,6 +13,7 @@ import Review from "../../pages/CarePlanning/Review/Review";
 import UserList from "../../pages/UserList/UserList";
 import AddUser from "../../pages/AddUser/AddUser";
 import Roles from "../../pages/Roles/Roles";
+import Facility from "../../pages/Facility/Facility";
 import LOCPage from "../../pages/LOC/LOC";
 import Login from "../../pages/Auth/Login/Login";
 import AccountActivation from "../../pages/Auth/AccountActivation/AccountActivation";
@@ -21,13 +22,14 @@ import Dailytask from "../../pages/CarePlanning/Dailytask/Dailytasklist";
 const Routing = () => {
   return (
     <Routes>
-      <Route path="/user-list" element={<UserList />} />
-      <Route path="/user-list/add-user" element={<AddUser />} />
-      <Route path="/roles" element={<Roles />} />
-      <Route path="/level-of-care" element={<LOCPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/account-activation" element={<AccountActivation />} />
       <Route path="/verification" element={<Verification />} />
+      <Route path="/user-list" element={<UserList />} />
+      <Route path="/user-list/add-user" element={<AddUser />} />
+      <Route path="/roles" element={<Roles />} />
+      <Route path="/facility" element={<Facility />} />
+      <Route path="/level-of-care" element={<LOCPage />} />
       <Route path="/" element={<Navigate to="/resident-list" replace />} />
       <Route path="/resident-list" element={<ResidentList />} />
       <Route path="/dashboard-nurse" element={<DashboardNurse />} />

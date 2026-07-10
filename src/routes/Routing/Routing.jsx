@@ -14,7 +14,7 @@ import UserList from "../../pages/UserList/UserList";
 import Login from "../../pages/Auth/Login/Login";
 import AccountActivation from "../../pages/Auth/AccountActivation/AccountActivation";
 import Verification from "../../pages/Auth/Verification/Verification";
-
+import Dailytask from"../../pages/CarePlanning/Dailytask/Dailytasklist"
 const Routing = () => {
   return (
     <Routes>
@@ -26,6 +26,8 @@ const Routing = () => {
       <Route path="/resident-list" element={<ResidentList />} />
       <Route path="/dashboard-nurse" element={<DashboardNurse />} />
       <Route path="/Review" element={<Review />} />
+      <Route path="/Dailytask" element={<Dailytask />} />
+
     </Routes>
   );
 };

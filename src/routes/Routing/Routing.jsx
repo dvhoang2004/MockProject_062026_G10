@@ -7,7 +7,7 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import ResidentList from "../../pages/resident/ResidentList";
+import ResidentList from "../../pages/Resident/ResidentList";
 import DashboardNurse from "../../pages/Dashboard/DashboardNurse";
 import Review from "../../pages/CarePlanning/Review/Review";
 import UserList from "../../pages/UserList/UserList";
@@ -15,7 +15,8 @@ import AddUser from "../../pages/AddUser/AddUser";
 import Login from "../../pages/Auth/Login/Login";
 import AccountActivation from "../../pages/Auth/AccountActivation/AccountActivation";
 import Verification from "../../pages/Auth/Verification/Verification";
-import Dailytask from"../../pages/CarePlanning/Dailytask/Dailytasklist"
+import Dailytask from "../../pages/CarePlanning/Dailytask/Dailytasklist";
+import ResidentProfileDetail from "../../pages/ResidentProfileDetail/ResidentProfileDetail";
 import RecordVitals from"../../pages/BedsideVital/RecordVitals"
 
 const Routing = () => {
@@ -31,6 +32,7 @@ const Routing = () => {
       <Route path="/dashboard-nurse" element={<DashboardNurse />} />
       <Route path="/Review" element={<Review />} />
       <Route path="/Dailytask" element={<Dailytask />} />
+      <Route path="/resident/detail" element={<ResidentProfileDetail />} />
       <Route path="/RecordVital" element={<RecordVitals />} />
 
     </Routes>

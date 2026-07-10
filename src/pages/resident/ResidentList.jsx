@@ -17,6 +17,8 @@ import {
   MdAccessTime,
   MdArrowDropDown,
   MdBloodtype,
+  MdAccountCircle,
+  MdReportProblem,
 } from "react-icons/md";
 import "./ResidentList.css";
 import { Link } from "react-router-dom";
@@ -100,7 +102,7 @@ const ResidentList = () => {
             <MdHelpOutline />
           </span>
           <div className="user-profile">
-            <div className="avatar">AL</div>
+            <MdAccountCircle className="avatar" />
             <div className="user-info">
               <span className="user-name">Anna Lee</span>
               <span className="user-role">Nurse</span>
@@ -148,7 +150,7 @@ const ResidentList = () => {
             <Link to="/incident-risk" className="menu-link">
               <li className="menu-item">
                 <div className="menu-item-content">
-                  <MdShield size={18} /> Incident & Risk
+                  <MdReportProblem size={18} /> Incident & Risk
                 </div>
               </li>
             </Link>
@@ -286,7 +288,9 @@ const ResidentList = () => {
                     <td>{resident.payer}</td>
                     <td>{resident.source}</td>
                     <td>
-                      <button className="btn-view">View</button>
+                      <Link to="/resident/detail" className="view-link-wrapper">
+                        <button className="btn-view">View</button>
+                      </Link>
                     </td>
                   </tr>
                 ))}

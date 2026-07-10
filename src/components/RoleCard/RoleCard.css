@@ -1,0 +1,37 @@
+.role-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.role-name {
+  font-size: 1rem;
+  margin: 0 0 0.6rem 0;
+}
+
+.role-tag {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.role-tag.internal {
+  background: #e8edff;
+  color: #2f5bff;
+}
+
+.role-tag.external {
+  background: #f7e8ff;
+  color: #a24fd6;
+}
+
+.role-description {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}

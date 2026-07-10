@@ -1,0 +1,52 @@
+.loc-card {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr 1.6fr 0.8fr;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+  background: #fff;
+  transition: background 0.15s ease;
+}
+
+.loc-card:last-child {
+  border-bottom: none;
+}
+
+.loc-card:hover {
+  background: #fafbff;
+}
+
+.tier-badge {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: #e8edff;
+  color: #2f5bff;
+}
+
+.dailyRate {
+  font-weight: 700;
+}
+
+.scoreRange,
+.effectiveDate,
+.lastUpdatedBy {
+  color: #555;
+}
+
+.edit-button {
+  background: none;
+  border: none;
+  color: #2f5bff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.edit-button:hover {
+  text-decoration: underline;
+}

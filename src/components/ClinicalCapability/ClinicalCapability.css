@@ -1,0 +1,71 @@
+.clinical-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.info-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.info-card-header h2 {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.tab-tag {
+  background: #f0f0f0;
+  color: #888;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+}
+
+.clinical-description {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 1.2rem;
+}
+
+.clinical-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 2rem;
+}
+
+.clinical-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 0.9rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.badge.green {
+  background: #e6f7ec;
+  color: #1e9e5a;
+}
+
+.badge.gray {
+  background: #eee;
+  color: #888;
+}
+
+.info-footnote {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 1rem;
+}

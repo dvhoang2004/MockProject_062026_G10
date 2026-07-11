@@ -20,7 +20,8 @@ import AccountActivation from "../../pages/Auth/AccountActivation/AccountActivat
 import Verification from "../../pages/Auth/Verification/Verification";
 import Dailytask from "../../pages/CarePlanning/Dailytask/Dailytasklist";
 import ResidentProfileDetail from "../../pages/ResidentProfileDetail/ResidentProfileDetail";
-import RecordVitals from "../../pages/BedsideVital/RecordVitals"
+import RecordVitals from "../../pages/BedsideVital/RecordVitals";
+import CreateEditResident from "../../pages/CreateEditResident/CreateEditResident";
 
 const Routing = () => {
   return (
@@ -40,7 +41,10 @@ const Routing = () => {
       <Route path="/Dailytask" element={<Dailytask />} />
       <Route path="/resident/detail" element={<ResidentProfileDetail />} />
       <Route path="/RecordVital" element={<RecordVitals />} />
-
+      {/* create*/}
+      <Route path="/resident/create" element={<CreateEditResident />} />
+      {/* edit */}
+      <Route path="/resident/edit/:id" element={<CreateEditResident />} />
     </Routes>
   );
 };

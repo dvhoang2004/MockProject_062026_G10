@@ -15,12 +15,13 @@ import AddUser from "../../pages/AddUser/AddUser";
 import Roles from "../../pages/Roles/Roles";
 import Facility from "../../pages/Facility/Facility";
 import LOCPage from "../../pages/LOC/LOC";
+import Staffing from "../../pages/Staffing/Staffing";
 import Login from "../../pages/Auth/Login/Login";
 import AccountActivation from "../../pages/Auth/AccountActivation/AccountActivation";
 import Verification from "../../pages/Auth/Verification/Verification";
 import Dailytask from "../../pages/CarePlanning/Dailytask/Dailytasklist";
 import ResidentProfileDetail from "../../pages/ResidentProfileDetail/ResidentProfileDetail";
-import RecordVitals from "../../pages/BedsideVital/RecordVitals"
+import RecordVitals from "../../pages/BedsideVital/RecordVitals";
 
 const Routing = () => {
   return (
@@ -33,6 +34,7 @@ const Routing = () => {
       <Route path="/roles" element={<Roles />} />
       <Route path="/facility" element={<Facility />} />
       <Route path="/level-of-care" element={<LOCPage />} />
+      <Route path="/staffing" element={<Staffing />} />
       <Route path="/" element={<Navigate to="/resident-list" replace />} />
       <Route path="/resident-list" element={<ResidentList />} />
       <Route path="/dashboard-nurse" element={<DashboardNurse />} />
@@ -40,7 +42,6 @@ const Routing = () => {
       <Route path="/Dailytask" element={<Dailytask />} />
       <Route path="/resident/detail" element={<ResidentProfileDetail />} />
       <Route path="/RecordVital" element={<RecordVitals />} />
-
     </Routes>
   );
 };

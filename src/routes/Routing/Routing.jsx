@@ -20,7 +20,8 @@ import AccountActivation from "../../pages/Auth/AccountActivation/AccountActivat
 import Verification from "../../pages/Auth/Verification/Verification";
 import Dailytask from "../../pages/CarePlanning/Dailytask/Dailytasklist";
 import ResidentProfileDetail from "../../pages/ResidentProfileDetail/ResidentProfileDetail";
-import RecordVitals from "../../pages/BedsideVital/RecordVitals"
+import RecordVitals from "../../pages/BedsideVital/RecordVitals";
+import DashboardDon from "../../pages/Dashboard/DashboardDon";
 
 const Routing = () => {
   return (
@@ -40,7 +41,7 @@ const Routing = () => {
       <Route path="/Dailytask" element={<Dailytask />} />
       <Route path="/resident/detail" element={<ResidentProfileDetail />} />
       <Route path="/RecordVital" element={<RecordVitals />} />
-
+      <Route path="/dashboard-don" element={<DashboardDon />} />
     </Routes>
   );
 };

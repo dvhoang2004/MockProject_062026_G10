@@ -1,0 +1,134 @@
+.incident-severity-page {
+  padding: 2rem;
+  background: #f7f8fa;
+  min-height: 100vh;
+  font-family: sans-serif;
+  color: #222;
+}
+
+.breadcrumb {
+  font-size: 0.8rem;
+  color: #999;
+  margin-bottom: 0.4rem;
+}
+
+.page-title {
+  font-size: 1.6rem;
+  margin: 0 0 0.3rem 0;
+}
+
+.page-subtitle {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 1.2rem;
+}
+
+.info-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  background: #e8f1ff;
+  border: 1px solid #cfe0ff;
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2447d1;
+  margin-bottom: 1.5rem;
+}
+
+.info-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #2f5bff;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 1fr 2.4fr 2fr 0.6fr;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 600;
+}
+
+.severity-table {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.severity-row {
+  display: grid;
+  grid-template-columns: 1fr 2.4fr 2fr 0.6fr;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 0.9rem;
+}
+
+.severity-row:last-child {
+  border-bottom: none;
+}
+
+.severity-row .example {
+  color: #888;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge.gray {
+  background: #eee;
+  color: #777;
+}
+
+.badge.yellow {
+  background: #fff4d6;
+  color: #b9860a;
+}
+
+.badge.orange {
+  background: #ffe9d6;
+  color: #c5690a;
+}
+
+.badge.red {
+  background: #ffe5e5;
+  color: #d84343;
+}
+
+.edit-button {
+  background: none;
+  border: none;
+  color: #2f5bff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.edit-button:hover {
+  text-decoration: underline;
+}
+
+.footnote {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 1rem;
+  line-height: 1.5;
+}

@@ -37,7 +37,7 @@
   text-decoration: none;
   color: inherit;
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 0px;
 }
 .menu-item {
   display: flex;
@@ -184,7 +184,7 @@ button {
 .btn-secondary:hover {
   background-color: #f8f9fa;
 }
-.btn-report {
+.profile-detail-btn-report {
   color: #dc2626;
   border-color: #fee2e2;
 }

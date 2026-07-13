@@ -208,9 +208,11 @@ const ResidentList = () => {
             <button className="btn-secondary">
               <MdTableView size={18} /> Table
             </button>
-            <button className="btn-primary">
-              <MdAdd size={18} /> Add New Resident
-            </button>
+            <Link to="/resident/create" className="menu-link">
+              <button className="btn-primary">
+                <MdAdd size={18} /> Add New Resident
+              </button>
+            </Link>
           </div>
 
           {/* KHỐI THỐNG KÊ (4 CARDS) */}

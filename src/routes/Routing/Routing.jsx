@@ -23,6 +23,8 @@ import Verification from "../../pages/Auth/Verification/Verification";
 import Dailytask from "../../pages/CarePlanning/Dailytask/Dailytasklist";
 import ResidentProfileDetail from "../../pages/ResidentProfileDetail/ResidentProfileDetail";
 import RecordVitals from "../../pages/BedsideVital/RecordVitals";
+import DashboardDon from "../../pages/Dashboard/DashboardDon";
+
 import CreateEditResident from "../../pages/CreateEditResident/CreateEditResident";
 import Reassessment from"../../pages/Reassessment/Reassessment"
 const Routing = () => {
@@ -46,6 +48,7 @@ const Routing = () => {
       <Route path="/Reassessment" element={<Reassessment />} />
       <Route path="/resident/detail" element={<ResidentProfileDetail />} />
       <Route path="/RecordVital" element={<RecordVitals />} />
+      <Route path="/dashboard-don" element={<DashboardDon />} />
       {/* create*/}
       <Route path="/resident/create" element={<CreateEditResident />} />
       {/* edit */}

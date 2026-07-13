@@ -1,0 +1,157 @@
+.staffing-page {
+  padding: 2rem;
+  background: #f7f8fa;
+  min-height: 100vh;
+  font-family: sans-serif;
+  color: #222;
+}
+
+.breadcrumb {
+  font-size: 0.8rem;
+  color: #999;
+  margin-bottom: 0.4rem;
+}
+
+.page-title {
+  font-size: 1.6rem;
+  margin: 0 0 0.3rem 0;
+}
+
+.page-subtitle {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.card-title,
+.section-title {
+  font-size: 1.05rem;
+  margin: 0 0 1rem 0;
+}
+
+.min-req-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.4rem;
+}
+
+.field-group input {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: #f9f9fb;
+  color: #333;
+}
+
+.input-with-suffix {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.input-with-suffix input {
+  flex: 1;
+}
+
+.suffix {
+  font-size: 0.8rem;
+  color: #888;
+  white-space: nowrap;
+}
+
+.shift-table-header {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 600;
+}
+
+.shift-table {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.shift-row {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 0.9rem 1.2rem;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 0.9rem;
+}
+
+.shift-row:last-child {
+  border-bottom: none;
+}
+
+.shift-row .subtotal {
+  font-weight: 700;
+}
+
+.sum-row {
+  display: flex;
+  justify-content: space-between;
+  max-width: 320px;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.compliance-card {
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+}
+
+.compliance-card.compliant {
+  background: #e6f7ec;
+  border: 1px solid #b8e6c9;
+  color: #1e9e5a;
+}
+
+.compliance-card.non-compliant {
+  background: #ffe5e5;
+  border: 1px solid #f3b8b8;
+  color: #d84343;
+}
+
+.compliance-title {
+  font-size: 1rem;
+  margin: 0 0 0.8rem 0;
+}
+
+.compliance-line {
+  font-size: 0.85rem;
+  margin: 0.3rem 0;
+}
+
+.compliance-usedby-label {
+  font-weight: 700;
+  margin: 0.8rem 0 0.2rem 0;
+  font-size: 0.85rem;
+}

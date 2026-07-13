@@ -107,12 +107,14 @@ const ResidentProfileDetail = () => {
                   <button className="btn-secondary">
                     <MdEdit /> Edit Profile
                   </button>
-                  <button className="btn-secondary btn-report">
+                  <button className="btn-secondary profile-detail-btn-report">
                     <MdReportProblem /> Report Incident
                   </button>
-                  <button className="btn-primary">
-                    <MdAdd /> New Assessment
-                  </button>
+                  <Link to="/resident/create" className="">
+                    <button className="btn-primary">
+                      <MdAdd /> New Assessment
+                    </button>
+                  </Link>
                 </div>
               </div>
               <p className="resident-meta">

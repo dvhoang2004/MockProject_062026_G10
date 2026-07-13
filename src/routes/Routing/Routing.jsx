@@ -15,6 +15,8 @@ import AddUser from "../../pages/AddUser/AddUser";
 import Roles from "../../pages/Roles/Roles";
 import Facility from "../../pages/Facility/Facility";
 import LOCPage from "../../pages/LOC/LOC";
+import Staffing from "../../pages/Staffing/Staffing";
+import IncidentSeverityLevel from "../../pages/IncidentSeverityLevel/IncidentSeverityLevel";
 import Login from "../../pages/Auth/Login/Login";
 import AccountActivation from "../../pages/Auth/AccountActivation/AccountActivation";
 import Verification from "../../pages/Auth/Verification/Verification";
@@ -23,6 +25,8 @@ import ResidentProfileDetail from "../../pages/ResidentProfileDetail/ResidentPro
 import RecordVitals from "../../pages/BedsideVital/RecordVitals";
 import DashboardDon from "../../pages/Dashboard/DashboardDon";
 
+import CreateEditResident from "../../pages/CreateEditResident/CreateEditResident";
+import Reassessment from"../../pages/Reassessment/Reassessment"
 const Routing = () => {
   return (
     <Routes>
@@ -34,14 +38,21 @@ const Routing = () => {
       <Route path="/roles" element={<Roles />} />
       <Route path="/facility" element={<Facility />} />
       <Route path="/level-of-care" element={<LOCPage />} />
+      <Route path="/staffing" element={<Staffing />} />
+      <Route path="/incident-severity" element={<IncidentSeverityLevel />} />
       <Route path="/" element={<Navigate to="/resident-list" replace />} />
       <Route path="/resident-list" element={<ResidentList />} />
       <Route path="/dashboard-nurse" element={<DashboardNurse />} />
       <Route path="/Review" element={<Review />} />
       <Route path="/Dailytask" element={<Dailytask />} />
+      <Route path="/Reassessment" element={<Reassessment />} />
       <Route path="/resident/detail" element={<ResidentProfileDetail />} />
       <Route path="/RecordVital" element={<RecordVitals />} />
       <Route path="/dashboard-don" element={<DashboardDon />} />
+      {/* create*/}
+      <Route path="/resident/create" element={<CreateEditResident />} />
+      {/* edit */}
+      <Route path="/resident/edit/:id" element={<CreateEditResident />} />
     </Routes>
   );
 };

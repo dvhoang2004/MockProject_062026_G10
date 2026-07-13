@@ -16,6 +16,7 @@ import Roles from "../../pages/Roles/Roles";
 import Facility from "../../pages/Facility/Facility";
 import LOCPage from "../../pages/LOC/LOC";
 import Staffing from "../../pages/Staffing/Staffing";
+import IncidentSeverityLevel from "../../pages/IncidentSeverityLevel/IncidentSeverityLevel";
 import Login from "../../pages/Auth/Login/Login";
 import AccountActivation from "../../pages/Auth/AccountActivation/AccountActivation";
 import Verification from "../../pages/Auth/Verification/Verification";
@@ -35,6 +36,7 @@ const Routing = () => {
       <Route path="/facility" element={<Facility />} />
       <Route path="/level-of-care" element={<LOCPage />} />
       <Route path="/staffing" element={<Staffing />} />
+      <Route path="/incident-severity" element={<IncidentSeverityLevel />} />
       <Route path="/" element={<Navigate to="/resident-list" replace />} />
       <Route path="/resident-list" element={<ResidentList />} />
       <Route path="/dashboard-nurse" element={<DashboardNurse />} />

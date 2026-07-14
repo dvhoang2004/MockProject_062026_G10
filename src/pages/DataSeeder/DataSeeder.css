@@ -1,0 +1,146 @@
+.data-seeder-page {
+  padding: 2rem;
+  background: #f7f8fa;
+  min-height: 100vh;
+  font-family: sans-serif;
+  color: #222;
+}
+
+.breadcrumb {
+  font-size: 0.8rem;
+  color: #999;
+  margin-bottom: 0.4rem;
+}
+
+.page-title {
+  font-size: 1.6rem;
+  margin: 0 0 0.3rem 0;
+}
+
+.page-subtitle {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 1.2rem;
+}
+
+.warning-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: #fff3cd;
+  border: 1px solid #ffe08a;
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.warning-content {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #a6710a;
+}
+
+.warning-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #d9971a;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reset-all-button {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.reset-all-button:hover {
+  background: #f5f5f5;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr 1.4fr 1fr 0.7fr 0.7fr;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 600;
+}
+
+.dataset-table {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.dataset-row {
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr 1.4fr 1fr 0.7fr 0.7fr;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 0.9rem;
+}
+
+.dataset-row:last-child {
+  border-bottom: none;
+}
+
+.dataset-row .dataset {
+  font-weight: 600;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.badge.green {
+  background: #e6f7ec;
+  color: #1e9e5a;
+}
+
+.badge.gray {
+  background: #eee;
+  color: #888;
+}
+
+.action-button {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background: #f5f5f5;
+}
+
+.footnote {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 1rem;
+  line-height: 1.5;
+}

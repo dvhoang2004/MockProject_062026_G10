@@ -24,7 +24,7 @@ import Dailytask from "../../pages/CarePlanning/Dailytask/Dailytasklist";
 import ResidentProfileDetail from "../../pages/ResidentProfileDetail/ResidentProfileDetail";
 import RecordVitals from "../../pages/BedsideVital/RecordVitals";
 import DashboardDon from "../../pages/Dashboard/DashboardDon";
-
+import CostBiling from"../../pages/CarePlanning/Detail/CostBiling/CareCost"
 import CreateEditResident from "../../pages/CreateEditResident/CreateEditResident";
 import Reassessment from"../../pages/Reassessment/Reassessment"
 const Routing = () => {
@@ -44,6 +44,7 @@ const Routing = () => {
       <Route path="/resident-list" element={<ResidentList />} />
       <Route path="/dashboard-nurse" element={<DashboardNurse />} />
       <Route path="/Review" element={<Review />} />
+      <Route path="/CostBiling" element={<CostBiling />} />
       <Route path="/Dailytask" element={<Dailytask />} />
       <Route path="/Reassessment" element={<Reassessment />} />
       <Route path="/resident/detail" element={<ResidentProfileDetail />} />

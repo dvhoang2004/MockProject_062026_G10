@@ -19,6 +19,7 @@ import Staffing from "../../pages/Staffing/Staffing";
 import IncidentSeverityLevel from "../../pages/IncidentSeverityLevel/IncidentSeverityLevel";
 import SLA from "../../pages/SLA/SLA";
 import DataSeeder from "../../pages/DataSeeder/DataSeeder";
+import Equipment from "../../pages/Equipment/Equipment";
 import Login from "../../pages/Auth/Login/Login";
 import AccountActivation from "../../pages/Auth/AccountActivation/AccountActivation";
 import Verification from "../../pages/Auth/Verification/Verification";
@@ -26,12 +27,12 @@ import Dailytask from "../../pages/CarePlanning/Dailytask/Dailytasklist";
 import ResidentProfileDetail from "../../pages/ResidentProfileDetail/ResidentProfileDetail";
 import RecordVitals from "../../pages/BedsideVital/RecordVitals";
 import DashboardDon from "../../pages/Dashboard/DashboardDon";
-import CostBiling from"../../pages/CarePlanning/Detail/CostBiling/CareCost"
+import CostBiling from "../../pages/CarePlanning/Detail/CostBiling/CareCost";
 import PreAdmission from "../../pages/PreAdmission/PreAdmission";
 import CreateEditResident from "../../pages/CreateEditResident/CreateEditResident";
 import Reassessment from "../../pages/Reassessment/Reassessment";
 import AdmissionForm from "../../pages/AdmissionForm/AdmissionForm";
-import CarePlanAcknow from"../../pages/CarePlanAcknowledgment/CarePlanAcknowledgment"
+import CarePlanAcknow from "../../pages/CarePlanAcknowledgment/CarePlanAcknowledgment";
 import ReportIncident from "../../pages/ReportIncident/ReportIncident";
 const Routing = () => {
   return (
@@ -48,6 +49,7 @@ const Routing = () => {
       <Route path="/incident-severity" element={<IncidentSeverityLevel />} />
       <Route path="/sla" element={<SLA />} />
       <Route path="/data-seeder" element={<DataSeeder />} />
+      <Route path="/equipment" element={<Equipment />} />
       <Route path="/" element={<Navigate to="/resident-list" replace />} />
       <Route path="/resident-list" element={<ResidentList />} />
       <Route path="/dashboard-nurse" element={<DashboardNurse />} />

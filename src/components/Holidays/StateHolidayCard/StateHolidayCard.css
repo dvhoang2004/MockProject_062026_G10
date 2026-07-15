@@ -1,0 +1,70 @@
+.state-holiday-row {
+  display: grid;
+  grid-template-columns: 1.6fr 1.4fr 1fr 0.8fr 0.8fr;
+  align-items: center;
+  padding: 0.9rem 0.8rem;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 0.9rem;
+  background: #fff;
+}
+
+.state-holiday-row:last-child {
+  border-bottom: none;
+}
+
+.state-holiday-row .name {
+  font-weight: 600;
+}
+
+.state-holiday-row .date,
+.state-holiday-row .repeat {
+  color: #555;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease;
+}
+
+.toggle-switch.on {
+  background: #2f5bff;
+}
+
+.toggle-switch.off {
+  background: #d9d9d9;
+}
+
+.toggle-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.2s ease;
+}
+
+.toggle-switch.on .toggle-knob {
+  transform: translateX(18px);
+}
+
+.edit-link {
+  background: none;
+  border: none;
+  color: #2f5bff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.edit-link:hover {
+  text-decoration: underline;
+}

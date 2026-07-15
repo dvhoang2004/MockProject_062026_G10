@@ -2,9 +2,9 @@ import React from "react";
 
 import "./ClinicalCapability.css";
 
-const ClinicalCapability = ({ capabilitiesMockdata }) => {
+const ClinicalCapability = ({ className, capabilitiesMockdata }) => {
   return (
-    <div className="clinical-card">
+    <div className={`clinical-card ${className || ""}`}>
       <div className="info-card-header">
         <h2>Facility Clinical Capability</h2>
         <span className="tab-tag">Tab 4 of 4</span>

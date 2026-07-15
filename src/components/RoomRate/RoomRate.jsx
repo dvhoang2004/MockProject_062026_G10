@@ -2,9 +2,9 @@ import React from "react";
 
 import "./RoomRate.css";
 
-const RoomRate = ({ roomRatesMockdata }) => {
+const RoomRate = ({ className, roomRatesMockdata }) => {
   return (
-    <div className="info-card">
+    <div className={`info-card ${className || ""}`}>
       <div className="info-card-header">
         <h2>Room Rate</h2>
         <span className="tab-tag">Tab 3 of 4</span>

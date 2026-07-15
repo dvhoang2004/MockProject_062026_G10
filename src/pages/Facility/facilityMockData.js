@@ -97,3 +97,41 @@ export const capabilitiesMockdata = [
   { label: "Bariatric care needs", supported: false },
   { label: "Isolation precautions (MRSA, C. diff, etc.)", supported: true },
 ];
+
+export const stateHolidaysMockdata = [
+  {
+    id: 1,
+    name: "Cesar Chavez Day",
+    date: "03/31",
+    repeatAnnually: "Yes",
+    active: true,
+  },
+  {
+    id: 2,
+    name: "Native American Day",
+    date: "4th Friday of September",
+    repeatAnnually: "Yes",
+    active: true,
+  },
+  {
+    id: 3,
+    name: "Admission Day",
+    date: "09/09",
+    repeatAnnually: "Yes",
+    active: false,
+  },
+];
+
+export const federalHolidaysMockdata = [
+  { id: 1, name: "New Year's Day", date: "01/01" },
+  { id: 2, name: "Martin Luther King Jr. Day", date: "3rd Monday of January" },
+  { id: 3, name: "Washington's Birthday", date: "3rd Monday of February" },
+  { id: 4, name: "Memorial Day", date: "Last Monday of May" },
+  { id: 5, name: "Juneteenth", date: "06/19" },
+  { id: 6, name: "Independence Day", date: "07/04" },
+  { id: 7, name: "Labor Day", date: "1st Monday of September" },
+  { id: 8, name: "Columbus Day", date: "2nd Monday of October" },
+  { id: 9, name: "Veterans Day", date: "11/11" },
+  { id: 10, name: "Thanksgiving Day", date: "4th Thursday of November" },
+  { id: 11, name: "Christmas Day", date: "12/25" },
+];

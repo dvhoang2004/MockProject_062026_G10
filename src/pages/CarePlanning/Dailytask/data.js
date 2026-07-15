@@ -100,8 +100,7 @@ export const recordVitalsData = {
     count: 1,
     title: "1 abnormal reading",
     message1: "SpO2 88% is below 92% threshold.",
-    message2:
-      "Saving will alert Anna Lee, RN and flags this record.",
+    message2: "Saving will alert Anna Lee, RN and flags this record.",
   },
 };
 
@@ -265,9 +264,7 @@ export const acknowledgmentData = {
       status: "On Track",
       statusClass: "on-track",
       goal: "Goal: Ambulate 50 ft with walker x2/day.",
-      tasks: [
-        "Assist ambulation w/ walker, 2x daily.",
-      ],
+      tasks: ["Assist ambulation w/ walker, 2x daily."],
     },
     {
       id: 2,
@@ -275,9 +272,7 @@ export const acknowledgmentData = {
       status: "At Risk",
       statusClass: "at-risk",
       goal: "Goal: Maintain skin integrity (no stage-2 injury).",
-      tasks: [
-        "Reposition q2h; skin check each shift.",
-      ],
+      tasks: ["Reposition q2h; skin check each shift."],
     },
     {
       id: 3,
@@ -285,9 +280,7 @@ export const acknowledgmentData = {
       status: "On Track",
       statusClass: "on-track",
       goal: "Goal: Maintain fluid intake ≥ 1500 mL/day.",
-      tasks: [
-        "Monitor fluid intake; document I/O.",
-      ],
+      tasks: ["Monitor fluid intake; document I/O."],
     },
   ],
 };
@@ -313,8 +306,7 @@ export const incidentData = {
     location: "Room 204B — bathroom",
     description:
       "Resident found on bathroom floor near the toilet; c/o right hip pain. No loss of consciousness observed.",
-    witnesses:
-      "Marcus Rivera, CNA (present at time of fall)",
+    witnesses: "Marcus Rivera, CNA (present at time of fall)",
     actionTaken:
       "Assisted resident to bed, vitals taken, physician notified per facility protocol.",
   },
@@ -376,8 +368,7 @@ export const incidentDetailData = {
     description:
       "Resident found on bathroom floor near the toilet; c/o right hip pain.",
 
-    witnesses:
-      "Marcus Rivera, CNA (present at time of fall)",
+    witnesses: "Marcus Rivera, CNA (present at time of fall)",
 
     immediateAction:
       "Assisted resident to bed, vitals taken, physician notified.",
@@ -579,6 +570,3 @@ export const incidentListData = {
     },
   ],
 };
-
-export default dailyTasks;recordVitalsData;reassessmentData;
-careCostData;acknowledgmentData;incidentData;chartLockData;incidentDetailData;incidentListData;

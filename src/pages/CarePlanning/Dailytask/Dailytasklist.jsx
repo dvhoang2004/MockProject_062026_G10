@@ -1,6 +1,6 @@
 import "./Dailytasklist.css";
 import { useState } from "react";
-import dailyTasks from "./data";
+import { dailyTasks } from "./data";
 
 function DailyTasks() {
   const [data, setData] = useState(dailyTasks);
@@ -10,14 +10,13 @@ function DailyTasks() {
   // Tính progress
   const total = residents.reduce(
     (sum, resident) => sum + resident.tasks.length,
-    0
+    0,
   );
 
   const completed = residents.reduce(
     (sum, resident) =>
-      sum +
-      resident.tasks.filter((task) => task.status === "Done").length,
-    0
+      sum + resident.tasks.filter((task) => task.status === "Done").length,
+    0,
   );
 
   const percent = total ? (completed / total) * 100 : 0;
@@ -37,7 +36,7 @@ function DailyTasks() {
                   ...task,
                   status: newStatus,
                 }
-              : task
+              : task,
           ),
         };
       }),
@@ -48,9 +47,7 @@ function DailyTasks() {
     <div className="daily-task">
       <div className="header">
         <div>
-          <p className="breadcrumb">
-            Care Planning &gt; Daily Tasks
-          </p>
+          <p className="breadcrumb">Care Planning &gt; Daily Tasks</p>
 
           <h1>Today's Tasks</h1>
 
@@ -76,10 +73,7 @@ function DailyTasks() {
       </div>
 
       {residents.map((resident) => (
-        <div
-          className="resident-card"
-          key={resident.id}
-        >
+        <div className="resident-card" key={resident.id}>
           <div className="resident-header">
             <h3>
               {resident.name} • Room {resident.room}
@@ -96,26 +90,16 @@ function DailyTasks() {
             <div className="empty-plan">
               <h4>No active care plan</h4>
 
-              <p>
-                Tasks appear here once the DON approves the plan.
-              </p>
+              <p>Tasks appear here once the DON approves the plan.</p>
             </div>
           ) : (
             resident.tasks.map((task) => (
-              <div
-                className="task-row"
-                key={task.id}
-              >
-                <div className="task-title">
-                  {task.title}
-                </div>
+              <div className="task-row" key={task.id}>
+                <div className="task-title">{task.title}</div>
 
                 <div className="task-time">
                   due {task.due}
-
-                  {task.overdue && (
-                    <span className="warning">❗</span>
-                  )}
+                  {task.overdue && <span className="warning">❗</span>}
                 </div>
 
                 <div className="actions">
@@ -123,11 +107,7 @@ function DailyTasks() {
                     <button
                       key={status}
                       onClick={() =>
-                        handleStatusChange(
-                          resident.id,
-                          task.id,
-                          status
-                        )
+                        handleStatusChange(resident.id, task.id, status)
                       }
                       className={
                         task.status === status

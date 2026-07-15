@@ -26,7 +26,8 @@ import RecordVitals from "../../pages/BedsideVital/RecordVitals";
 import DashboardDon from "../../pages/Dashboard/DashboardDon";
 
 import CreateEditResident from "../../pages/CreateEditResident/CreateEditResident";
-import Reassessment from"../../pages/Reassessment/Reassessment"
+import Reassessment from "../../pages/Reassessment/Reassessment";
+import InitialAssessment from "../../pages/InitialAssessment/InitialAssessment";
 const Routing = () => {
   return (
     <Routes>
@@ -49,6 +50,7 @@ const Routing = () => {
       <Route path="/resident/detail" element={<ResidentProfileDetail />} />
       <Route path="/RecordVital" element={<RecordVitals />} />
       <Route path="/dashboard-don" element={<DashboardDon />} />
+      <Route path="/initial-assessment" element={<InitialAssessment />} />
       {/* create*/}
       <Route path="/resident/create" element={<CreateEditResident />} />
       {/* edit */}

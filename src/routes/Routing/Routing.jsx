@@ -17,6 +17,8 @@ import Facility from "../../pages/Facility/Facility";
 import LOCPage from "../../pages/LOC/LOC";
 import Staffing from "../../pages/Staffing/Staffing";
 import IncidentSeverityLevel from "../../pages/IncidentSeverityLevel/IncidentSeverityLevel";
+import SLA from "../../pages/SLA/SLA";
+import DataSeeder from "../../pages/DataSeeder/DataSeeder";
 import Login from "../../pages/Auth/Login/Login";
 import AccountActivation from "../../pages/Auth/AccountActivation/AccountActivation";
 import Verification from "../../pages/Auth/Verification/Verification";
@@ -24,7 +26,7 @@ import Dailytask from "../../pages/CarePlanning/Dailytask/Dailytasklist";
 import ResidentProfileDetail from "../../pages/ResidentProfileDetail/ResidentProfileDetail";
 import RecordVitals from "../../pages/BedsideVital/RecordVitals";
 import DashboardDon from "../../pages/Dashboard/DashboardDon";
-
+import PreAdmission from "../../pages/PreAdmission/PreAdmission";
 import CreateEditResident from "../../pages/CreateEditResident/CreateEditResident";
 import Reassessment from "../../pages/Reassessment/Reassessment";
 import AdmissionForm from "../../pages/AdmissionForm/AdmissionForm";
@@ -41,6 +43,8 @@ const Routing = () => {
       <Route path="/level-of-care" element={<LOCPage />} />
       <Route path="/staffing" element={<Staffing />} />
       <Route path="/incident-severity" element={<IncidentSeverityLevel />} />
+      <Route path="/sla" element={<SLA />} />
+      <Route path="/data-seeder" element={<DataSeeder />} />
       <Route path="/" element={<Navigate to="/resident-list" replace />} />
       <Route path="/resident-list" element={<ResidentList />} />
       <Route path="/dashboard-nurse" element={<DashboardNurse />} />
@@ -51,6 +55,7 @@ const Routing = () => {
       <Route path="/RecordVital" element={<RecordVitals />} />
       <Route path="/dashboard-don" element={<DashboardDon />} />
       <Route path="/admission-form" element={<AdmissionForm />} />
+      <Route path="/pre-admission" element={<PreAdmission />} />
       {/* create*/}
       <Route path="/resident/create" element={<CreateEditResident />} />
       {/* edit */}

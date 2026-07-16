@@ -33,6 +33,7 @@ import Reassessment from "../../pages/Reassessment/Reassessment";
 import AdmissionForm from "../../pages/AdmissionForm/AdmissionForm";
 import CarePlanAcknow from"../../pages/CarePlanAcknowledgment/CarePlanAcknowledgment"
 import ReportIncident from "../../pages/ReportIncident/ReportIncident";
+import ChartLock from"../../pages/ChartLockConfirmation/ChartLockConfirmation"
 const Routing = () => {
   return (
     <Routes>
@@ -62,6 +63,7 @@ const Routing = () => {
       <Route path="/pre-admission" element={<PreAdmission />} />
       <Route path="/CarePlanAcknow" element={<CarePlanAcknow />} />
       <Route path="/ReportIncident" element={<ReportIncident />} />
+       <Route path="/ChartLock" element={<ChartLock />} />
       {/* create*/}
       <Route path="/resident/create" element={<CreateEditResident />} />
       {/* edit */}

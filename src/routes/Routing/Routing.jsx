@@ -26,13 +26,14 @@ import Dailytask from "../../pages/CarePlanning/Dailytask/Dailytasklist";
 import ResidentProfileDetail from "../../pages/ResidentProfileDetail/ResidentProfileDetail";
 import RecordVitals from "../../pages/BedsideVital/RecordVitals";
 import DashboardDon from "../../pages/Dashboard/DashboardDon";
-import CostBiling from"../../pages/CarePlanning/Detail/CostBiling/CareCost"
+import CostBiling from "../../pages/CarePlanning/Detail/CostBiling/CareCost";
 import PreAdmission from "../../pages/PreAdmission/PreAdmission";
 import CreateEditResident from "../../pages/CreateEditResident/CreateEditResident";
 import Reassessment from "../../pages/Reassessment/Reassessment";
 import AdmissionForm from "../../pages/AdmissionForm/AdmissionForm";
-import CarePlanAcknow from"../../pages/CarePlanAcknowledgment/CarePlanAcknowledgment"
+import CarePlanAcknow from "../../pages/CarePlanAcknowledgment/CarePlanAcknowledgment";
 import ReportIncident from "../../pages/ReportIncident/ReportIncident";
+import DashboardCna from "../../pages/Dashboard/DashboardCna";
 const Routing = () => {
   return (
     <Routes>
@@ -62,6 +63,7 @@ const Routing = () => {
       <Route path="/pre-admission" element={<PreAdmission />} />
       <Route path="/CarePlanAcknow" element={<CarePlanAcknow />} />
       <Route path="/ReportIncident" element={<ReportIncident />} />
+      <Route path="/dashboard-cna" element={<DashboardCna />} />
       {/* create*/}
       <Route path="/resident/create" element={<CreateEditResident />} />
       {/* edit */}

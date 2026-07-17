@@ -33,6 +33,7 @@ import Reassessment from "../../pages/Reassessment/Reassessment";
 import AdmissionForm from "../../pages/AdmissionForm/AdmissionForm";
 import CarePlanAcknow from"../../pages/CarePlanAcknowledgment/CarePlanAcknowledgment"
 import ReportIncident from "../../pages/ReportIncident/ReportIncident";
+import Incidentdetail from"../../pages/Incidentdetail/Incidentdetail"
 const Routing = () => {
   return (
     <Routes>
@@ -62,6 +63,7 @@ const Routing = () => {
       <Route path="/pre-admission" element={<PreAdmission />} />
       <Route path="/CarePlanAcknow" element={<CarePlanAcknow />} />
       <Route path="/ReportIncident" element={<ReportIncident />} />
+      <Route path="/Incidentdetail" element={<Incidentdetail />} />
       {/* create*/}
       <Route path="/resident/create" element={<CreateEditResident />} />
       {/* edit */}

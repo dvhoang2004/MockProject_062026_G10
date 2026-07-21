@@ -1,26 +1,30 @@
 .data-seeder-page {
-  padding: 2rem;
+  padding: clamp(1rem, 2vw, 2rem);
   background: #f7f8fa;
   min-height: 100vh;
   font-family: sans-serif;
   color: #222;
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
 .breadcrumb {
-  font-size: 0.8rem;
+  font-size: clamp(0.75rem, 0.7vw, 0.9rem);
   color: #999;
-  margin-bottom: 0.4rem;
+  margin-bottom: clamp(0.4rem, 0.8vw, 0.6rem);
 }
 
 .page-title {
-  font-size: 1.6rem;
-  margin: 0 0 0.3rem 0;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin: 0 0 0.4rem 0;
+  line-height: 1.1;
 }
 
 .page-subtitle {
-  font-size: 0.85rem;
+  font-size: clamp(0.82rem, 0.85vw, 1rem);
   color: #888;
   margin-bottom: 1.2rem;
+  max-width: 860px;
 }
 
 .warning-banner {
@@ -31,7 +35,7 @@
   background: #fff3cd;
   border: 1px solid #ffe08a;
   border-radius: 8px;
-  padding: 0.9rem 1.1rem;
+  padding: clamp(0.85rem, 1.2vw, 1.1rem);
   margin-bottom: 1.5rem;
 }
 
@@ -39,7 +43,7 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 0.85rem;
+  font-size: clamp(0.85rem, 0.9vw, 0.98rem);
   font-weight: 600;
   color: #a6710a;
 }
@@ -64,7 +68,7 @@
   border-radius: 8px;
   padding: 0.6rem 1.2rem;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: clamp(0.82rem, 0.9vw, 0.95rem);
   cursor: pointer;
   white-space: nowrap;
 }
@@ -77,7 +81,7 @@
   display: grid;
   grid-template-columns: 1.6fr 0.8fr 1.4fr 1fr 0.7fr 0.7fr;
   padding: 0.6rem 1.2rem;
-  font-size: 0.8rem;
+  font-size: clamp(0.78rem, 0.8vw, 0.9rem);
   color: #888;
   font-weight: 600;
 }
@@ -93,9 +97,9 @@
   display: grid;
   grid-template-columns: 1.6fr 0.8fr 1.4fr 1fr 0.7fr 0.7fr;
   align-items: center;
-  padding: 1rem 1.2rem;
+  padding: clamp(0.95rem, 1vw, 1.2rem);
   border-bottom: 1px solid #f2f2f2;
-  font-size: 0.9rem;
+  font-size: clamp(0.88rem, 0.9vw, 0.98rem);
 }
 
 .dataset-row:last-child {
@@ -139,8 +143,81 @@
 }
 
 .footnote {
-  font-size: 0.75rem;
+  font-size: clamp(0.75rem, 0.8vw, 0.9rem);
   color: #999;
   margin-top: 1rem;
   line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .warning-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .table-header {
+    grid-template-columns: 1.6fr 1fr 1.2fr 0.9fr 0.7fr 0.7fr;
+  }
+
+  .dataset-row {
+    grid-template-columns: 1.6fr 1fr 1.2fr 0.9fr 0.7fr 0.7fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .data-seeder-page {
+    padding: 1rem;
+  }
+
+  .page-title {
+    font-size: 1.4rem;
+  }
+
+  .warning-banner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .table-header {
+    display: none;
+  }
+
+  .dataset-row {
+    grid-template-columns: 1fr;
+    row-gap: 0.65rem;
+  }
+
+  .dataset-row .col {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .dataset-row .dataset::before {
+    content: "Dataset:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .dataset-row .records::before {
+    content: "Records:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .dataset-row .lastSeeded::before {
+    content: "Last Seeded:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .dataset-row .seeder-status::before {
+    content: "Status:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .dataset-row .action {
+    justify-content: flex-end;
+  }
 }

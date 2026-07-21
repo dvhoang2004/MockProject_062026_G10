@@ -1,7 +1,7 @@
 .rooms-wings-card {
   background: #fff;
   border-radius: 10px;
-  padding: 1.5rem;
+  padding: clamp(1rem, 1.5vw, 1.5rem);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
@@ -9,16 +9,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(0.75rem, 1vw, 1rem);
   margin-bottom: 1rem;
 }
 
 .rooms-header h2 {
-  font-size: 1.05rem;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
   margin: 0;
 }
 
 .rooms-count {
-  font-size: 0.85rem;
+  font-size: clamp(0.82rem, 0.9vw, 0.95rem);
   color: #888;
 }
 
@@ -28,7 +30,7 @@
   border-radius: 8px;
   padding: 0.6rem 1.2rem;
   font-weight: 400;
-  font-size: 0.85rem;
+  font-size: clamp(0.82rem, 0.85vw, 0.95rem);
   cursor: pointer;
 }
 
@@ -41,7 +43,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 0.6fr 1.2fr 1.2fr 1.6fr;
   padding: 0.6rem 0.8rem;
-  font-size: 0.8rem;
+  font-size: clamp(0.78rem, 0.8vw, 0.9rem);
   color: #888;
   font-weight: 600;
   border-bottom: 1px solid #eee;
@@ -53,7 +55,7 @@
   align-items: center;
   padding: 0.8rem;
   border-bottom: 1px solid #f2f2f2;
-  font-size: 0.9rem;
+  font-size: clamp(0.88rem, 0.9vw, 1rem);
 }
 
 .room-row:last-child {
@@ -85,4 +87,70 @@
 .badge.gray {
   background: #eee;
   color: #888;
+}
+
+@media (max-width: 900px) {
+  .rooms-table-header,
+  .room-row {
+    grid-template-columns: 1.2fr 1.2fr 0.7fr 1fr 1fr 1.1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .rooms-table-header {
+    display: none;
+  }
+
+  .room-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 0.65rem;
+    padding: 0.95rem 0.8rem;
+  }
+
+  .room-row .col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.92rem;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .room-row .wing::before {
+    content: "Wing:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .room-row .room::before {
+    content: "Room:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .room-row .bed::before {
+    content: "Bed:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .room-row .roomType::before {
+    content: "Type:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .room-row .roomStatus::before {
+    content: "Status:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .room-row .occupant::before {
+    content: "Occupant:";
+    color: #888;
+    white-space: nowrap;
+  }
 }

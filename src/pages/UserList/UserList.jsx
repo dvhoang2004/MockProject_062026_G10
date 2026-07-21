@@ -106,7 +106,7 @@ const UserList = () => {
         </button>
       </div>
 
-      <div className="table-header">
+      <div className="user-table-header">
         <div className="col name">Name</div>
         <div className="col email">Email</div>
         <div className="col phone">Phone</div>

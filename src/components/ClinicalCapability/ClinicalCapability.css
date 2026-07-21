@@ -1,7 +1,7 @@
 .clinical-card {
   background: #fff;
   border-radius: 10px;
-  padding: 1.5rem;
+  padding: clamp(1rem, 1.5vw, 1.5rem);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
@@ -13,20 +13,20 @@
 }
 
 .info-card-header h2 {
-  font-size: 1.05rem;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
   margin: 0;
 }
 
 .tab-tag {
   background: #f0f0f0;
   color: #888;
-  font-size: 0.75rem;
+  font-size: clamp(0.72rem, 0.75vw, 0.85rem);
   padding: 0.25rem 0.8rem;
   border-radius: 999px;
 }
 
 .clinical-description {
-  font-size: 0.85rem;
+  font-size: clamp(0.82rem, 0.9vw, 0.95rem);
   color: #888;
   margin-bottom: 1.2rem;
 }
@@ -43,7 +43,7 @@
   align-items: center;
   padding: 0.6rem 0;
   border-bottom: 1px solid #f2f2f2;
-  font-size: 0.9rem;
+  font-size: clamp(0.88rem, 0.9vw, 1rem);
 }
 
 .badge {
@@ -65,7 +65,25 @@
 }
 
 .info-footnote {
-  font-size: 0.75rem;
+  font-size: clamp(0.75rem, 0.8vw, 0.9rem);
   color: #999;
   margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .clinical-grid {
+    gap: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .clinical-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .clinical-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }

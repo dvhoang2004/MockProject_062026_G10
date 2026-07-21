@@ -1,12 +1,12 @@
 .role-card {
   background: #fff;
   border-radius: 10px;
-  padding: 1.2rem;
+  padding: clamp(1rem, 1.5vw, 1.3rem);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .role-name {
-  font-size: 1rem;
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
   margin: 0 0 0.6rem 0;
 }
 
@@ -14,7 +14,7 @@
   display: inline-block;
   padding: 0.2rem 0.7rem;
   border-radius: 999px;
-  font-size: 0.75rem;
+  font-size: clamp(0.72rem, 0.8vw, 0.85rem);
   font-weight: 600;
   margin-bottom: 0.8rem;
 }
@@ -30,7 +30,7 @@
 }
 
 .role-description {
-  font-size: 0.85rem;
+  font-size: clamp(0.85rem, 0.9vw, 0.98rem);
   color: #666;
   line-height: 1.5;
   margin: 0;

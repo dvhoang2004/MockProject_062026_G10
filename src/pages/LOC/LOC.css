@@ -1,43 +1,46 @@
-.loc-page {
-  padding: 2rem;
+.locPage {
+  padding: clamp(1rem, 2vw, 2rem);
   background: #f7f8fa;
   min-height: 100vh;
-  font-family: sans-serif;
   color: #222;
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
-.breadcrumb {
-  font-size: 0.8rem;
+.locPage-breadcrumb {
+  font-size: clamp(0.75rem, 0.7vw, 0.9rem);
   color: #999;
-  margin-bottom: 0.4rem;
+  margin-bottom: clamp(0.4rem, 0.8vw, 0.6rem);
 }
 
-.page-title {
-  font-size: 1.6rem;
-  margin: 0 0 0.3rem 0;
+.locPage-title {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin: 0 0 0.4rem 0;
+  line-height: 1.1;
 }
 
-.page-subtitle {
-  font-size: 0.85rem;
+.locPage-subtitle {
+  font-size: clamp(0.82rem, 0.85vw, 1rem);
   color: #888;
   margin-bottom: 1.2rem;
+  max-width: 860px;
 }
 
-.info-banner {
+.locPage-infoBanner {
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
   background: #e8f1ff;
   border: 1px solid #cfe0ff;
   border-radius: 8px;
-  padding: 0.9rem 1.1rem;
-  font-size: 0.85rem;
+  padding: clamp(0.85rem, 1.2vw, 1.1rem);
+  font-size: clamp(0.85rem, 0.9vw, 0.98rem);
   font-weight: 600;
   color: #2447d1;
   margin-bottom: 1.5rem;
 }
 
-.info-icon {
+.locPage-infoIcon {
   flex-shrink: 0;
   width: 18px;
   height: 18px;
@@ -51,24 +54,61 @@
   justify-content: center;
 }
 
-.table-header {
+.locPage-tableHeader {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1.2fr 1.6fr 0.8fr;
   padding: 0.6rem 1.2rem;
-  font-size: 0.8rem;
+  font-size: clamp(0.78rem, 0.85vw, 0.9rem);
   color: #888;
   font-weight: 600;
 }
 
-.loc-table {
+.locPage-tableHeader .locPage-col {
+  text-align: left;
+}
+
+.locPage-table {
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.footnote {
-  font-size: 0.75rem;
+.locPage-footnote {
+  font-size: clamp(0.75rem, 0.8vw, 0.9rem);
   color: #999;
   margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .locPage-infoBanner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .locPage-tableHeader {
+    grid-template-columns: 1.5fr 1.2fr 1fr 1fr 1fr 0.8fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .locPage {
+    padding: 1rem;
+  }
+
+  .locPage-title {
+    font-size: 1.4rem;
+  }
+
+  .locPage-subtitle {
+    margin-bottom: 1rem;
+  }
+
+  .locPage-infoBanner {
+    padding: 0.9rem;
+  }
+
+  .locPage-tableHeader {
+    display: none;
+  }
 }

@@ -1,46 +1,50 @@
 .staffing-page {
-  padding: 2rem;
+  padding: clamp(1rem, 2vw, 2rem);
   background: #f7f8fa;
   min-height: 100vh;
   font-family: sans-serif;
   color: #222;
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
 .breadcrumb {
-  font-size: 0.8rem;
+  font-size: clamp(0.75rem, 0.7vw, 0.9rem);
   color: #999;
-  margin-bottom: 0.4rem;
+  margin-bottom: clamp(0.4rem, 0.8vw, 0.6rem);
 }
 
 .page-title {
-  font-size: 1.6rem;
-  margin: 0 0 0.3rem 0;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin: 0 0 0.4rem 0;
+  line-height: 1.1;
 }
 
 .page-subtitle {
-  font-size: 0.85rem;
+  font-size: clamp(0.82rem, 0.85vw, 1rem);
   color: #888;
   margin-bottom: 1.5rem;
+  max-width: 860px;
 }
 
 .card {
   background: #fff;
   border-radius: 10px;
-  padding: 1.5rem;
+  padding: clamp(1rem, 1.5vw, 1.5rem);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   margin-bottom: 1.5rem;
 }
 
 .card-title,
 .section-title {
-  font-size: 1.05rem;
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
   margin: 0 0 1rem 0;
 }
 
 .min-req-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.9rem, 1.2vw, 1.2rem);
 }
 
 .field-group {
@@ -49,7 +53,7 @@
 }
 
 .field-group label {
-  font-size: 0.8rem;
+  font-size: clamp(0.78rem, 0.8vw, 0.9rem);
   font-weight: 600;
   color: #444;
   margin-bottom: 0.4rem;
@@ -59,7 +63,7 @@
   padding: 0.6rem 0.8rem;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  font-size: 0.9rem;
+  font-size: clamp(0.9rem, 0.95vw, 1rem);
   background: #f9f9fb;
   color: #333;
 }
@@ -75,7 +79,7 @@
 }
 
 .suffix {
-  font-size: 0.8rem;
+  font-size: clamp(0.78rem, 0.8vw, 0.9rem);
   color: #888;
   white-space: nowrap;
 }
@@ -84,7 +88,7 @@
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1fr;
   padding: 0.6rem 1.2rem;
-  font-size: 0.8rem;
+  font-size: clamp(0.78rem, 0.8vw, 0.9rem);
   color: #888;
   font-weight: 600;
 }
@@ -100,9 +104,9 @@
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1fr;
   align-items: center;
-  padding: 0.9rem 1.2rem;
+  padding: clamp(0.9rem, 1vw, 1.2rem);
   border-bottom: 1px solid #f2f2f2;
-  font-size: 0.9rem;
+  font-size: clamp(0.88rem, 0.9vw, 0.98rem);
 }
 
 .shift-row:last-child {
@@ -119,13 +123,13 @@
   max-width: 320px;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
-  font-size: 0.9rem;
+  font-size: clamp(0.9rem, 0.95vw, 1rem);
   font-weight: 600;
 }
 
 .compliance-card {
   border-radius: 10px;
-  padding: 1.2rem 1.5rem;
+  padding: clamp(1rem, 1.3vw, 1.5rem);
 }
 
 .compliance-card.compliant {
@@ -141,17 +145,76 @@
 }
 
 .compliance-title {
-  font-size: 1rem;
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
   margin: 0 0 0.8rem 0;
 }
 
 .compliance-line {
-  font-size: 0.85rem;
+  font-size: clamp(0.84rem, 0.85vw, 0.95rem);
   margin: 0.3rem 0;
 }
 
 .compliance-usedby-label {
   font-weight: 700;
   margin: 0.8rem 0 0.2rem 0;
-  font-size: 0.85rem;
+  font-size: clamp(0.85rem, 0.9vw, 0.95rem);
+}
+
+@media (max-width: 900px) {
+  .min-req-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .staffing-page {
+    padding: 1rem;
+  }
+
+  .page-title {
+    font-size: 1.4rem;
+  }
+
+  .min-req-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shift-table-header {
+    display: none;
+  }
+
+  .shift-row {
+    grid-template-columns: 1fr;
+    row-gap: 0.7rem;
+  }
+
+  .shift-row .col {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .shift-row .shift::before {
+    content: "Shift:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .shift-row .cna::before {
+    content: "CNA hrs:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .shift-row .nurse::before {
+    content: "Nurse hrs:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .shift-row .subtotal::before {
+    content: "Subtotal:";
+    color: #888;
+    white-space: nowrap;
+  }
 }

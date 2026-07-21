@@ -47,7 +47,7 @@ const ResidentProfileDetail = () => {
               <MdPeople /> <span>Residents</span>
             </li>
           </Link>
-          <Link to="/care-planning" className="menu-link">
+          <Link to="/careplan/list" className="menu-link">
             <li className="menu-item">
               <MdAssignment /> <span>Care Planning</span>
             </li>

@@ -152,7 +152,7 @@ const Dashboard = () => {
                 <MdPeople /> Residents
               </li>
             </Link>
-            <Link to="/care-planning" className="menu-link">
+            <Link to="/careplan/list" className="menu-link">
               <li className="menu-item">
                 <MdAssignment /> Care Planning
               </li>

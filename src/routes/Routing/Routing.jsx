@@ -45,6 +45,7 @@ import LocHistory from "../../pages/LocHistory/LocHistory";
 import LocClassification from "../../pages/LocClassification/LocClassification";
 import ChartLock from"../../pages/ChartLockConfirmation/ChartLockConfirmation"
 import AssessmentHistory from "../../pages/AssessmentHistory/AssessmentHistory";
+import IncidentdetailNurse from"../../pages/IncidentdetailNurse/IncidentdetailNurse"
 import IncidentDetailunlock from "../../pages/incidentdetailunlocked/IncidentDetailUnlocked"
 import IncidentList from "../../pages/Incidentlist/IncidentList"
 const Routing = () => {
@@ -86,7 +87,8 @@ const Routing = () => {
       <Route path="/careplan/list" element={<CarePlanList />} />
       <Route path="/loc/history" element={<LocHistory />} />
       <Route path="/loc/classification" element={<LocClassification />} />
-      <Route path="/ChartLock" element={<ChartLock />} />
+       <Route path="/ChartLock" element={<ChartLock />} />
+      <Route path="/IncidentdetailNurse" element={<IncidentdetailNurse />} />
       <Route path="/IncidentDetailunlock" element={<IncidentDetailunlock />} />
       <Route path="/IncidentList" element={<IncidentList />} />
       <Route path="/assessment/history" element={<AssessmentHistory />} />

@@ -127,7 +127,7 @@ export default function IncidentDetail() {
         isOpen={isSubmitModalOpen} 
         onClose={() => setIsSubmitModalOpen(false)} 
       />
-      <UnlockChartModal 
+      {/* <UnlockChartModal 
         isOpen={isUnlockModalOpen} 
         onClose={() => setIsUnlockModalOpen(false)} 
       />

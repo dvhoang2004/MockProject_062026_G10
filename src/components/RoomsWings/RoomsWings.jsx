@@ -8,7 +8,7 @@ const statusClass = {
   "Out of Service": "gray",
 };
 
-const RoomsWings = ({ mockRooms }) => {
+const RoomsWings = ({ className, mockRooms }) => {
   const wingCount = new Set(mockRooms.map((r) => r.wing)).size;
   const handleAddRoom = () => {
     // Placeholder for add room functionality
@@ -16,8 +16,9 @@ const RoomsWings = ({ mockRooms }) => {
   };
 
   return (
-    <div className="rooms-wings-card">
+    <div className={`rooms-wings-card ${className || ""}`}>
       <div className="rooms-header">
+        <h2>Rooms & Wings</h2>
         <span className="rooms-count">
           {mockRooms.length} rooms configured across {wingCount} wings
         </span>

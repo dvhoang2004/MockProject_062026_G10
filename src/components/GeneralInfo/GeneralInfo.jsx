@@ -2,9 +2,9 @@ import React from "react";
 
 import "./GeneralInfo.css";
 
-const GeneralInfo = ({ generalInfoMockdata }) => {
+const GeneralInfo = ({ className, generalInfoMockdata }) => {
   return (
-    <div className="info-card">
+    <div className={`info-card ${className || ""}`}>
       <div className="info-card-header">
         <h2>General Info</h2>
         <span className="tab-tag">Tab 1 of 4</span>

@@ -12,24 +12,29 @@
   margin-bottom: 1rem;
 }
 
+.rooms-header h2 {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
 .rooms-count {
   font-size: 0.85rem;
   color: #888;
 }
 
 .add-room-button {
-  background: #2f5bff;
-  color: #fff;
-  border: none;
+  color: #000;
+  border: 1px solid #000;
   border-radius: 8px;
   padding: 0.6rem 1.2rem;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 0.85rem;
   cursor: pointer;
 }
 
 .add-room-button:hover {
   background: #2447d1;
+  color: #fff;
 }
 
 .rooms-table-header {

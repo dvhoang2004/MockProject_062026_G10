@@ -1,0 +1,316 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f8f9fc;
+  color: #2d3748;
+}
+
+/* ================= PAGE ================= */
+
+.incident-page {
+  max-width: 1300px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+
+
+.breadcrumb {
+  font-size: 13px;
+  color: #8b8b8b;
+  margin-bottom: 8px;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.title-row h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+}
+
+.sub-title {
+  font-size:15px;
+  color: #777;
+}
+
+/* ================= BADGES ================= */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.orange {
+  background: #fff3dd;
+  border: 1px solid #ffd48a;
+  color: #ff9800;
+}
+
+.red {
+  background: #ffe8e8;
+  border: 1px solid #ffc9c9;
+  color: #e53935;
+}
+
+
+
+.content {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.left {
+  flex: 1;
+}
+
+.right {
+  width: 320px;
+}
+
+
+
+.card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.card h3,
+.card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row strong {
+  font-size: 14px;
+  color: #555;
+}
+
+.detail-row span {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+}
+
+
+
+.attachment {
+  margin: 20px 0;
+}
+
+.attachment h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.attachment button {
+  height: 34px;
+  padding: 0 16px;
+  margin-right: 10px;
+  border-radius: 18px;
+  border: 1px solid #d9d9d9;
+  background: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.attachment button:hover {
+  background: #f5f5f5;
+}
+
+
+
+.timeline {
+  margin-top: 12px;
+}
+
+.timeline h3 {
+  margin-bottom: 16px;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  gap: 14px;
+  padding-bottom: 22px;
+}
+
+.timeline-item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 12px;
+  width: 2px;
+  height: calc(100% - 4px);
+  background: #d9d9d9;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #2f6bff;
+  background: #fff;
+  margin-top: 3px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.dot.active {
+  background: #2f6bff;
+}
+
+.timeline-item b {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+
+.timeline-item p {
+  color: #777;
+  font-size: 13px;
+}
+
+/* ================= SLA ================= */
+
+.green {
+  background: #edfdf1;
+  border: 1px solid #bde8c5;
+}
+
+.green h4 {
+  color: #2f855a;
+  margin-bottom: 12px;
+}
+
+.green h2 {
+  font-size: 26px;
+  color: #16a34a;
+  margin-bottom: 12px;
+}
+
+.green p {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.green small {
+  font-size: 12px;
+  color: #666;
+}
+
+/* ================= STATUS ================= */
+
+.status-card .badge {
+  margin-bottom: 10px;
+}
+
+.status-card p {
+  color: #777;
+  font-size: 13px;
+}
+
+/* ================= BUTTON ================= */
+
+.action-btn {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #dcdcdc;
+  background: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.action-btn:hover {
+  background: #f7f7f7;
+}
+
+.action-btn.secondary {
+  color: #444;
+}
+
+.action-btn.danger {
+  color: #e53935;
+  border-color: #ff9d9d;
+}
+
+.action-btn.danger:hover {
+  background: #fff5f5;
+}
+
+.action-btn.disabled {
+  background: #f3f3f3;
+  color: #a8a8a8;
+  cursor: not-allowed;
+}
+
+.unlock-note {
+  margin-top: 8px;
+  color: #999;
+  font-size: 11px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+
+  .content {
+    flex-direction: column;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .detail-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .title-row {
+    flex-wrap: wrap;
+  }
+
+  .title-row h1 {
+    font-size: 24px;
+  }
+}

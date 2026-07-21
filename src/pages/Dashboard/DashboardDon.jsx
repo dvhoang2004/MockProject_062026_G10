@@ -49,7 +49,7 @@ const DashboardDon = () => {
             </Link>
           </div>
           <div className="don-menu-item">
-            <Link to="/care-planning" className="menu-link">
+            <Link to="/careplan/list" className="menu-link">
               <MdAssignment size={22} /> <span>Care Planning</span>
             </Link>
           </div>

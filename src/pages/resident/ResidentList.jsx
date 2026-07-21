@@ -132,7 +132,7 @@ const ResidentList = () => {
                 </div>
               </li>
             </Link>
-            <Link to="/care-planning" className="menu-link">
+            <Link to="/careplan/list" className="menu-link">
               <li className="menu-item">
                 <div className="menu-item-content">
                   <MdAssignment size={18} /> Care Planning

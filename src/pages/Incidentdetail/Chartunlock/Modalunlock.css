@@ -1,0 +1,21 @@
+.modal-label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.modal-textarea,
+.modal-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.modal-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}

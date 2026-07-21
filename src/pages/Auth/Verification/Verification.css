@@ -1,4 +1,5 @@
-.verification-container {
+/* Root scope */
+.otpVerify-page {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -6,7 +7,7 @@
   box-sizing: border-box;
 }
 
-.verification-form {
+.otpVerify-page .otpVerify-form {
   background: #ffffff;
   padding: 32px 40px;
   border-radius: 12px;
@@ -16,12 +17,12 @@
   box-sizing: border-box;
 }
 
-.verification-header {
+.otpVerify-page .otpVerify-header {
   text-align: center;
   margin-bottom: 24px;
 }
 
-.logo-box {
+.otpVerify-page .otpVerify-logo {
   width: 44px;
   height: 44px;
   background-color: #2563eb;
@@ -35,28 +36,28 @@
   font-size: 20px;
 }
 
-.verification-header h2 {
+.otpVerify-page .otpVerify-title {
   font-size: 24px;
   color: #111827;
   margin: 0 0 8px 0;
   font-weight: 600;
 }
 
-.verification-subtext {
+.otpVerify-page .otpVerify-subtext {
   font-size: 13px;
   color: #6b7280;
   line-height: 1.5;
   margin: 0;
 }
 
-.otp-inputs {
+.otpVerify-page .otpVerify-inputs {
   display: flex;
   justify-content: space-between;
   gap: 8px;
   margin-bottom: 20px;
 }
 
-.otp-inputs input {
+.otpVerify-page .otpVerify-input {
   width: 46px;
   height: 52px;
   font-size: 20px;
@@ -69,23 +70,23 @@
   box-sizing: border-box;
 }
 
-.otp-inputs input.active,
-.otp-inputs input:focus {
+.otpVerify-page .otpVerify-input.otpVerify-input--active,
+.otpVerify-page .otpVerify-input:focus {
   border: 2px solid #2563eb;
 }
 
-.resend-container {
+.otpVerify-page .otpVerify-resend {
   text-align: center;
   margin-bottom: 24px;
 }
 
-.resend-container p {
+.otpVerify-page .otpVerify-resendText {
   font-size: 12px;
   color: #6b7280;
   margin: 0 0 4px 0;
 }
 
-.resend-link {
+.otpVerify-page .otpVerify-resendBtn {
   background: none;
   border: none;
   color: #2563eb;
@@ -95,7 +96,8 @@
   padding: 0;
 }
 
-.form-submit {
+.otpVerify-page .otpVerify-submitBtn {
+  justify-content: center;
   width: 100%;
   padding: 12px;
   background-color: #2563eb;
@@ -108,22 +110,22 @@
   transition: background-color 0.2s;
 }
 
-.form-submit:hover {
+.otpVerify-page .otpVerify-submitBtn:hover {
   background-color: #1d4ed8;
 }
 
-.verification-footer {
+.otpVerify-page .otpVerify-footer {
   text-align: center;
   margin-top: 16px;
 }
 
-.switch-account-link {
+.otpVerify-page .otpVerify-switchLink {
   font-size: 13px;
   color: #2563eb;
   text-decoration: none;
   font-weight: 600;
 }
 
-.switch-account-link:hover {
+.otpVerify-page .otpVerify-switchLink:hover {
   text-decoration: underline;
 }

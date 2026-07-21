@@ -18,16 +18,16 @@ const AccountActivation = () => {
       <form className="account-activation-form" onSubmit={handleSubmit}>
         {/* Header */}
         <div className="account-activation-header">
-          <p className="logo-box">N</p>
+          <p className="account-activation-logo-box">N</p>
           <h2>Activate your account</h2>
         </div>
 
-        <div className="alert-badge">
+        <div className="account-activation-alert-badge">
           Invited by Administrator &bull; link valid 72h
         </div>
 
         {/* Account Activation Inputs */}
-        <div className="form-inputs">
+        <div className="account-activation-form-inputs">
           <div>
             <label htmlFor="email">Email</label>
             <input
@@ -40,7 +40,8 @@ const AccountActivation = () => {
 
           <div>
             <label htmlFor="password">
-              Set password <span className="required">*</span>
+              Set password{" "}
+              <span className="account-activation-required">*</span>
             </label>
             <input
               id="password"
@@ -52,7 +53,8 @@ const AccountActivation = () => {
 
           <div>
             <label htmlFor="confirm-password">
-              Confirm password <span className="required">*</span>
+              Confirm password{" "}
+              <span className="account-activation-required">*</span>
             </label>
             <input
               id="confirm-password"
@@ -64,7 +66,8 @@ const AccountActivation = () => {
 
           <div>
             <label htmlFor="phone">
-              Phone number <span className="required">*</span>
+              Phone number{" "}
+              <span className="account-activation-required">*</span>
             </label>
             <input
               id="phone"
@@ -74,14 +77,14 @@ const AccountActivation = () => {
             />
           </div>
 
-          <div className="checkbox-container">
+          <div className="account-activation-checkbox">
             <input type="checkbox" id="terms" name="terms" required />
             <label htmlFor="terms">
               I accept the Terms of Use & Privacy Policy
             </label>
           </div>
 
-          <button type="submit" className="form-submit">
+          <button type="submit" className="account-activation-form-submit">
             Activate account
           </button>
         </div>

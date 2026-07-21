@@ -13,7 +13,7 @@ const Login = () => {
           <p>Nursing Home Management System</p>
         </div>
         {/* Form Inputs: User Credentials */}
-        <div className="form-inputs">
+        <div className="login-form-inputs">
           <div>
             <label htmlFor="email-phone">Email or Phone</label>
             <input
@@ -36,7 +36,7 @@ const Login = () => {
           </div>
 
           {/* Submit Button */}
-          <button type="submit" className="form-submit">
+          <button type="submit" className="login-form-submit">
             Sign In
           </button>
           <footer className="login-footer">

@@ -21,7 +21,7 @@
   margin-bottom: 20px;
 }
 
-.logo-box {
+.account-activation-logo-box {
   width: 44px;
   height: 44px;
   background-color: #2563eb;
@@ -42,7 +42,7 @@
   font-weight: 600;
 }
 
-.alert-badge {
+.account-activation-alert-badge {
   background-color: #dcfce7;
   color: #15803d;
   font-size: 13px;
@@ -53,35 +53,53 @@
   margin-bottom: 24px;
 }
 
-.form-inputs {
+.account-activation-form-inputs {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.form-inputs > div {
+.account-activation-form-inputs > div {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.form-inputs label {
+.account-activation-form-inputs label {
   font-size: 14px;
   font-weight: 500;
   color: #374151;
 }
 
-.required {
+.account-activation-required {
   color: #ef4444;
 }
 
-.form-inputs input[readonly] {
+.account-activation-form-inputs input:not([type="checkbox"]) {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #111827;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.account-activation-form-inputs input:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.account-activation-form-inputs input[readonly] {
   background-color: #f9fafb;
   color: #6b7280;
   cursor: not-allowed;
 }
 
-.form-inputs .checkbox-container {
+.account-activation-form-inputs .account-activation-checkbox {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -89,17 +107,18 @@
   margin-top: 4px;
 }
 
-.checkbox-container input {
+.account-activation-checkbox input {
   cursor: pointer;
 }
 
-.checkbox-container label {
+.account-activation-checkbox label {
   font-weight: normal;
   color: #374151;
   cursor: pointer;
 }
 
-.form-submit {
+.account-activation-form-submit {
+  justify-content: center;
   width: 100%;
   padding: 12px;
   background-color: #2563eb;
@@ -113,6 +132,6 @@
   transition: background-color 0.2s;
 }
 
-.form-submit:hover {
+.account-activation-form-submit:hover {
   background-color: #1d4ed8;
 }

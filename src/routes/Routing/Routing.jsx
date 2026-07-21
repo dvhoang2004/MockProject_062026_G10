@@ -30,10 +30,16 @@ import CostBiling from "../../pages/CarePlanning/Detail/CostBiling/CareCost";
 import PreAdmission from "../../pages/PreAdmission/PreAdmission";
 import CreateEditResident from "../../pages/CreateEditResident/CreateEditResident";
 import Reassessment from "../../pages/Reassessment/Reassessment";
+import InitialAssessment from "../../pages/InitialAssessment/InitialAssessment";
 import AdmissionForm from "../../pages/AdmissionForm/AdmissionForm";
 import CarePlanAcknow from "../../pages/CarePlanAcknowledgment/CarePlanAcknowledgment";
 import ReportIncident from "../../pages/ReportIncident/ReportIncident";
 import CarePlanCreate from "../../pages/CarePlanCreate/CarePlanCreate";
+import CarePlanList from "../../pages/CarePlanList/CarePlanList";
+import LocHistory from "../../pages/LocHistory/LocHistory";
+import LocClassification from "../../pages/LocClassification/LocClassification";
+import ChartLock from"../../pages/ChartLockConfirmation/ChartLockConfirmation"
+import AssessmentHistory from "../../pages/AssessmentHistory/AssessmentHistory";
 const Routing = () => {
   return (
     <Routes>
@@ -59,11 +65,17 @@ const Routing = () => {
       <Route path="/resident/detail" element={<ResidentProfileDetail />} />
       <Route path="/RecordVital" element={<RecordVitals />} />
       <Route path="/dashboard-don" element={<DashboardDon />} />
+      <Route path="/initial-assessment" element={<InitialAssessment />} />
       <Route path="/admission-form" element={<AdmissionForm />} />
       <Route path="/pre-admission" element={<PreAdmission />} />
       <Route path="/CarePlanAcknow" element={<CarePlanAcknow />} />
       <Route path="/ReportIncident" element={<ReportIncident />} />
       <Route path="/careplan/create" element={<CarePlanCreate />} />
+      <Route path="/careplan/list" element={<CarePlanList />} />
+      <Route path="/loc/history" element={<LocHistory />} />
+      <Route path="/loc/classification" element={<LocClassification />} />
+       <Route path="/ChartLock" element={<ChartLock />} />
+      <Route path="/assessment/history" element={<AssessmentHistory />} />
       {/* create*/}
       <Route path="/resident/create" element={<CreateEditResident />} />
       {/* edit */}

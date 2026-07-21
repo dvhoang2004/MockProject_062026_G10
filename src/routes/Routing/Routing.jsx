@@ -34,6 +34,7 @@ import InitialAssessment from "../../pages/InitialAssessment/InitialAssessment";
 import AdmissionForm from "../../pages/AdmissionForm/AdmissionForm";
 import CarePlanAcknow from "../../pages/CarePlanAcknowledgment/CarePlanAcknowledgment";
 import ReportIncident from "../../pages/ReportIncident/ReportIncident";
+import ChartLock from"../../pages/ChartLockConfirmation/ChartLockConfirmation"
 import AssessmentHistory from "../../pages/AssessmentHistory/AssessmentHistory";
 const Routing = () => {
   return (
@@ -65,6 +66,7 @@ const Routing = () => {
       <Route path="/pre-admission" element={<PreAdmission />} />
       <Route path="/CarePlanAcknow" element={<CarePlanAcknow />} />
       <Route path="/ReportIncident" element={<ReportIncident />} />
+       <Route path="/ChartLock" element={<ChartLock />} />
       <Route path="/assessment/history" element={<AssessmentHistory />} />
       {/* create*/}
       <Route path="/resident/create" element={<CreateEditResident />} />

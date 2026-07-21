@@ -3,8 +3,8 @@ import "./Incidentdetail.css";
 import { incidentDetailData } from "../../pages/CarePlanning/Dailytask/data";
 
 
-// import SubmitReportModal from "../../pages/Incidentdetail/SubmitexternalreportModal";
-// import UnlockChartModal from "../../pages/Incidentdetail/Chartunlock";
+import SubmitReportModal from "../../pages/Incidentdetail/Submitexternalreport/SubmitexternalreportModal";
+import UnlockChartModal from "../../pages/Incidentdetail/Chartunlock/Chartunlock";
 
 
 import { TbChartLine } from "react-icons/tb";
@@ -123,14 +123,14 @@ export default function IncidentDetail() {
       </div>
 
       {/* MODALS */}
-      {/* <SubmitReportModal 
+      <SubmitReportModal 
         isOpen={isSubmitModalOpen} 
         onClose={() => setIsSubmitModalOpen(false)} 
       />
       <UnlockChartModal 
         isOpen={isUnlockModalOpen} 
         onClose={() => setIsUnlockModalOpen(false)} 
-      /> */}
+      />
     </div>
   );
 }

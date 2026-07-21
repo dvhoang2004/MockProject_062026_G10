@@ -1,0 +1,90 @@
+/* Modal.css - Tập trung toàn bộ style cho bảng thông báo */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.modal-info-box {
+    background: #f9f9f9;
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 4px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.label {
+    color: #666;
+    font-size: 14px;
+}
+
+.value {
+    font-weight: 600;
+}
+
+.warning-box {
+    background: #fff3cd;
+    color: #856404;
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.checkbox-container {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn-cancel {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-submit {
+    padding: 8px 16px;
+    background: #2f6bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-submit:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}

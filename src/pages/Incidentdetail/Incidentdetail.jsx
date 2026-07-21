@@ -3,7 +3,7 @@ import "./Incidentdetail.css";
 import { incidentDetailData } from "../../pages/CarePlanning/Dailytask/data";
 
 
-// import SubmitReportModal from "../../pages/Incidentdetail/SubmitexternalreportModal";
+import SubmitReportModal from "../../pages/Incidentdetail/Submitexternalreport/SubmitexternalreportModal";
 // import UnlockChartModal from "../../pages/Incidentdetail/Chartunlock";
 
 
@@ -123,11 +123,11 @@ export default function IncidentDetail() {
       </div>
 
       {/* MODALS */}
-      {/* <SubmitReportModal 
+      <SubmitReportModal 
         isOpen={isSubmitModalOpen} 
         onClose={() => setIsSubmitModalOpen(false)} 
       />
-      <UnlockChartModal 
+      {/* <UnlockChartModal 
         isOpen={isUnlockModalOpen} 
         onClose={() => setIsUnlockModalOpen(false)} 
       /> */}

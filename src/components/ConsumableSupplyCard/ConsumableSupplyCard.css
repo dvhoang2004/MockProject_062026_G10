@@ -1,0 +1,42 @@
+.supply-row {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr 1.1fr 1.2fr 1fr 1.2fr 0.9fr;
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 0.85rem;
+}
+
+.supply-row:last-child {
+  border-bottom: none;
+}
+
+.supply-row .name {
+  font-weight: 600;
+}
+
+.supply-row .supply-category,
+.supply-row .supply-stockOnHand,
+.supply-row .supply-reorderThreshold,
+.supply-row .supply-unitCost,
+.supply-row .supply-privatePayRate {
+  color: #555;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.22rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.badge.green {
+  background: #e6f7ec;
+  color: #1e9e5a;
+}
+
+.badge.red {
+  background: #ffe5e5;
+  color: #d84343;
+}

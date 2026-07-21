@@ -1,0 +1,192 @@
+.equipment-page {
+  padding: 2rem;
+  background: #f7f8fa;
+  min-height: 100vh;
+  font-family: sans-serif;
+  color: #222;
+}
+
+.breadcrumb {
+  font-size: 0.8rem;
+  color: #999;
+  margin-bottom: 0.4rem;
+}
+
+.page-title {
+  font-size: 1.6rem;
+  margin: 0 0 0.3rem 0;
+}
+
+.page-subtitle {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 1.2rem;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+}
+
+.stats-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 160px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.stat-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.stat-icon.blue {
+  background: #e8edff;
+  color: #2f5bff;
+}
+.stat-icon.green {
+  background: #e6f7ec;
+  color: #1e9e5a;
+}
+.stat-icon.yellow {
+  background: #fff4d6;
+  color: #b9860a;
+}
+.stat-icon.purple {
+  background: #f2e8ff;
+  color: #8a4fd6;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.in-use-note {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0 0 1rem 0;
+}
+
+.toolbar {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-select {
+  padding: 0.6rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.add-equipment-button {
+  margin-left: auto;
+  background: #2f5bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.add-equipment-button:hover {
+  background: #2447d1;
+}
+
+.equipment-table-header {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr 1.2fr 1.2fr 1fr 0.6fr;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.78rem;
+  color: #888;
+  font-weight: 600;
+}
+
+.equipment-table {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  margin-bottom: 0.8rem;
+}
+
+.footnote {
+  font-size: 0.75rem;
+  color: #999;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.consumables-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.consumables-subtitle {
+  font-size: 0.82rem;
+  color: #888;
+  margin: 0 0 1.2rem 0;
+}
+
+.supply-table-header {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr 1.1fr 1.2fr 1fr 1.2fr 0.9fr;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.78rem;
+  color: #888;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+}
+
+.supply-table {
+  margin-bottom: 1.2rem;
+}
+
+.holiday-warning-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #fff8e1;
+  border: 1px solid #ffe08a;
+  border-radius: 8px;
+  padding: 0.8rem 1.1rem;
+  font-size: 0.85rem;
+  color: #a6710a;
+}
+
+.holiday-icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+}

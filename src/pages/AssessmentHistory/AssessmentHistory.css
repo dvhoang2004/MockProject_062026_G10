@@ -1,0 +1,342 @@
+/* ==========================================================================
+   KHUNG BỐ CỤC CHUẨN
+   ========================================================================== */
+.assess-hist-layout {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f8fafc;
+  overflow: hidden;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* SIDEBAR & HEADER (Khớp viền, Thẻ Link chuẩn, Căn lề Sidebar) */
+.assess-hist-sidebar {
+  width: 260px;
+  background: #ffffff;
+  border-right: none;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.assess-hist-brand {
+  height: 64px !important;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 24px !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-sizing: border-box !important;
+}
+.brand-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.brand-text strong {
+  font-size: 18px;
+  color: #1f4bb3;
+}
+.brand-text span {
+  font-size: 12px;
+  color: #64748b;
+  border-left: 1px solid #cbd5e1;
+  padding-left: 8px;
+}
+
+.assess-hist-menu {
+  padding: 16px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.assess-hist-footer-menu {
+  border-top: none;
+  padding: 16px 0;
+}
+.menu-item {
+  margin: 2px 16px 2px 0 !important;
+  border-radius: 0 24px 24px 0 !important;
+  border: 1px solid transparent;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
+}
+.menu-item:hover:not(.disabled):not(.active) {
+  background-color: #f8fafc !important;
+}
+.menu-item .menu-link {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+  padding: 8px 16px !important;
+  text-decoration: none !important;
+  color: #475569 !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  cursor: pointer;
+}
+.menu-item:hover:not(.disabled):not(.active) .menu-link {
+  color: #2563eb !important;
+}
+.menu-item.active {
+  background: #f0f8ff !important;
+  border: 1px solid #bbf7d0 !important;
+  border-left: 4px solid #2563eb !important;
+}
+.menu-item.active .menu-link {
+  color: #2563eb !important;
+  font-weight: 600 !important;
+}
+.menu-item svg {
+  flex-shrink: 0 !important;
+  display: block !important;
+}
+.menu-item span {
+  display: inline-block !important;
+  line-height: 1 !important;
+  transform: translateY(1px);
+}
+.badge-soon {
+  background: #f1f5f9;
+  color: #94a3b8;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: auto !important;
+  font-weight: 600;
+  transform: translateY(0) !important;
+}
+
+/* MAIN & TOP HEADER */
+.assess-hist-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.assess-hist-header-top {
+  height: 64px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.icon-action {
+  color: #475569;
+  cursor: pointer;
+}
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+.user-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.2;
+}
+.user-role {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+/* WORKSPACE - Giữ nguyên độ rộng 1440px */
+.assess-hist-workspace {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 80px;
+}
+.assess-hist-container {
+  padding: 32px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.breadcrumb {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+/* ==========================================================================
+   TITLE BLOCK & BUTTONS
+   ========================================================================== */
+.page-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+.title-section h1 {
+  font-size: 24px;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+.title-section p {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+}
+
+.action-section {
+  display: flex;
+  gap: 12px;
+}
+.btn-secondary {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-secondary:hover {
+  background: #f1f5f9;
+}
+.btn-primary {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+/* ==========================================================================
+   BẢNG TABLE LỊCH SỬ (TABLE CARD)
+   ========================================================================== */
+.table-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  overflow: hidden; /* Cắt góc bo tròn của bảng */
+}
+.assess-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.assess-table th {
+  padding: 16px 24px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  border-bottom: 1px solid #e2e8f0;
+}
+.assess-table td {
+  padding: 20px 24px;
+  font-size: 13px;
+  color: #334155;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: middle;
+}
+.assess-table tr:last-child td {
+  border-bottom: none; /* Dòng cuối không có viền dưới */
+}
+.fw-bold {
+  font-weight: 600;
+  color: #0f172a !important;
+}
+.text-right {
+  text-align: right;
+}
+
+/* Các loại Badge (Nhãn màu) */
+.badge-type {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.badge-type.reassessment {
+  background-color: #f3e8ff;
+  color: #9333ea;
+}
+.badge-type.initial {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.badge-tier {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.badge-tier.level-3 {
+  border-color: #fde047;
+  color: #b45309;
+  background-color: #fefce8;
+}
+.badge-tier.level-2 {
+  border-color: #bfdbfe;
+  color: #1d4ed8;
+  background-color: #eff6ff;
+}
+
+/* Nút Action Link trong bảng */
+.action-link {
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+.action-link:hover {
+  text-decoration: underline;
+}
+.action-link.current {
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   CADENCE NOTE CARD (Ghi chú dưới cùng)
+   ========================================================================== */
+.cadence-note-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px 24px;
+}
+.text-dark {
+  color: #1e293b;
+  margin: 0 0 8px 0;
+  font-size: 14px;
+}
+.text-muted {
+  color: #64748b;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}

@@ -1,42 +1,46 @@
-.sla-page {
-  padding: 2rem;
+.slaPage {
+  padding: clamp(1rem, 2vw, 2rem);
   background: #f7f8fa;
   min-height: 100vh;
   color: #222;
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
-.breadcrumb {
-  font-size: 0.8rem;
+.slaPage-breadcrumb {
+  font-size: clamp(0.75rem, 0.7vw, 0.9rem);
   color: #999;
-  margin-bottom: 0.4rem;
+  margin-bottom: clamp(0.4rem, 0.8vw, 0.6rem);
 }
 
-.page-title {
-  font-size: 1.6rem;
-  margin: 0 0 0.3rem 0;
+.slaPage-title {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin: 0 0 0.4rem 0;
+  line-height: 1.1;
 }
 
-.page-subtitle {
-  font-size: 0.85rem;
+.slaPage-subtitle {
+  font-size: clamp(0.82rem, 0.85vw, 1rem);
   color: #888;
   margin-bottom: 1.2rem;
+  max-width: 860px;
 }
 
-.info-banner {
+.slaPage-infoBanner {
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
   background: #e8f1ff;
   border: 1px solid #cfe0ff;
   border-radius: 8px;
-  padding: 0.9rem 1.1rem;
-  font-size: 0.85rem;
+  padding: clamp(0.85rem, 1.2vw, 1.1rem);
+  font-size: clamp(0.85rem, 0.9vw, 0.98rem);
   font-weight: 600;
   color: #2447d1;
   margin-bottom: 1.5rem;
 }
 
-.info-icon {
+.slaPage-infoIcon {
   flex-shrink: 0;
   width: 18px;
   height: 18px;
@@ -50,40 +54,48 @@
   justify-content: center;
 }
 
-.table-header {
+.slaPage-tableHeader {
   display: grid;
   grid-template-columns: 1fr 1.8fr 1.4fr 1.8fr 0.6fr;
   padding: 0.6rem 1.2rem;
-  font-size: 0.8rem;
+  font-size: clamp(0.78rem, 0.8vw, 0.9rem);
   color: #888;
   font-weight: 600;
 }
 
-.sla-table {
+.slaPage-tableHeader .slaPage-col {
+  text-align: left;
+}
+
+.slaPage-table {
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.sla-row {
+.slaPage-row {
   display: grid;
   grid-template-columns: 1fr 1.8fr 1.4fr 1.8fr 0.6fr;
   align-items: center;
-  padding: 1rem 1.2rem;
+  padding: clamp(0.95rem, 1vw, 1.2rem);
   border-bottom: 1px solid #f2f2f2;
-  font-size: 0.9rem;
+  font-size: clamp(0.88rem, 0.9vw, 0.98rem);
 }
 
-.sla-row:last-child {
+.slaPage-row:last-child {
   border-bottom: none;
 }
 
-.sla-row .deadline {
+.slaPage-row .slaPage-col {
+  text-align: left;
+}
+
+.slaPage-row .slaPage-col--deadline {
   font-weight: 700;
 }
 
-.badge {
+.slaPage-badge {
   display: inline-block;
   padding: 0.3rem 0.9rem;
   border-radius: 999px;
@@ -91,27 +103,27 @@
   font-weight: 600;
 }
 
-.badge.red {
+.slaPage-badge--red {
   background: #ffe5e5;
   color: #d84343;
 }
 
-.badge.orange {
+.slaPage-badge--orange {
   background: #ffe9d6;
   color: #c5690a;
 }
 
-.badge.yellow {
+.slaPage-badge--yellow {
   background: #fff4d6;
   color: #b9860a;
 }
 
-.badge.gray {
+.slaPage-badge--gray {
   background: #eee;
   color: #777;
 }
 
-.edit-button {
+.slaPage-editButton {
   background: none;
   border: none;
   color: #2f5bff;
@@ -121,18 +133,74 @@
   padding: 0;
 }
 
-.edit-button:hover {
+.slaPage-editButton:hover {
   text-decoration: underline;
 }
 
-.na-text {
+.slaPage-naText {
   color: #bbb;
   font-size: 0.85rem;
 }
 
-.footnote {
-  font-size: 0.75rem;
+.slaPage-footnote {
+  font-size: clamp(0.75rem, 0.8vw, 0.9rem);
   color: #999;
   margin-top: 1rem;
   line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .slaPage-tableHeader,
+  .slaPage-row {
+    grid-template-columns: 1fr 1.6fr 1.2fr 1.8fr 0.8fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .slaPage {
+    padding: 1rem;
+  }
+
+  .slaPage-title {
+    font-size: 1.4rem;
+  }
+
+  .slaPage-tableHeader {
+    display: none;
+  }
+
+  .slaPage-row {
+    grid-template-columns: 1fr;
+    row-gap: 0.7rem;
+  }
+
+  .slaPage-row .slaPage-col {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .slaPage-row .slaPage-col--severity::before {
+    content: "Severity:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .slaPage-row .slaPage-col--external::before {
+    content: "External:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .slaPage-row .slaPage-col--deadline::before {
+    content: "Deadline:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .slaPage-row .slaPage-col--regulatory::before {
+    content: "Regulatory:";
+    color: #888;
+    white-space: nowrap;
+  }
 }

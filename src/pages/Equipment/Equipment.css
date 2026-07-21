@@ -1,36 +1,39 @@
-.equipment-page {
-  padding: 2rem;
+.equipmentPage {
+  padding: clamp(1rem, 2vw, 2rem);
   background: #f7f8fa;
   min-height: 100vh;
-  font-family: sans-serif;
   color: #222;
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
-.breadcrumb {
-  font-size: 0.8rem;
+.equipmentPage-breadcrumb {
+  font-size: clamp(0.75rem, 0.7vw, 0.9rem);
   color: #999;
-  margin-bottom: 0.4rem;
+  margin-bottom: clamp(0.4rem, 0.8vw, 0.6rem);
 }
 
-.page-title {
-  font-size: 1.6rem;
+.equipmentPage-title {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
   margin: 0 0 0.3rem 0;
+  line-height: 1.1;
 }
 
-.page-subtitle {
-  font-size: 0.85rem;
+.equipmentPage-subtitle {
+  font-size: clamp(0.85rem, 0.85vw, 1rem);
   color: #888;
   margin-bottom: 1.2rem;
+  max-width: 860px;
 }
 
-.section-title {
-  font-size: 1.1rem;
+.equipmentPage-sectionTitle {
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
   margin: 0 0 1rem 0;
 }
 
-.stats-row {
+.equipmentPage-statsRow {
   display: flex;
-  gap: 1rem;
+  gap: clamp(0.9rem, 1.5vw, 1.2rem);
   margin-bottom: 0.8rem;
   flex-wrap: wrap;
 }
@@ -85,20 +88,23 @@
   font-weight: 700;
 }
 
-.in-use-note {
+.equipmentPage-note {
   font-size: 0.8rem;
   color: #888;
   margin: 0 0 1rem 0;
 }
 
-.toolbar {
+.equipmentPage-toolbar {
   display: flex;
-  gap: 0.8rem;
+  gap: clamp(0.75rem, 1vw, 0.95rem);
   margin-bottom: 1rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .filter-select {
+  flex: 1 1 220px;
+  min-width: 180px;
   padding: 0.6rem 1rem;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
@@ -107,7 +113,8 @@
   cursor: pointer;
 }
 
-.add-equipment-button {
+.equipmentPage-addEquipmentButton {
+  flex: 0 0 auto;
   margin-left: auto;
   background: #2f5bff;
   color: #fff;
@@ -119,20 +126,22 @@
   cursor: pointer;
 }
 
-.add-equipment-button:hover {
+.equipmentPage-addEquipmentButton:hover {
   background: #2447d1;
 }
 
-.equipment-table-header {
+.equipmentPage-tableHeader {
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1fr 1.2fr 1.2fr 1fr 0.6fr;
-  padding: 0.6rem 1.2rem;
-  font-size: 0.78rem;
+  padding: 0.7rem 1.2rem;
+  font-size: clamp(0.78rem, 0.8vw, 0.95rem);
   color: #888;
   font-weight: 600;
+  background: #f9fbff;
+  border-radius: 10px 10px 0 0;
 }
 
-.equipment-table {
+.equipmentPage-table {
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
@@ -140,41 +149,43 @@
   margin-bottom: 0.8rem;
 }
 
-.footnote {
-  font-size: 0.75rem;
+.equipmentPage-footnote {
+  font-size: clamp(0.75rem, 0.8vw, 0.9rem);
   color: #999;
   margin-bottom: 1.5rem;
   line-height: 1.5;
 }
 
-.consumables-card {
+.equipmentPage-consumablesCard {
   background: #fff;
   border-radius: 10px;
   padding: 1.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.consumables-subtitle {
+.equipmentPage-consumablesSubtitle {
   font-size: 0.82rem;
   color: #888;
   margin: 0 0 1.2rem 0;
 }
 
-.supply-table-header {
+.equipmentPage-supplyTableHeader {
   display: grid;
   grid-template-columns: 1.8fr 1.2fr 1.1fr 1.2fr 1fr 1.2fr 0.9fr;
-  padding: 0.6rem 1.2rem;
-  font-size: 0.78rem;
+  padding: 0.7rem 1.2rem;
+  font-size: clamp(0.78rem, 0.8vw, 0.95rem);
   color: #888;
   font-weight: 600;
   border-bottom: 1px solid #eee;
+  background: #f9fbff;
+  border-radius: 10px 10px 0 0;
 }
 
-.supply-table {
+.equipmentPage-supplyTable {
   margin-bottom: 1.2rem;
 }
 
-.holiday-warning-banner {
+.equipmentPage-holidayWarningBanner {
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -186,7 +197,55 @@
   color: #a6710a;
 }
 
-.holiday-icon {
+.equipmentPage-holidayIcon {
   flex-shrink: 0;
   font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .equipmentPage {
+    padding: clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .equipmentPage-tableHeader {
+    grid-template-columns: 1.6fr 1.1fr 1fr 1fr 1fr 0.9fr 0.9fr 0.7fr;
+  }
+
+  .equipmentPage-supplyTableHeader {
+    grid-template-columns: 1.8fr 1.2fr 1.1fr 1.2fr 1fr 1fr 0.9fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .equipmentPage {
+    padding: 1rem;
+  }
+
+  .equipmentPage-title {
+    font-size: 1.4rem;
+  }
+
+  .equipmentPage-subtitle {
+    margin-bottom: 1rem;
+  }
+
+  .equipmentPage-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-select,
+  .equipmentPage-addEquipmentButton {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .equipmentPage-addEquipmentButton {
+    margin-left: 0;
+  }
+
+  .equipmentPage-tableHeader,
+  .equipmentPage-supplyTableHeader {
+    display: none;
+  }
 }

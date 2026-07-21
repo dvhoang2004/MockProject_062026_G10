@@ -1,23 +1,28 @@
-.loc-card {
+.locCard {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1.2fr 1.6fr 0.8fr;
   align-items: center;
-  padding: 1rem 1.2rem;
+  padding: clamp(0.95rem, 1.3vw, 1.1rem) clamp(1rem, 1.4vw, 1.2rem);
   border-bottom: 1px solid #eee;
-  font-size: 0.9rem;
+  font-size: clamp(0.88rem, 0.9vw, 0.98rem);
   background: #fff;
   transition: background 0.15s ease;
+  text-align: left;
 }
 
-.loc-card:last-child {
+.locCard:last-child {
   border-bottom: none;
 }
 
-.loc-card:hover {
+.locCard:hover {
   background: #fafbff;
 }
 
-.tier-badge {
+.locCard .locPage-col {
+  text-align: left;
+}
+
+.locCard-tierBadge {
   display: inline-block;
   padding: 0.3rem 0.9rem;
   border-radius: 999px;
@@ -27,17 +32,17 @@
   color: #2f5bff;
 }
 
-.dailyRate {
+.locCard .locPage-col--dailyRate {
   font-weight: 700;
 }
 
-.scoreRange,
-.effectiveDate,
-.lastUpdatedBy {
+.locCard .locPage-col--scoreRange,
+.locCard .locPage-col--effectiveDate,
+.locCard .locPage-col--lastUpdatedBy {
   color: #555;
 }
 
-.edit-button {
+.locCard-editButton {
   background: none;
   border: none;
   color: #2f5bff;
@@ -47,6 +52,60 @@
   padding: 0;
 }
 
-.edit-button:hover {
+.locCard-editButton:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .locCard {
+    grid-template-columns: 1.5fr 1.2fr 1fr 1fr 1fr 0.8fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .locCard {
+    grid-template-columns: 1fr;
+    row-gap: 0.7rem;
+    padding: 0.95rem 0.9rem;
+  }
+
+  .locCard .locPage-col {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .locCard .locPage-col--level::before {
+    content: "Level:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .locCard .locPage-col--scoreRange::before {
+    content: "Score:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .locCard .locPage-col--dailyRate::before {
+    content: "Rate:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .locCard .locPage-col--effectiveDate::before {
+    content: "Effective:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .locCard .locPage-col--lastUpdatedBy::before {
+    content: "Updated By:";
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .locCard .locPage-col--action {
+    justify-content: flex-end;
+  }
 }

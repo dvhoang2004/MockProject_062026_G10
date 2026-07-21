@@ -1,31 +1,35 @@
 .facility-page {
-  padding: 2rem;
+  padding: clamp(1rem, 2vw, 2rem);
   background: #f7f8fa;
   min-height: 100vh;
-  font-family: sans-serif;
   color: #222;
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
 .breadcrumb {
-  font-size: 0.8rem;
+  font-size: clamp(0.75rem, 0.7vw, 0.9rem);
   color: #999;
-  margin-bottom: 0.4rem;
+  margin-bottom: clamp(0.4rem, 0.8vw, 0.6rem);
 }
 
 .page-title {
-  font-size: 1.6rem;
-  margin: 0 0 0.3rem 0;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin: 0 0 0.4rem 0;
+  line-height: 1.1;
 }
 
 .page-subtitle {
-  font-size: 0.85rem;
+  font-size: clamp(0.82rem, 0.85vw, 1rem);
   color: #888;
   margin-bottom: 1.2rem;
+  max-width: 860px;
 }
 
 .tabs {
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: clamp(0.8rem, 1.5vw, 1.5rem);
   border-bottom: 1px solid #e0e0e0;
   margin-bottom: 1.5rem;
 }
@@ -33,16 +37,19 @@
 .tab-button {
   background: none;
   border: none;
-  padding: 0.6rem 0.2rem;
-  font-size: 0.9rem;
+  padding: 0.7rem 0.25rem;
+  font-size: clamp(0.9rem, 1vw, 1rem);
   color: #888;
   cursor: pointer;
   border-bottom: 2px solid transparent;
+  border-radius: 0;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .tab-button.active-tab {
   color: #2f5bff;
-  background-color: rgba(47, 91, 255, 0.1);
   font-weight: 600;
   border-bottom-color: #2f5bff;
 }
@@ -52,12 +59,12 @@
 
 .facility-info-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
   grid-template-areas:
     "item-1 item-1"
     "item-2 item-3"
     "item-4 item-4";
-  gap: 20px;
+  gap: clamp(1rem, 2vw, 1.5rem);
 }
 
 .item-1 {
@@ -71,4 +78,47 @@
 }
 .item-4 {
   grid-area: item-4;
+}
+
+@media (max-width: 900px) {
+  .facility-page {
+    padding: clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .tabs {
+    gap: clamp(0.6rem, 1.5vw, 1rem);
+  }
+
+  .facility-info-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "item-1"
+      "item-2"
+      "item-3"
+      "item-4";
+  }
+}
+
+@media (max-width: 640px) {
+  .facility-page {
+    padding: 1rem;
+  }
+
+  .page-title {
+    font-size: 1.4rem;
+  }
+
+  .page-subtitle {
+    margin-bottom: 1rem;
+  }
+
+  .tabs {
+    margin-bottom: 1rem;
+  }
+
+  .tab-button {
+    flex: 1 1 100%;
+    text-align: left;
+    padding: 0.85rem 0.35rem;
+  }
 }

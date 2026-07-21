@@ -61,3 +61,30 @@
 .view-link:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 900px) {
+  .equipment-row {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+
+  .equipment-row .name {
+    grid-column: 1 / span 2;
+  }
+
+  .equipment-row .action {
+    justify-self: end;
+  }
+}
+
+@media (max-width: 640px) {
+  .equipment-row {
+    grid-template-columns: 1fr;
+    padding: 0.85rem 1rem;
+    row-gap: 0.55rem;
+  }
+
+  .equipment-row .action {
+    justify-self: start;
+  }
+}

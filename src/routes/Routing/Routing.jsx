@@ -26,14 +26,16 @@ import Dailytask from "../../pages/CarePlanning/Dailytask/Dailytasklist";
 import ResidentProfileDetail from "../../pages/ResidentProfileDetail/ResidentProfileDetail";
 import RecordVitals from "../../pages/BedsideVital/RecordVitals";
 import DashboardDon from "../../pages/Dashboard/DashboardDon";
-import CostBiling from"../../pages/CarePlanning/Detail/CostBiling/CareCost"
+import CostBiling from "../../pages/CarePlanning/Detail/CostBiling/CareCost";
 import PreAdmission from "../../pages/PreAdmission/PreAdmission";
 import CreateEditResident from "../../pages/CreateEditResident/CreateEditResident";
 import Reassessment from "../../pages/Reassessment/Reassessment";
+import InitialAssessment from "../../pages/InitialAssessment/InitialAssessment";
 import AdmissionForm from "../../pages/AdmissionForm/AdmissionForm";
-import CarePlanAcknow from"../../pages/CarePlanAcknowledgment/CarePlanAcknowledgment"
+import CarePlanAcknow from "../../pages/CarePlanAcknowledgment/CarePlanAcknowledgment";
 import ReportIncident from "../../pages/ReportIncident/ReportIncident";
 import ChartLock from"../../pages/ChartLockConfirmation/ChartLockConfirmation"
+import AssessmentHistory from "../../pages/AssessmentHistory/AssessmentHistory";
 const Routing = () => {
   return (
     <Routes>
@@ -59,11 +61,13 @@ const Routing = () => {
       <Route path="/resident/detail" element={<ResidentProfileDetail />} />
       <Route path="/RecordVital" element={<RecordVitals />} />
       <Route path="/dashboard-don" element={<DashboardDon />} />
+      <Route path="/initial-assessment" element={<InitialAssessment />} />
       <Route path="/admission-form" element={<AdmissionForm />} />
       <Route path="/pre-admission" element={<PreAdmission />} />
       <Route path="/CarePlanAcknow" element={<CarePlanAcknow />} />
       <Route path="/ReportIncident" element={<ReportIncident />} />
        <Route path="/ChartLock" element={<ChartLock />} />
+      <Route path="/assessment/history" element={<AssessmentHistory />} />
       {/* create*/}
       <Route path="/resident/create" element={<CreateEditResident />} />
       {/* edit */}

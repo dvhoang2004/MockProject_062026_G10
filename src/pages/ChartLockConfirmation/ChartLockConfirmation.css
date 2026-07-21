@@ -1,0 +1,184 @@
+/* ChartLockConfirmation.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.chart-lock-page {
+  min-height: 100vh;
+  background: #f7f8fc;
+  padding: 24px;
+  font-family: "Inter", sans-serif;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: #8b9099;
+  margin-bottom: 40px;
+}
+
+/* ==========================
+   Main Card
+========================== */
+
+.lock-card {
+  width: 650px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 36px;
+  text-align: center;
+}
+
+/* ==========================
+   Lock Icon
+========================== */
+
+.lock-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  background: #fee2e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lock-icon svg {
+  font-size: 38px;
+  color: #dc2626;
+}
+
+/* ==========================
+   Title
+========================== */
+
+.lock-card h1 {
+  font-size: 38px;
+  color: #1f2937;
+  margin-bottom: 18px;
+}
+
+.lock-description {
+  font-size: 18px;
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+/* ==========================
+   Reference
+========================== */
+
+.reference-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fafafa;
+  padding: 20px;
+  text-align: left;
+}
+
+.reference-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.reference-header span {
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.reference-header strong {
+  font-size: 20px;
+  color: #374151;
+}
+
+.reference-card p {
+  color: #4b5563;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.back-btn,
+.view-btn {
+  width: 250px;
+  height: 48px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.back-btn {
+  background: #fff;
+  border: 1px solid #d1d5db;
+  color: #374151;
+}
+
+.back-btn:hover {
+  background: #f3f4f6;
+}
+
+.view-btn {
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.view-btn:hover {
+  background: #1d4ed8;
+}
+
+.view-btn svg {
+  font-size: 14px;
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media (max-width: 768px) {
+  .lock-card {
+    width: 100%;
+    padding: 24px;
+  }
+
+  .lock-card h1 {
+    font-size: 30px;
+  }
+
+  .lock-description {
+    font-size: 15px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .back-btn,
+  .view-btn {
+    width: 100%;
+  }
+}

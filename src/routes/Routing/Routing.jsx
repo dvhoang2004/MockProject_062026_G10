@@ -34,6 +34,7 @@ import InitialAssessment from "../../pages/InitialAssessment/InitialAssessment";
 import AdmissionForm from "../../pages/AdmissionForm/AdmissionForm";
 import CarePlanAcknow from "../../pages/CarePlanAcknowledgment/CarePlanAcknowledgment";
 import ReportIncident from "../../pages/ReportIncident/ReportIncident";
+import LocGate from "../../pages/LocGate/LocGate";
 import CarePlanDetail from "../../pages/CarePlanDetail/CarePlanDetail";
 import CarePlanCreate from "../../pages/CarePlanCreate/CarePlanCreate";
 import CarePlanList from "../../pages/CarePlanList/CarePlanList";
@@ -71,6 +72,7 @@ const Routing = () => {
       <Route path="/pre-admission" element={<PreAdmission />} />
       <Route path="/CarePlanAcknow" element={<CarePlanAcknow />} />
       <Route path="/ReportIncident" element={<ReportIncident />} />
+      <Route path="/loc-gate" element={<LocGate />} />
       <Route path="/careplan/detail" element={<CarePlanDetail />} />
       <Route path="/careplan/create" element={<CarePlanCreate />} />
       <Route path="/careplan/list" element={<CarePlanList />} />

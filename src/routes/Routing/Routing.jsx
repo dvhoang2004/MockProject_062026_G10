@@ -30,6 +30,7 @@ import CostBiling from"../../pages/CarePlanning/Detail/CostBiling/CareCost"
 import PreAdmission from "../../pages/PreAdmission/PreAdmission";
 import CreateEditResident from "../../pages/CreateEditResident/CreateEditResident";
 import Reassessment from "../../pages/Reassessment/Reassessment";
+import InitialAssessment from "../../pages/InitialAssessment/InitialAssessment";
 import AdmissionForm from "../../pages/AdmissionForm/AdmissionForm";
 import CarePlanAcknow from"../../pages/CarePlanAcknowledgment/CarePlanAcknowledgment"
 import ReportIncident from "../../pages/ReportIncident/ReportIncident";
@@ -58,6 +59,7 @@ const Routing = () => {
       <Route path="/resident/detail" element={<ResidentProfileDetail />} />
       <Route path="/RecordVital" element={<RecordVitals />} />
       <Route path="/dashboard-don" element={<DashboardDon />} />
+      <Route path="/initial-assessment" element={<InitialAssessment />} />
       <Route path="/admission-form" element={<AdmissionForm />} />
       <Route path="/pre-admission" element={<PreAdmission />} />
       <Route path="/CarePlanAcknow" element={<CarePlanAcknow />} />

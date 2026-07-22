@@ -2,10 +2,8 @@ import { useState } from "react";
 import "./Incidentdetail.css";
 import { incidentDetailData } from "../../pages/CarePlanning/Dailytask/data";
 
-
-// import SubmitReportModal from "../../pages/Incidentdetail/SubmitexternalreportModal";
-// import UnlockChartModal from "../../pages/Incidentdetail/Chartunlock";
-
+import SubmitReportModal from "../../pages/Incidentdetail/Submitexternalreport/SubmitexternalreportModal";
+import UnlockChartModal from "../../pages/Incidentdetail/Chartunlock/Chartunlock";
 
 import { TbChartLine } from "react-icons/tb";
 import { RiShieldCheckLine } from "react-icons/ri";
@@ -33,13 +31,16 @@ export default function IncidentDetail() {
 
       {/* HEADER */}
       <div className="title-row">
-        <h1>Incident {incident.id} — {incident.resident}</h1>
+        <h1>
+          Incident {incident.id} — {incident.resident}
+        </h1>
         <span className="badge orange">{incident.status}</span>
         <span className="badge red">{incident.severity}</span>
       </div>
 
       <p className="sub-title">
-        Fall • {incident.room} • Reported by {incident.reporter} • {incident.incidentDate}
+        Fall • {incident.room} • Reported by {incident.reporter} •{" "}
+        {incident.incidentDate}
       </p>
 
       {/* CONTENT */}
@@ -48,10 +49,22 @@ export default function IncidentDetail() {
         <div className="left">
           <div className="card">
             <h3>Report Details (read-only)</h3>
-            <div className="detail-row"><strong>Location</strong><span>{reportDetails.location}</span></div>
-            <div className="detail-row"><strong>Description</strong><span>{reportDetails.description}</span></div>
-            <div className="detail-row"><strong>Witnesses</strong><span>{reportDetails.witnesses}</span></div>
-            <div className="detail-row"><strong>Immediate action</strong><span>{reportDetails.immediateAction}</span></div>
+            <div className="detail-row">
+              <strong>Location</strong>
+              <span>{reportDetails.location}</span>
+            </div>
+            <div className="detail-row">
+              <strong>Description</strong>
+              <span>{reportDetails.description}</span>
+            </div>
+            <div className="detail-row">
+              <strong>Witnesses</strong>
+              <span>{reportDetails.witnesses}</span>
+            </div>
+            <div className="detail-row">
+              <strong>Immediate action</strong>
+              <span>{reportDetails.immediateAction}</span>
+            </div>
           </div>
 
           <div className="attachment">
@@ -59,7 +72,9 @@ export default function IncidentDetail() {
             <div className="attachment-list">
               {attachments.map((file) => (
                 <button key={file.id} className="attachment-btn">
-                  <span className="file-icon">{file.type === "pdf" ? "📄" : "🖼"}</span>
+                  <span className="file-icon">
+                    {file.type === "pdf" ? "📄" : "🖼"}
+                  </span>
                   {file.name}
                 </button>
               ))}
@@ -73,7 +88,9 @@ export default function IncidentDetail() {
                 <div className={`dot ${item.active ? "active" : ""}`}></div>
                 <div className="timeline-content">
                   <b>{item.title}</b>
-                  <p>{item.user} • {item.time}</p>
+                  <p>
+                    {item.user} • {item.time}
+                  </p>
                 </div>
               </div>
             ))}
@@ -91,8 +108,10 @@ export default function IncidentDetail() {
 
           <div className="card status-card">
             <h4>
-                <TbChartLine style={{ marginRight: '8px', verticalAlign: 'middle' }} />
-                Chart Status
+              <TbChartLine
+                style={{ marginRight: "8px", verticalAlign: "middle" }}
+              />
+              Chart Status
             </h4>
             <div className="status-row">
               <span className="badge red">{chartStatus.status}</span>
@@ -109,11 +128,15 @@ export default function IncidentDetail() {
                 className={`action-btn ${action.type}`}
                 disabled={action.type === "disabled"}
                 onClick={() => {
-                  if (action.label === "Submit External Report") setIsSubmitModalOpen(true);
-                  if (action.label === "Unlock Chart") setIsUnlockModalOpen(true);
+                  if (action.label === "Submit External Report")
+                    setIsSubmitModalOpen(true);
+                  if (action.label === "Unlock Chart")
+                    setIsUnlockModalOpen(true);
                 }}
               >
-                {action.label === "Submit External Report" && <RiShieldCheckLine style={{marginRight: '6px'}} />}
+                {action.label === "Submit External Report" && (
+                  <RiShieldCheckLine style={{ marginRight: "6px" }} />
+                )}
                 {action.label}
               </button>
             ))}
@@ -123,14 +146,14 @@ export default function IncidentDetail() {
       </div>
 
       {/* MODALS */}
-      {/* <SubmitReportModal 
-        isOpen={isSubmitModalOpen} 
-        onClose={() => setIsSubmitModalOpen(false)} 
+      <SubmitReportModal
+        isOpen={isSubmitModalOpen}
+        onClose={() => setIsSubmitModalOpen(false)}
       />
-      <UnlockChartModal 
-        isOpen={isUnlockModalOpen} 
-        onClose={() => setIsUnlockModalOpen(false)} 
-      /> */}
+      <UnlockChartModal
+        isOpen={isUnlockModalOpen}
+        onClose={() => setIsUnlockModalOpen(false)}
+      />
     </div>
   );
 }

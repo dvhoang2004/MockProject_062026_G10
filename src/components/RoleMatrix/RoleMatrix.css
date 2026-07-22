@@ -1,20 +1,20 @@
 .role-matrix-card {
   background: #fff;
   border-radius: 10px;
-  padding: 1.5rem;
+  padding: clamp(1rem, 1.5vw, 1.5rem);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .matrix-title {
-  font-size: 1.1rem;
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
   margin: 0 0 0.8rem 0;
 }
 
 .matrix-legend {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 0.8rem;
+  gap: clamp(0.75rem, 1vw, 1rem);
+  font-size: clamp(0.8rem, 0.9vw, 0.95rem);
   color: #888;
   margin-bottom: 1.2rem;
   flex-wrap: wrap;
@@ -27,7 +27,7 @@
 .matrix-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.85rem;
+  font-size: clamp(0.85rem, 0.9vw, 0.95rem);
 }
 
 .matrix-table th {
@@ -72,4 +72,30 @@
   font-size: 0.7rem;
   color: #999;
   margin-top: 0.1rem;
+}
+
+@media (max-width: 900px) {
+  .matrix-table th,
+  .matrix-table td {
+    padding: 0.55rem 0.7rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .matrix-table {
+    font-size: 0.9rem;
+  }
+
+  .matrix-table th,
+  .matrix-table td {
+    padding: 0.65rem 0.65rem;
+  }
+
+  .matrix-table th {
+    white-space: normal;
+  }
+
+  .matrix-table td {
+    white-space: normal;
+  }
 }

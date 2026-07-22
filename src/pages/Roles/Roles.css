@@ -1,36 +1,64 @@
 .roles-page {
-  padding: 2rem;
+  padding: clamp(1rem, 2vw, 2rem);
   background: #f7f8fa;
   min-height: 100vh;
   font-family: sans-serif;
   color: #222;
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
 .breadcrumb {
-  font-size: 0.8rem;
+  font-size: clamp(0.75rem, 0.7vw, 0.9rem);
   color: #999;
-  margin-bottom: 0.4rem;
+  margin-bottom: clamp(0.4rem, 0.8vw, 0.6rem);
 }
 
 .page-title {
-  font-size: 1.6rem;
-  margin: 0 0 0.3rem 0;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin: 0 0 0.4rem 0;
+  line-height: 1.1;
 }
 
 .page-subtitle {
-  font-size: 0.85rem;
+  font-size: clamp(0.82rem, 0.85vw, 1rem);
   color: #888;
   margin-bottom: 1.5rem;
+  max-width: 860px;
 }
 
 .section-title {
-  font-size: 1.2rem;
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
   margin: 0 0 1rem 0;
 }
 
 .role-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: clamp(0.85rem, 1.3vw, 1rem);
   margin-bottom: 2rem;
+}
+
+@media (max-width: 900px) {
+  .role-grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .roles-page {
+    padding: 1rem;
+  }
+
+  .page-title {
+    font-size: 1.4rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .role-grid {
+    grid-template-columns: 1fr;
+  }
 }

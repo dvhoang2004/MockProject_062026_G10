@@ -6,6 +6,7 @@ import {
   FiCreditCard,
   FiCalendar,
 } from "react-icons/fi";
+
 import "./Equipment.css";
 import EquipmentCard from "../../components/EquipmentCard/EquipmentCard";
 import ConsumableSupplyCard from "../../components/ConsumableSupplyCard/ConsumableSupplyCard";
@@ -29,17 +30,21 @@ const EquipmentPage = () => {
   const inUsePercentText = `${dmeStats.inUse} of ${dmeStats.totalItems} units currently in use`;
 
   return (
-    <div className="equipment-page">
-      <div className="breadcrumb">Admin &gt; Equipment &amp; Supply</div>
-      <h1 className="page-title">Equipment &amp; Supply Inventory</h1>
-      <p className="page-subtitle">
+    <div className="equipmentPage">
+      <div className="equipmentPage-breadcrumb">
+        Admin &gt; Equipment &amp; Supply
+      </div>
+      <h1 className="equipmentPage-title">Equipment &amp; Supply Inventory</h1>
+      <p className="equipmentPage-subtitle">
         Durable Medical Equipment (DME) asset register and Consumable Supplies
         stock — see Master Plan §9.1 for billing model
       </p>
 
-      <h2 className="section-title">Durable Medical Equipment (DME)</h2>
+      <h2 className="equipmentPage-sectionTitle">
+        Durable Medical Equipment (DME)
+      </h2>
 
-      <div className="stats-row">
+      <div className="equipmentPage-statsRow">
         <div className="stat-card">
           <span className="stat-icon blue">
             <FiLayers />
@@ -80,69 +85,72 @@ const EquipmentPage = () => {
         </div>
       </div>
 
-      <p className="in-use-note">{inUsePercentText}</p>
+      <p className="equipmentPage-note">{inUsePercentText}</p>
 
-      <div className="toolbar">
+      <div className="equipmentPage-toolbar">
         <select className="filter-select">
           <option>Category: All</option>
         </select>
         <select className="filter-select">
           <option>Status: All</option>
         </select>
-        <button className="add-equipment-button" onClick={handleAddEquipment}>
+        <button
+          className="equipmentPage-addEquipmentButton"
+          onClick={handleAddEquipment}
+        >
           + Add Equipment
         </button>
       </div>
 
-      <div className="equipment-table-header">
-        <div className="col name">Item</div>
-        <div className="col category">Category</div>
-        <div className="col assetTag">Asset Tag</div>
-        <div className="col qty">Qty (In Use/Total)</div>
-        <div className="col status">Status</div>
-        <div className="col assignedTo">Assigned To</div>
-        <div className="col unitValue">Unit Value</div>
-        <div className="col action"></div>
+      <div className="equipmentPage-tableHeader">
+        <div className="col equipment-name">Item</div>
+        <div className="col equipment-category">Category</div>
+        <div className="col equipment-assetTag">Asset Tag</div>
+        <div className="col equipment-qty">Qty (In Use/Total)</div>
+        <div className="col equipment-status">Status</div>
+        <div className="col equipment-assignedTo">Assigned To</div>
+        <div className="col equipment-unitValue">Unit Value</div>
+        <div className="col equipment-action"></div>
       </div>
 
-      <div className="equipment-table">
+      <div className="equipmentPage-table">
         {dmeItems.map((item) => (
           <EquipmentCard key={item.id} item={item} onView={handleView} />
         ))}
       </div>
 
-      <p className="footnote">
+      <p className="equipmentPage-footnote">
         Unit Value is an internal reference for depreciation/maintenance
         planning only. DME used inside the facility is bundled into the per-diem
         rate (CMS SNF Consolidated Billing, §9.1) — it is never billed per-item
         to Medicare Part A.
       </p>
 
-      <div className="consumables-card">
-        <h2 className="section-title">Consumable Supplies</h2>
-        <p className="consumables-subtitle">
+      <div className="equipmentPage-consumablesCard">
+        <h2 className="equipmentPage-sectionTitle">Consumable Supplies</h2>
+        <p className="equipmentPage-consumablesSubtitle">
           Unit Cost = internal COGS tracking. Private-Pay Rate = simulated
           billing rate for residents not on Medicare Part A (§9.1, NFR-05).
         </p>
 
-        <div className="supply-table-header">
-          <div className="col name">Item</div>
-          <div className="col category">Category</div>
-          <div className="col stockOnHand">Stock on Hand</div>
-          <div className="col reorderThreshold">Reorder Threshold</div>
-          <div className="col unitCost">Unit Cost</div>
-          <div className="col privatePayRate">Private-Pay Rate</div>
-          <div className="col status">Status</div>
+        <div className="equipmentPage-supplyTableHeader">
+          <div className="col supply-name">Item</div>
+          <div className="col supply-category">Category</div>
+          <div className="col supply-stockOnHand">Stock on Hand</div>
+          <div className="col supply-reorderThreshold">Reorder Threshold</div>
+          <div className="col supply-unitCost">Unit Cost</div>
+          <div className="col supply-privatePayRate">Private-Pay Rate</div>
+          <div className="col supply-status">Status</div>
         </div>
 
-        <div className="supply-table">
+        <div className="equipmentPage-supplyTable">
           {consumableSupplies.map((supply) => (
             <ConsumableSupplyCard key={supply.id} supply={supply} />
           ))}
         </div>
 
-        <div className="holiday-warning-banner">
-          <FiCalendar className="holiday-icon" />
+        <div className="equipmentPage-holidayWarningBanner">
+          <FiCalendar className="equipmentPage-holidayIcon" />
           <span>{holidayWarning}</span>
         </div>
       </div>

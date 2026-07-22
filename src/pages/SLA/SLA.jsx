@@ -40,44 +40,58 @@ const SLA = () => {
   };
 
   return (
-    <div className="sla-page">
-      <div className="breadcrumb">Admin &gt; SLA Config</div>
-      <h1 className="page-title">SLA Configuration</h1>
-      <p className="page-subtitle">
+    <div className="slaPage">
+      <div className="slaPage-breadcrumb">Admin &gt; SLA Config</div>
+      <h1 className="slaPage-title">SLA Configuration</h1>
+      <p className="slaPage-subtitle">
         Regulatory reporting deadlines by incident severity (NFR-06)
       </p>
 
-      <div className="info-banner">
-        <span className="info-icon">!</span>
+      <div className="slaPage-infoBanner">
+        <span className="slaPage-infoIcon">!</span>
         <span>
           Deadlines fixed to AD-08 severity tiers. Simulated — nothing is
           transmitted externally (NFR-05).
         </span>
       </div>
 
-      <div className="table-header">
-        <div className="col severity">Severity</div>
-        <div className="col external">External Report Required</div>
-        <div className="col deadline">Reporting Deadline</div>
-        <div className="col regulatory">Regulatory Body</div>
-        <div className="col"></div>
+      <div className="slaPage-tableHeader">
+        <div className="slaPage-col slaPage-col--severity">Severity</div>
+        <div className="slaPage-col slaPage-col--external">
+          External Report Required
+        </div>
+        <div className="slaPage-col slaPage-col--deadline">
+          Reporting Deadline
+        </div>
+        <div className="slaPage-col slaPage-col--regulatory">
+          Regulatory Body
+        </div>
+        <div className="slaPage-col slaPage-col--action"></div>
       </div>
 
-      <div className="sla-table">
+      <div className="slaPage-table">
         {SLA_DATA.map((sla) => (
-          <div className="sla-row" key={sla.severity}>
-            <div className="col severity">
-              <span className={`badge ${sla.color}`}>{sla.severity}</span>
+          <div className="slaPage-row" key={sla.severity}>
+            <div className="slaPage-col slaPage-col--severity">
+              <span className={`slaPage-badge slaPage-badge--${sla.color}`}>
+                {sla.severity}
+              </span>
             </div>
-            <div className="col external">{sla.externalReportRequired}</div>
-            <div className="col deadline">{sla.deadline}</div>
-            <div className="col regulatory">{sla.regulatory}</div>
-            <div className="col">
+            <div className="slaPage-col slaPage-col--external">
+              {sla.externalReportRequired}
+            </div>
+            <div className="slaPage-col slaPage-col--deadline">
+              {sla.deadline}
+            </div>
+            <div className="slaPage-col slaPage-col--regulatory">
+              {sla.regulatory}
+            </div>
+            <div className="slaPage-col slaPage-col--action">
               {sla.externalReportRequired === "No" ? (
-                <span className="na-text">N/A</span>
+                <span className="slaPage-naText">N/A</span>
               ) : (
                 <button
-                  className="edit-button"
+                  className="slaPage-editButton"
                   onClick={() => handleEdit(sla.severity)}
                 >
                   Edit
@@ -88,7 +102,7 @@ const SLA = () => {
         ))}
       </div>
 
-      <p className="footnote">
+      <p className="slaPage-footnote">
         Only Deadline and Regulatory Body are editable. Values match M7 Incident
         List (SLA Countdown), Incident Detail, and Submit External Report modal
         (S6) — e.g. Major=24h, Moderate=48h window.

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import NurseSidebar from "../../components/Sidebar/NurseSidebar";
 import "./InitialAssessment.css";
 import {
   MdNotificationsNone,
@@ -21,56 +22,7 @@ const InitialAssessment = () => {
   return (
     <div className="init-assess-layout">
       {/* SIDEBAR VỚI THẺ LINK CHUẨN */}
-      <aside className="init-assess-sidebar">
-        <div className="init-assess-brand">
-          <MdMenu size={24} className="icon-menu" />
-          <div className="brand-text">
-            <strong>NHMS</strong>
-            <span></span>
-          </div>
-        </div>
-        <nav className="init-assess-menu">
-          <div className="menu-item">
-            <Link to="/dashboard-nurse" className="menu-link">
-              <MdDashboard size={22} /> <span>Dashboard</span>
-            </Link>
-          </div>
-          <div className="menu-item active">
-            <Link to="/resident-list" className="menu-link">
-              <MdPeople size={22} /> <span>Residents</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/care-planning" className="menu-link">
-              <MdAssignment size={22} /> <span>Care Planning</span>
-            </Link>
-          </div>
-          <div className="menu-item disabled">
-            <Link to="/eMAR" className="menu-link">
-              <MdBloodtype size={22} /> <span>eMAR</span>
-              <span className="badge-soon">soon</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/incident-risk" className="menu-link">
-              <MdReportProblem size={22} /> <span>Incident & Risk</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/reports" className="menu-link">
-              <MdBarChart size={22} /> <span>Reports</span>
-            </Link>
-          </div>
-        </nav>
-        <div className="init-assess-footer-menu">
-          <div className="menu-item">
-            <div className="menu-link">
-              {" "}
-              <MdLogout /> Logout
-            </div>
-          </div>
-        </div>
-      </aside>
+      <NurseSidebar />
 
       {/* MAIN CONTENT */}
       <main className="init-assess-main">

@@ -1,22 +1,15 @@
 import React, { useState, useEffect } from "react";
 import {
-  MdMenu,
   MdNotificationsNone,
   MdHelpOutline,
   MdAccountCircle,
   MdArrowDropDown,
-  MdDashboard,
-  MdPeopleOutline,
-  MdAssignment,
-  MdBloodtype,
-  MdReportProblem,
-  MdBarChart,
-  MdLogout,
   MdWarningAmber,
   MdCheckCircle,
 } from "react-icons/md";
 import { Link, useParams } from "react-router-dom";
 import "./CreateEditResident.css";
+import NurseSidebar from "../../components/Sidebar/NurseSidebar";
 
 const CreateEditResident = () => {
   const { id } = useParams();
@@ -30,14 +23,14 @@ const CreateEditResident = () => {
   const [lastName, setLastName] = useState("");
   const [ssn, setSsn] = useState("");
   const [emergencyContact, setEmergencyContact] = useState("");
-  const [isDuplicateName, setIsDuplicateName] = useState(false); // State quản lý cảnh báo trùng
+  const [isDuplicateName, setIsDuplicateName] = useState(false); // State Duplicate alert management
 
   // ==========================================
-  // [KHU VỰC API 1]: ĐỔ DỮ LIỆU KHI EDIT
+  // [AREA API 1]: POPULATE DATA ON EDIT
   // ==========================================
   useEffect(() => {
     if (isEdit) {
-      /* BỎ GHI CHÚ ĐOẠN NÀY KHI CÓ API
+      /* REMOVE THE COMMENT FOR THIS SECTION ONCE THE API IS AVAILABLE
       fetch(`https://api.du-an.com/residents/${id}`)
         .then(response => response.json())
         .then(data => {
@@ -49,7 +42,7 @@ const CreateEditResident = () => {
         .catch(err => console.error("Lỗi lấy dữ liệu:", err));
       */
 
-      // --- MOCK DATA (Xóa đoạn này khi đã ghép API) ---
+      // --- MOCK DATA (DELETE WHEN HAVE API) ---
       setFirstName("Elena");
       setLastName("Ramos");
       setSsn("123-45-6789");
@@ -59,12 +52,12 @@ const CreateEditResident = () => {
   }, [id, isEdit]);
 
   // ==========================================
-  // [KHU VỰC API 2]: KIỂM TRA TRÙNG LẶP TÊN
+  // [API AREA 2]: NAME DUPLICATE CHECK
   // ==========================================
   useEffect(() => {
-    // Chỉ kiểm tra khi người dùng đã nhập cả First và Last Name
+    // Only perform the check when the user has entered both First and Last Name.
     if (firstName.trim() !== "" && lastName.trim() !== "") {
-      /* BỎ GHI CHÚ ĐOẠN NÀY KHI CÓ API
+      /*  REMOVE THE COMMENT FOR THIS SECTION ONCE THE API IS AVAILABLE
       fetch(`https://api.du-an.com/check-duplicate?first=${firstName}&last=${lastName}`)
         .then(response => response.json())
         .then(data => {
@@ -74,7 +67,7 @@ const CreateEditResident = () => {
         .catch(err => console.error("Lỗi check trùng lặp:", err));
       */
 
-      // --- MOCK LOGIC (Xóa đoạn này khi đã ghép API) ---
+      // --- MOCK LOGIC (DELETE WHEN HAVE API) ---
       if (
         firstName.trim().toLowerCase() === "elena" &&
         lastName.trim().toLowerCase() === "ramos"
@@ -89,133 +82,68 @@ const CreateEditResident = () => {
     }
   }, [firstName, lastName]);
 
-  // 3. LOGIC TỰ ĐỘNG ĐÁNH GIÁ (TICK XANH)
+  // 3. LOGIC AUTOMATED ASSESSMENT (GREEN TICK)
   const isRequiredComplete = firstName.trim() !== "" && lastName.trim() !== "";
   const isSsnValid = ssn.trim().length === 11;
   const isEmergencyContactAdded = emergencyContact.trim() !== "";
 
   return (
-    <div className="nhms-container">
-      {/* HEADER TOP */}
-      <header className="nhms-header">
-        <div className="header-left">
-          <button className="menu-btn">
-            <MdMenu />
-          </button>
-          <div className="logo-area">
-            <span className="logo-bold">NHMS</span>
-            <span className="logo-sub">Nursing Home Management System</span>
-          </div>
-        </div>
-        <div className="header-right">
-          <span className="header-icon">
-            <div className="notification-dot"></div>
-            <MdNotificationsNone />
-          </span>
-          <span className="header-icon">
-            <MdHelpOutline />
-          </span>
-          <div className="user-profile">
-            <MdAccountCircle className="avatar" />
-            <div className="user-info">
-              <span className="user-name">Priya Shah</span>
-              <span className="user-role">Admission Staff</span>
-            </div>
-            <span className="profile-arrow">
-              <MdArrowDropDown />
-            </span>
-          </div>
-        </div>
-      </header>
+    <div className="cer-layout">
+      {/* SIDEBAR  */}
+      <NurseSidebar />
 
-      <div className="nhms-workspace">
-        {/* SIDEBAR TRÁI */}
-        <aside className="nhms-sidebar">
-          <ul className="sidebar-menu">
-            <Link to="/dashboard-nurse" className="menu-link">
-              <li className="menu-item">
-                <div className="menu-item-content">
-                  <MdDashboard size={20} /> Dashboard
-                </div>
-              </li>
-            </Link>
-            <Link to="/residents-detail" className="menu-link">
-              <li className="menu-item active">
-                <div className="menu-item-content">
-                  <MdPeopleOutline size={18} /> Residents
-                </div>
-              </li>
-            </Link>
-            <Link to="/careplan/list" className="menu-link">
-              <li className="menu-item">
-                <div className="menu-item-content">
-                  <MdAssignment size={18} /> Care Planning
-                </div>
-              </li>
-            </Link>
-            <Link to="/emar" className="menu-link">
-              <li className="menu-item disabled">
-                <div className="menu-item-content">
-                  <MdBloodtype size={18} /> eMAR
-                </div>
-                <span className="badge-soon">soon</span>
-              </li>
-            </Link>
-            <Link to="/incident-risk" className="menu-link">
-              <li className="menu-item">
-                <div className="menu-item-content">
-                  <MdReportProblem size={18} /> Incident & Risk
-                </div>
-              </li>
-            </Link>
-            <Link to="/reports" className="menu-link">
-              <li className="menu-item">
-                <div className="menu-item-content">
-                  <MdBarChart size={18} /> Reports
-                </div>
-              </li>
-            </Link>
-          </ul>
-          <div className="sidebar-footer">
-            <span className="menu-item">
-              <div className="menu-item-content">
-                <MdLogout size={18} /> Logout
+      {/* MAIN COTENT */}
+      <main className="cer-main">
+        {/* HEADER TOP (Chuẩn hóa) */}
+        <header className="cer-header-top">
+          <div className="header-left"></div>
+          <div className="header-right">
+            <MdNotificationsNone className="icon-action" size={26} />
+            <MdHelpOutline className="icon-action" size={26} />
+            <div className="user-profile">
+              <MdAccountCircle size={34} color="#94a3b8" />
+              <div className="user-info">
+                <span className="user-name">Priya Shah</span>
+                <span className="user-role">Admission Staff</span>
               </div>
-            </span>
+              <MdArrowDropDown size={20} color="#475569" />
+            </div>
           </div>
-        </aside>
+        </header>
 
-        {/* NỘI DUNG CHÍNH BÊN PHẢI */}
-        <main className="edit-resident-main">
-          <div className="edit-scroll-area">
-            <div className="page-header">
-              <span className="breadcrumb">
+        {/* WORKSPACE */}
+        <div className="cer-workspace">
+          <div className="cer-container">
+            {/* PAGE HEADER */}
+            <div className="cer-page-header">
+              <span className="cer-breadcrumb">
                 Residents &gt; {isEdit ? "Edit Resident" : "Create Resident"}
               </span>
-              <div className="title-row">
+              <div className="cer-title-row">
                 <h2>{isEdit ? "Edit Resident" : "Create Resident"}</h2>
-                {isEdit && <span className="badge-pending">Pending</span>}
+                {isEdit && <span className="cer-badge-pending">Pending</span>}
               </div>
               {isEdit && (
-                <span className="subtitle">Elona Ramos • Room 106-A</span>
+                <span className="cer-subtitle">Elena Ramos • Room 106-A</span>
               )}
             </div>
 
-            <div className="edit-grid">
-              {/* CỘT TRÁI: FORM */}
-              <div className="form-column">
-                <section className="form-card relative-card">
+            {/* FORM GRID (Left: Form, Right: Widget) */}
+            <div className="cer-grid-layout">
+              {/* LEFT COLUMN: FORM */}
+              <div className="cer-form-column">
+                {/* Section 1: Personal Info */}
+                <section className="cer-card">
                   {isEdit && (
-                    <div className="status-box">
-                      <span className="status-initials">ER</span>
+                    <div className="cer-status-box">
+                      <span className="cer-status-initials">ER</span>
                     </div>
                   )}
-
                   <h3>Personal Information</h3>
-                  <div className="input-grid-3-cols">
-                    <div className="create-edit-input-group">
+                  <div className="cer-input-grid-3">
+                    <div className="cer-input-group">
                       <label>
-                        First Name <span className="required">*</span>
+                        First Name <span className="cer-required">*</span>
                       </label>
                       <input
                         type="text"
@@ -224,9 +152,9 @@ const CreateEditResident = () => {
                         placeholder="Thử gõ 'Elena'..."
                       />
                     </div>
-                    <div className="create-edit-input-group">
+                    <div className="cer-input-group">
                       <label>
-                        Last Name <span className="required">*</span>
+                        Last Name <span className="cer-required">*</span>
                       </label>
                       <input
                         type="text"
@@ -235,19 +163,19 @@ const CreateEditResident = () => {
                         placeholder="Thử gõ 'Ramos'..."
                       />
                     </div>
-                    <div className="create-edit-input-group">
+                    <div className="cer-input-group">
                       <label>
-                        Date of Birth <span className="required">*</span>
+                        Date of Birth <span className="cer-required">*</span>
                       </label>
                       <input type="text" />
                     </div>
-                    <div className="create-edit-input-group">
+                    <div className="cer-input-group">
                       <label>Gender</label>
                       <input type="text" />
                     </div>
-                    <div className="create-edit-input-group">
+                    <div className="cer-input-group">
                       <label>
-                        SSN <span className="required">*</span>
+                        SSN <span className="cer-required">*</span>
                       </label>
                       <input
                         type="text"
@@ -256,45 +184,47 @@ const CreateEditResident = () => {
                         placeholder="XXX-XX-XXXX"
                       />
                     </div>
-                    <div className="create-edit-input-group">
+                    <div className="cer-input-group">
                       <label>Marital Status</label>
                       <input type="text" />
                     </div>
-                    <div className="create-edit-input-group">
+                    <div className="cer-input-group">
                       <label>
-                        Status <span className="required">*</span>
+                        Status <span className="cer-required">*</span>
                       </label>
                       <input type="text" />
                     </div>
-                    <div className="create-edit-input-group">
+                    <div className="cer-input-group">
                       <label>
-                        Referral Source <span className="required">*</span>
+                        Referral Source <span className="cer-required">*</span>
                       </label>
                       <input type="text" />
                     </div>
-                    <div className="create-edit-input-group">
+                    <div className="cer-input-group">
                       <label>Referring Facility</label>
                       <input type="text" />
                     </div>
                   </div>
                 </section>
 
-                <section className="form-card">
+                {/* Section 2: Contact & Address */}
+                <section className="cer-card">
                   <h3>Contact & Address</h3>
-                  <div className="input-grid">
-                    <div className="create-edit-input-group">
+                  <div className="cer-input-grid-2">
+                    <div className="cer-input-group">
                       <label>
-                        Phone <span className="required">*</span>
+                        Phone <span className="cer-required">*</span>
                       </label>
                       <input type="text" />
                     </div>
-                    <div className="create-edit-input-group">
+                    <div className="cer-input-group">
                       <label>Address</label>
                       <input type="text" />
                     </div>
-                    <div className="create-edit-input-group">
+                    <div className="cer-input-group">
                       <label>
-                        Emergency Contact <span className="required">*</span>
+                        Emergency Contact{" "}
+                        <span className="cer-required">*</span>
                       </label>
                       <input
                         type="text"
@@ -302,130 +232,137 @@ const CreateEditResident = () => {
                         onChange={(e) => setEmergencyContact(e.target.value)}
                       />
                     </div>
-                    <div className="create-edit-input-group">
+                    <div className="cer-input-group">
                       <label>
-                        Emergency Phone <span className="required">*</span>
+                        Emergency Phone <span className="cer-required">*</span>
                       </label>
                       <input type="text" />
                     </div>
                   </div>
                 </section>
 
-                <section className="form-card">
-                  <div className="section-header">
+                {/* Section 3: POA */}
+                <section className="cer-card">
+                  <div className="cer-section-header">
                     <h3>Authorized Representative / POA</h3>
-                    <div className="toggle-wrapper">
+                    <div
+                      className="cer-toggle-wrapper"
+                      onClick={() => setPoaOnFile(!poaOnFile)}
+                    >
                       <div
-                        className={`toggle-switch ${poaOnFile ? "active" : ""}`}
-                        onClick={() => setPoaOnFile(!poaOnFile)}
+                        className={`cer-toggle-switch ${poaOnFile ? "active" : ""}`}
                       >
-                        <div className="toggle-knob"></div>
+                        <div className="cer-toggle-knob"></div>
                       </div>
-                      <span className="toggle-label">POA on file</span>
+                      <span className="cer-toggle-label">POA on file</span>
                     </div>
                   </div>
-                  <div className="input-grid">
-                    <div className="create-edit-input-group">
+                  <div className="cer-input-grid-2">
+                    <div className="cer-input-group">
                       <label>POA Name</label>
-                      <input type="text" />
+                      <input type="text" disabled={!poaOnFile} />
                     </div>
-                    <div className="create-edit-input-group">
+                    <div className="cer-input-group">
                       <label>Relationship</label>
-                      <input type="text" />
+                      <input type="text" disabled={!poaOnFile} />
                     </div>
                   </div>
                 </section>
 
-                <section className="form-card">
+                {/* Section 4: Insurance */}
+                <section className="cer-card">
                   <h3>Insurance / Payer</h3>
-                  <div className="input-grid">
-                    <div className="create-edit-input-group">
+                  <div className="cer-input-grid-2">
+                    <div className="cer-input-group">
                       <label>
-                        Payer Source <span className="required">*</span>
+                        Payer Source <span className="cer-required">*</span>
                       </label>
                       <input type="text" />
                     </div>
-                    <div className="create-edit-input-group">
+                    <div className="cer-input-group">
                       <label>Payer Type</label>
                       <input type="text" />
                     </div>
-                    <div className="create-edit-input-group">
+                    <div className="cer-input-group">
                       <label>Medicare Number</label>
                       <input type="text" />
                     </div>
-                    <div className="create-edit-input-group">
+                    <div className="cer-input-group">
                       <label>Insurance Provider</label>
                       <input type="text" />
                     </div>
-                    <div className="create-edit-input-group">
+                    <div className="cer-input-group">
                       <label>Auth Start Date</label>
                       <input type="text" />
                     </div>
-                    <div className="create-edit-input-group">
+                    <div className="cer-input-group">
                       <label>Auth End Date</label>
                       <input type="text" />
                     </div>
                   </div>
                 </section>
 
-                <section className="form-card">
+                {/* Section 5: DNR */}
+                <section className="cer-card">
                   <h3>Do Not Resuscitate (DNR)</h3>
-                  <div className="toggle-wrapper mt-8">
+                  <div
+                    className="cer-toggle-wrapper mt-8"
+                    onClick={() => setDnrActive(!dnrActive)}
+                  >
                     <div
-                      className={`toggle-switch ${dnrActive ? "active" : ""}`}
-                      onClick={() => setDnrActive(!dnrActive)}
+                      className={`cer-toggle-switch ${dnrActive ? "active" : ""}`}
                     >
-                      <div className="toggle-knob"></div>
+                      <div className="cer-toggle-knob"></div>
                     </div>
-                    <span className="toggle-label">No — DNR not active</span>
+                    <span className="cer-toggle-label">
+                      {dnrActive
+                        ? "Yes — DNR is active"
+                        : "No — DNR not active"}
+                    </span>
                   </div>
                 </section>
               </div>
 
-              {/* CỘT PHẢI: WIDGETS */}
-              <div className="widget-column">
-                {/* HIỂN THỊ CẢNH BÁO NẾU PHÁT HIỆN TRÙNG TÊN */}
+              {/* RIGHT COLUMN: WIDGETS */}
+              <div className="cer-widget-column">
+                {/* Cảnh báo trùng tên */}
                 {isDuplicateName && (
-                  <div className="alert-card warning animate-fade-in">
-                    <MdWarningAmber className="alert-icon" />
-                    <div className="alert-text">
+                  <div className="cer-alert-card animate-fade-in">
+                    <MdWarningAmber className="cer-alert-icon" />
+                    <div className="cer-alert-text">
                       <h4>Similar resident name exists.</h4>
                       <p>Please verify before saving.</p>
                     </div>
                   </div>
                 )}
 
-                <div className="widget-card">
+                {/* Validation Card */}
+                <div className="cer-widget-card">
                   <h3>Validation</h3>
-                  <ul className="validation-list">
+                  <ul className="cer-validation-list">
                     <li>
                       <MdCheckCircle
-                        className="check-icon"
+                        className="cer-check-icon"
                         style={{
-                          color: isRequiredComplete ? "#2563eb" : "#d1d5db",
-                          transition: "color 0.3s",
+                          color: isRequiredComplete ? "#2563eb" : "#cbd5e1",
                         }}
                       />
                       Required fields complete
                     </li>
                     <li>
                       <MdCheckCircle
-                        className="check-icon"
-                        style={{
-                          color: isSsnValid ? "#2563eb" : "#d1d5db",
-                          transition: "color 0.3s",
-                        }}
+                        className="cer-check-icon"
+                        style={{ color: isSsnValid ? "#2563eb" : "#cbd5e1" }}
                       />
                       SSN format valid
                     </li>
                     <li>
                       <MdCheckCircle
-                        className="check-icon"
+                        className="cer-check-icon"
                         style={{
                           color: isEmergencyContactAdded
                             ? "#2563eb"
-                            : "#d1d5db",
-                          transition: "color 0.3s",
+                            : "#cbd5e1",
                         }}
                       />
                       Emergency contact required
@@ -433,10 +370,11 @@ const CreateEditResident = () => {
                   </ul>
                 </div>
 
-                <div className="widget-card role-card">
-                  <span className="role-badge">Role</span>
-                  <h4>Admission Staff</h4>
-                  <p>
+                {/* Role Card */}
+                <div className="cer-widget-card">
+                  <span className="cer-role-badge">Role</span>
+                  <h4 className="cer-role-title">Admission Staff</h4>
+                  <p className="cer-role-desc">
                     Can create/edit intake fields.
                     <br />
                     Clinical fields are read-only here.
@@ -445,21 +383,24 @@ const CreateEditResident = () => {
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="form-actions-footer">
-            <div className="footer-left">
-              {isEdit && <button className="btn-outline">Discharge</button>}
-              {isEdit && <button className="btn-outline">Change Status</button>}
-            </div>
-            <div className="footer-right">
-              <button className="btn-outline">Cancel</button>
-              <button className="btn-primary">
-                {isEdit ? "Save Changes" : "Create Resident"}
-              </button>
-            </div>
+        {/* FOOTER FIXED ACTION */}
+        <div className="cer-footer-actions">
+          <div className="cer-footer-left">
+            {isEdit && <button className="cer-btn-outline">Discharge</button>}
+            {isEdit && (
+              <button className="cer-btn-outline">Change Status</button>
+            )}
           </div>
-        </main>
-      </div>
+          <div className="cer-footer-right">
+            <button className="cer-btn-outline">Cancel</button>
+            <button className="cer-btn-primary">
+              {isEdit ? "Save Changes" : "Create Resident"}
+            </button>
+          </div>
+        </div>
+      </main>
     </div>
   );
 };

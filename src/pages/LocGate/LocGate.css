@@ -318,3 +318,90 @@
 .btn-redirect:hover {
   background-color: #1d4ed8;
 }
+/* ==========================================================================
+   RESPONSIVE: LOC GATE (CARE PLAN LOCKED)
+   ========================================================================== */
+
+/* 1.TABLET & MOBILE(Under 768px) */
+@media (max-width: 768px) {
+  .cp-locked-main,
+  .cp-locked-workspace,
+  .cp-locked-container {
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  .cp-locked-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin: 0 auto !important;
+  }
+
+  .cp-locked-header-top {
+    padding: 0 16px !important;
+  }
+  .cp-locked-header-top .user-info {
+    display: none !important;
+  }
+
+  /* Alert Banner:Icons and text automatically adjust to wrap lines if the line is too narrow*/
+  .alert-warning-banner {
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+}
+
+/* 2. MOBILE  (Under 480px */
+@media (max-width: 480px) {
+  .page-header-block h1 {
+    font-size: 22px !important;
+  }
+  .subtitle-row {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  /* Alert banner */
+  .alert-warning-banner {
+    flex-direction: column !important;
+  }
+
+  /* =========================================================
+     LOCKED 
+     ========================================================= */
+  .locked-card {
+    padding: 24px 16px !important;
+  }
+
+  .locked-desc {
+    font-size: 14px !important;
+  }
+
+  /* Hide the <br/> tag so that the text automatically wraps naturally on small screens */
+  .locked-desc br {
+    display: none !important;
+  }
+
+  /* Press all the buttons and wrappers inside to 100% horizontal width*/
+  .tooltip-wrapper,
+  .rpd-link-action,
+  .btn-disabled,
+  .btn-redirect {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Manage the Tooltip box to prevent screen overflow */
+  .tooltip-box {
+    width: 100% !important;
+    white-space: normal !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+}

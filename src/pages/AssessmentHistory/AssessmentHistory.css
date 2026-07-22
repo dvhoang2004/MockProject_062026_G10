@@ -1,7 +1,7 @@
 /* ==========================================================================
-   KHUNG BỐ CỤC CHUẨN
+   LAYOUT CƠ BẢN
    ========================================================================== */
-.assess-hist-layout {
+.ah-layout {
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -10,115 +10,15 @@
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
-
-/* SIDEBAR & HEADER (Khớp viền, Thẻ Link chuẩn, Căn lề Sidebar) */
-.assess-hist-sidebar {
-  width: 260px;
-  background: #ffffff;
-  border-right: none;
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-}
-.assess-hist-brand {
-  height: 64px !important;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 0 24px !important;
-  border-bottom: 1px solid #e2e8f0 !important;
-  box-sizing: border-box !important;
-}
-.brand-text {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-}
-.brand-text strong {
-  font-size: 18px;
-  color: #1f4bb3;
-}
-.brand-text span {
-  font-size: 12px;
-  color: #64748b;
-  border-left: 1px solid #cbd5e1;
-  padding-left: 8px;
-}
-
-.assess-hist-menu {
-  padding: 16px 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.assess-hist-footer-menu {
-  border-top: none;
-  padding: 16px 0;
-}
-.menu-item {
-  margin: 2px 16px 2px 0 !important;
-  border-radius: 0 24px 24px 0 !important;
-  border: 1px solid transparent;
-  border-left: 4px solid transparent;
-  transition: all 0.2s ease;
-}
-.menu-item:hover:not(.disabled):not(.active) {
-  background-color: #f8fafc !important;
-}
-.menu-item .menu-link {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  gap: 12px !important;
-  width: 100% !important;
-  padding: 8px 16px !important;
-  text-decoration: none !important;
-  color: #475569 !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  cursor: pointer;
-}
-.menu-item:hover:not(.disabled):not(.active) .menu-link {
-  color: #2563eb !important;
-}
-.menu-item.active {
-  background: #f0f8ff !important;
-  border: 1px solid #bbf7d0 !important;
-  border-left: 4px solid #2563eb !important;
-}
-.menu-item.active .menu-link {
-  color: #2563eb !important;
-  font-weight: 600 !important;
-}
-.menu-item svg {
-  flex-shrink: 0 !important;
-  display: block !important;
-}
-.menu-item span {
-  display: inline-block !important;
-  line-height: 1 !important;
-  transform: translateY(1px);
-}
-.badge-soon {
-  background: #f1f5f9;
-  color: #94a3b8;
-  font-size: 10px;
-  padding: 2px 6px;
-  border-radius: 10px;
-  margin-left: auto !important;
-  font-weight: 600;
-  transform: translateY(0) !important;
-}
-
-/* MAIN & TOP HEADER */
-.assess-hist-main {
+.ah-main {
   flex: 1;
   display: flex;
   flex-direction: column;
   position: relative;
 }
-.assess-hist-header-top {
+
+/* HEADER TOP */
+.ah-header-top {
   height: 64px;
   background: #ffffff;
   border-bottom: 1px solid #e2e8f0;
@@ -141,6 +41,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 .user-info {
   display: flex;
@@ -159,63 +60,173 @@
   margin-top: 2px;
 }
 
-/* WORKSPACE - Giữ nguyên độ rộng 1440px */
-.assess-hist-workspace {
+/* WORKSPACE CONTAINER */
+.ah-workspace {
   flex: 1;
   overflow-y: auto;
-  padding-bottom: 80px;
+  padding-bottom: 60px;
 }
-.assess-hist-container {
+.ah-container {
   padding: 32px;
   max-width: 1440px;
   margin: 0 auto;
 }
-.breadcrumb {
+.ah-breadcrumb {
   font-size: 13px;
   color: #64748b;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 /* ==========================================================================
-   TITLE BLOCK & BUTTONS
+   PROFILE HEADER (KHÔI PHỤC)
    ========================================================================== */
-.page-header-flex {
+.ah-profile-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 24px;
+  align-items: center;
+  margin-bottom: 32px;
 }
-.title-section h1 {
+.ah-profile-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.ah-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 24px;
-  color: #0f172a;
-  margin: 0 0 8px 0;
   font-weight: 700;
+  color: #475569;
+  background-color: #f8fafc;
 }
-.title-section p {
+.ah-profile-info h1 {
+  margin: 0 0 4px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+}
+.ah-meta-text {
+  margin: 0 0 12px 0;
   font-size: 13px;
   color: #64748b;
-  margin: 0;
+}
+.ah-badges-row {
+  display: flex;
+  gap: 8px;
 }
 
-.action-section {
+/* BADGES (Viền nhạt) */
+.ah-badge {
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #ffffff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+.badge-green-outline {
+  border: 1px solid #86efac;
+  color: #16a34a;
+  background-color: #f0fdf4;
+}
+.badge-yellow-outline {
+  border: 1px solid #fde047;
+  color: #ca8a04;
+  background-color: #fefce8;
+}
+.badge-blue-outline {
+  border: 1px solid #bfdbfe;
+  color: #2563eb;
+  background-color: #eff6ff;
+}
+.badge-gray-outline {
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  background-color: #f8fafc;
+}
+
+/* ==========================================================================
+   TABS NAVIGATION (KHÔI PHỤC & ĐỔI TÊN CLASS ĐỂ TRÁNH XUNG ĐỘT)
+   ========================================================================== */
+.ah-tabs-nav {
+  display: flex;
+  gap: 32px;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 32px;
+}
+.ah-tab {
+  padding: 0 4px 12px 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ah-tab:hover:not(.disabled) {
+  color: #0f172a;
+}
+.ah-tab.ah-tab-active {
+  color: #2563eb !important;
+  border-bottom: 2px solid #2563eb;
+  background-color: transparent;
+}
+.ah-tab.disabled {
+  color: #cbd5e1;
+  cursor: not-allowed;
+}
+.tab-badge-soon {
+  background: #f1f5f9;
+  color: #94a3b8;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+/* ==========================================================================
+   TABLE TOOLBAR & BUTTONS
+   ========================================================================== */
+.ah-table-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.ah-record-count {
+  font-size: 13px;
+  color: #64748b;
+}
+.ah-toolbar-actions {
   display: flex;
   gap: 12px;
 }
-.btn-secondary {
-  background: #ffffff;
+
+.ah-btn-outline {
+  background-color: #ffffff;
   border: 1px solid #cbd5e1;
   color: #475569;
-  padding: 10px 16px;
+  padding: 10px 20px;
   border-radius: 6px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: 0.2s;
 }
-.btn-secondary:hover {
-  background: #f1f5f9;
+.ah-btn-outline:hover {
+  background-color: #f8fafc;
 }
-.btn-primary {
+.ah-btn-primary {
   background-color: #2563eb;
   color: #ffffff;
   border: none;
@@ -225,118 +236,214 @@
   font-weight: 600;
   cursor: pointer;
   transition: 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
-.btn-primary:hover {
+.ah-btn-primary:hover {
   background-color: #1d4ed8;
 }
 
 /* ==========================================================================
-   BẢNG TABLE LỊCH SỬ (TABLE CARD)
+   TABLE LỊCH SỬ
    ========================================================================== */
-.table-card {
+.ah-table-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
+  overflow: hidden;
   margin-bottom: 24px;
-  overflow: hidden; /* Cắt góc bo tròn của bảng */
 }
-.assess-table {
+.ah-table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
 }
-.assess-table th {
+.ah-table th {
   padding: 16px 24px;
   font-size: 13px;
   font-weight: 600;
   color: #64748b;
   border-bottom: 1px solid #e2e8f0;
+  background: #ffffff;
 }
-.assess-table td {
-  padding: 20px 24px;
+.ah-table td {
+  padding: 16px 24px;
   font-size: 13px;
   color: #334155;
   border-bottom: 1px solid #e2e8f0;
   vertical-align: middle;
 }
-.assess-table tr:last-child td {
-  border-bottom: none; /* Dòng cuối không có viền dưới */
+.ah-table tr:last-child td {
+  border-bottom: none;
 }
 .fw-bold {
   font-weight: 600;
-  color: #0f172a !important;
+  color: #0f172a;
 }
 .text-right {
   text-align: right;
 }
 
-/* Các loại Badge (Nhãn màu) */
-.badge-type {
-  display: inline-block;
-  padding: 6px 12px;
+/* BADGES (Nền đặc cho loại Assessment) */
+.ah-badge-solid {
+  padding: 6px 14px;
   border-radius: 20px;
   font-size: 12px;
   font-weight: 600;
+  display: inline-block;
+  white-space: nowrap;
 }
-.badge-type.reassessment {
+.bg-purple {
   background-color: #f3e8ff;
-  color: #9333ea;
+  color: #7e22ce;
 }
-.badge-type.initial {
-  background-color: #eff6ff;
+.bg-blue {
+  background-color: #dbeafe;
   color: #2563eb;
 }
 
-.badge-tier {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-  border: 1px solid transparent;
-}
-.badge-tier.level-3 {
-  border-color: #fde047;
-  color: #b45309;
-  background-color: #fefce8;
-}
-.badge-tier.level-2 {
-  border-color: #bfdbfe;
-  color: #1d4ed8;
-  background-color: #eff6ff;
-}
-
-/* Nút Action Link trong bảng */
-.action-link {
+/* Link Action (Current View / Compare) */
+.ah-link-action {
   color: #2563eb;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-}
-.action-link:hover {
-  text-decoration: underline;
-}
-.action-link.current {
   font-weight: 700;
+  text-decoration: none;
+  font-size: 13px;
+}
+.ah-link-action:hover {
+  text-decoration: underline;
 }
 
 /* ==========================================================================
-   CADENCE NOTE CARD (Ghi chú dưới cùng)
+   INFO CARD (Bottom)
    ========================================================================== */
-.cadence-note-card {
+.ah-info-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
-.text-dark {
-  color: #1e293b;
-  margin: 0 0 8px 0;
+.ah-info-card h4 {
+  margin: 0;
   font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
 }
-.text-muted {
-  color: #64748b;
+.ah-info-card p {
   margin: 0;
   font-size: 13px;
-  line-height: 1.5;
+  color: #64748b;
+}
+/* ==========================================================================
+   RESPONSIVE: ASSESSMENT HISTORY
+   ========================================================================== */
+
+/* 1. SMALL LAPTOP  & TABLET (Under 1200px) */
+
+@media (max-width: 1200px) {
+  .ah-table-toolbar {
+    gap: 16px;
+  }
+}
+
+/* 2. TABLET & MOBILE (Under 768px) */
+@media (max-width: 768px) {
+  .ah-main,
+  .ah-workspace,
+  .ah-container {
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  .ah-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin: 0 auto !important;
+  }
+
+  .ah-header-top {
+    padding: 0 16px !important;
+  }
+  .ah-header-top .user-info {
+    display: none !important;
+  }
+
+  /* Header (Avatar & Meta info)  */
+  .ah-profile-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    height: auto !important;
+  }
+
+  /* Badges */
+  .ah-badges-row {
+    flex-wrap: wrap !important;
+  }
+}
+
+/* 3. MOBILE(Under 480px ) */
+@media (max-width: 480px) {
+  /* TABS*/
+  .ah-tabs-nav {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px !important;
+    scrollbar-width: none; /* Firefox */
+  }
+  .ah-tabs-nav::-webkit-scrollbar {
+    display: none !important; /* Chrome/Safari */
+  }
+  .ah-tab {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Toolbar*/
+  .ah-table-toolbar {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  /* Compare / New) 2 column  100% */
+  .ah-toolbar-actions {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  .ah-toolbar-actions button {
+    width: 100% !important;
+    justify-content: center !important;
+    margin: 0 !important;
+  }
+
+  .ah-info-card {
+    padding: 16px !important;
+  }
+  .ah-info-card h4 {
+    font-size: 14px !important;
+  }
+}
+
+/* ==========================================================================
+   HORIZONTAL SCROLL AUTHORIZATION FOR HISTORICAL DATA TABLES
+   ========================================================================== */
+.ah-table-card {
+  width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 16px;
+  box-sizing: border-box !important;
+}
+
+.ah-table-card table {
+  min-width: 700px !important;
 }

@@ -1,5 +1,7 @@
 import React from "react";
 import "./PreAdmission.css";
+import { Link } from "react-router-dom";
+import NurseSidebar from "../../components/Sidebar/NurseSidebar";
 import {
   MdNotificationsNone,
   MdHelpOutline,
@@ -22,44 +24,7 @@ const PreAdmissionScreening = () => {
   return (
     <div className="pre-adm-layout">
       {/* SIDEBAR BÊN TRÁI */}
-      <aside className="pre-adm-sidebar">
-        <div className="pre-adm-brand">
-          <MdMenu size={24} className="icon-menu" />
-          <div className="brand-text">
-            <strong>NHMS</strong>
-            <span></span>
-          </div>
-        </div>
-        <nav className="pre-adm-menu">
-          <div className="menu-item">
-            <MdDashboard size={22} /> <span>Dashboard</span>
-          </div>
-          {/* Nút Residents đang active */}
-          <div className="menu-item active">
-            <MdPeople size={22} /> <span>Residents</span>
-          </div>
-          <div className="menu-item">
-            <MdAssignment size={22} /> <span>Care Planning</span>
-          </div>
-          <div className="menu-item disabled">
-            <MdBloodtype size={22} /> <span>eMAR</span>
-            <span className="badge-soon">soon</span>
-          </div>
-          <div className="menu-item">
-            <MdReportProblem size={22} /> <span>Incident & Risk</span>
-          </div>
-          <div className="menu-item">
-            <MdBarChart size={22} /> <span>Reports</span>
-          </div>
-        </nav>
-        <div className="pre-adm-footer-menu">
-          <div className="menu-item">
-            {" "}
-            <MdLogout size={22} /> <span>Logout</span>
-          </div>
-        </div>
-      </aside>
-
+      <NurseSidebar />
       {/* KHU VỰC NỘI DUNG CHÍNH */}
       <main className="pre-adm-main">
         {/* HEADER */}
@@ -243,7 +208,9 @@ const PreAdmissionScreening = () => {
         {/* FOOTER CỐ ĐỊNH Ở ĐÁY */}
         <footer className="pre-adm-action-footer">
           <button className="btn-back">← Back</button>
-          <button className="btn-submit">Submit for Review</button>
+          <Link to="/admission-form">
+            <button className="btn-submit">Submit for Review</button>
+          </Link>
         </footer>
       </main>
     </div>

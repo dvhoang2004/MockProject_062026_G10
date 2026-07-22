@@ -1,7 +1,7 @@
 /* ==========================================================================
-   LAYOUT, SIDEBAR & HEADER 
+   LAYOUT 
    ========================================================================== */
-.loc-hist-layout {
+.lh-layout {
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -10,115 +10,15 @@
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
-
-.loc-hist-sidebar {
-  width: 260px;
-  background: #ffffff;
-  border-right: none;
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-}
-.loc-hist-brand {
-  height: 64px !important;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 0 24px !important;
-  border-bottom: 1px solid #e2e8f0 !important;
-  box-sizing: border-box !important;
-}
-.brand-text {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-}
-.brand-text strong {
-  font-size: 18px;
-  color: #1e55d5;
-}
-.brand-text span {
-  font-size: 12px;
-  color: #64748b;
-  border-left: none;
-  padding-left: 8px;
-}
-
-.loc-hist-menu {
-  padding: 16px 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.loc-hist-footer-menu {
-  border-top: none;
-  padding: 16px 0;
-}
-
-/* Menu  */
-.menu-item {
-  margin: 0px 16px 0px 0 !important;
-  border-radius: 0 24px 24px 0 !important;
-  border: 1px solid transparent;
-  border-left: 4px solid transparent;
-  transition: all 0.2s ease;
-}
-.menu-item:hover:not(.disabled):not(.active) {
-  background-color: #f8fafc !important;
-}
-.menu-item .menu-link {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  gap: 12px !important;
-  width: 100% !important;
-  padding: 4px 16px !important;
-  text-decoration: none !important;
-  color: #475569 !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  cursor: pointer;
-}
-.menu-item:hover:not(.disabled):not(.active) .menu-link {
-  color: #2563eb !important;
-}
-.menu-item.active {
-  background: #f0f8ff !important;
-  border: 1px solid #bbf7d0 !important;
-  border-left: 4px solid #2563eb !important;
-}
-.menu-item.active .menu-link {
-  color: #2563eb !important;
-  font-weight: 600 !important;
-}
-.menu-item svg {
-  flex-shrink: 0 !important;
-  display: block !important;
-}
-.menu-item span {
-  display: inline-block !important;
-  line-height: 1 !important;
-  transform: translateY(1px);
-}
-.badge-soon {
-  background: #f1f5f9;
-  color: #94a3b8;
-  font-size: 10px;
-  padding: 2px 6px;
-  border-radius: 10px;
-  margin-left: auto !important;
-  font-weight: 600;
-  transform: translateY(0) !important;
-}
-
-.loc-hist-main {
+.lh-main {
   flex: 1;
   display: flex;
   flex-direction: column;
   position: relative;
 }
-.loc-hist-header-top {
+
+/* HEADER TOP */
+.lh-header-top {
   height: 64px;
   background: #ffffff;
   border-bottom: 1px solid #e2e8f0;
@@ -127,6 +27,7 @@
   align-items: center;
   padding: 0 32px;
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 .header-right {
   display: flex;
@@ -141,6 +42,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 .user-info {
   display: flex;
@@ -159,55 +61,154 @@
   margin-top: 2px;
 }
 
-/* WORKSPACE */
-.loc-hist-workspace {
+/* WORKSPACE CONTAINER */
+.lh-workspace {
   flex: 1;
   overflow-y: auto;
   padding-bottom: 60px;
 }
-.loc-hist-container {
+.lh-container {
   padding: 32px;
   max-width: 1440px;
   margin: 0 auto;
 }
-.breadcrumb {
+.lh-breadcrumb {
   font-size: 13px;
   color: #64748b;
-  margin-bottom: 16px;
-}
-
-/* PAGE TITLE */
-.page-header-block {
   margin-bottom: 24px;
-}
-.page-header-block h1 {
-  font-size: 24px;
-  color: #0f172a;
-  margin: 0 0 8px 0;
-  font-weight: 700;
-}
-.page-header-block p {
-  font-size: 13px;
-  color: #64748b;
-  margin: 0;
 }
 
 /* ==========================================================================
-   TABLE LOC HISTORY
+   PROFILE HEADER
    ========================================================================== */
-.table-card {
+.lh-profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.lh-profile-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.lh-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #475569;
+  background-color: #f8fafc;
+}
+.lh-profile-info h1 {
+  margin: 0 0 4px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+}
+.lh-meta-text {
+  margin: 0 0 12px 0;
+  font-size: 13px;
+  color: #64748b;
+}
+.lh-badges-row {
+  display: flex;
+  gap: 8px;
+}
+
+.lh-badge {
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #ffffff;
+}
+.badge-green-outline {
+  border: 1px solid #86efac;
+  color: #16a34a;
+  background-color: #f0fdf4;
+}
+.badge-yellow-outline {
+  border: 1px solid #fde047;
+  color: #ca8a04;
+  background-color: #fefce8;
+}
+.badge-gray-outline {
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  background-color: #f8fafc;
+}
+
+/* ==========================================================================
+   TABS NAVIGATION
+   ========================================================================== */
+.lh-tabs-nav {
+  display: flex;
+  gap: 32px;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 32px;
+}
+.lh-tab {
+  padding: 0 4px 12px 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.lh-tab:hover:not(.disabled) {
+  color: #0f172a;
+}
+.lh-tab.lh-tab-active {
+  color: #2563eb !important;
+  border-bottom: 2px solid #2563eb;
+  background-color: transparent;
+}
+.lh-tab.disabled {
+  color: #cbd5e1;
+  cursor: not-allowed;
+}
+.tab-badge-soon {
+  background: #f1f5f9;
+  color: #94a3b8;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+/* ==========================================================================
+   TABLE & DATA
+   ========================================================================== */
+.lh-page-header-block {
+  margin-bottom: 16px;
+}
+.lh-record-count {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.lh-table-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
-  margin-bottom: 24px;
   overflow: hidden;
+  margin-bottom: 24px;
 }
-.loc-hist-table {
+.lh-table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
 }
-.loc-hist-table th {
+.lh-table th {
   padding: 16px 24px;
   font-size: 13px;
   font-weight: 600;
@@ -215,69 +216,151 @@
   border-bottom: 1px solid #e2e8f0;
   background: #ffffff;
 }
-.loc-hist-table td {
+.lh-table td {
   padding: 20px 24px;
   font-size: 13px;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid #f1f5f9;
   vertical-align: middle;
 }
-.loc-hist-table tr:last-child td {
+.lh-table tr:last-child td {
   border-bottom: none;
 }
 
-/* Text Type*/
+/* Text */
+.text-muted-dark {
+  color: #475569;
+}
+.text-muted {
+  color: #64748b;
+  font-style: italic;
+}
+.text-blue {
+  color: #2563eb;
+}
 .fw-bold {
   font-weight: 600;
 }
 .text-dark {
-  color: #0f172a !important;
-}
-.text-blue {
-  color: #2563eb !important;
-}
-.text-muted {
-  color: #94a3b8;
-}
-.text-muted-dark {
-  color: #475569;
+  color: #0f172a;
 }
 
-/* Level Badge Type  */
-.badge-tier {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px 16px;
-  border-radius: 20px;
+/* Tier Badges  */
+.lh-badge-tier {
+  padding: 6px 14px;
+  border-radius: 16px;
   font-size: 12px;
-  font-weight: 600;
-  border: 1px solid transparent;
+  font-weight: 700;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
 }
 .level-1 {
-  border-color: #86efac;
-  color: #166534;
-  background-color: #dcfce3;
+  background-color: #f0fdf4;
+  border: 1px solid #86efac;
+  color: #16a34a;
 }
 .level-2 {
-  border-color: #bfdbfe;
-  color: #1d4ed8;
   background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #2563eb;
 }
 .level-3 {
-  border-color: #fde047;
-  color: #b45309;
   background-color: #fefce8;
+  border: 1px solid #fde047;
+  color: #ca8a04;
 }
 
 /* ==========================================================================
-   AUDIT NOTE CARD (
+   AUDIT NOTE
    ========================================================================== */
-.audit-note-card {
+.lh-audit-note-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   padding: 20px 24px;
 }
-.mb-4 {
-  margin-bottom: 8px;
+.lh-mb-4 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+}
+.lh-audit-note-card .text-muted {
+  margin: 0;
+  font-size: 13px;
+  font-style: normal;
+}
+/* ==========================================================================
+   RESPONSIVE: LOC HISTORY
+   ========================================================================== */
+
+/* 1. SMALL LAPTOP & TABLET (Under 1200px) */
+
+/* 2. TABLET & MOBILE  (Under 768px) */
+@media (max-width: 768px) {
+  .lh-main,
+  .lh-workspace,
+  .lh-container {
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  .lh-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin: 0 auto !important;
+  }
+
+  .lh-header-top {
+    padding: 0 16px !important;
+  }
+  .lh-header-top .user-info {
+    display: none !important;
+  }
+
+  .lh-profile-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    height: auto !important;
+  }
+
+  .lh-badges-row {
+    flex-wrap: wrap !important;
+  }
+}
+
+/* 3. MOBILE (Under 480px) */
+@media (max-width: 480px) {
+  /* TABS HANDLE: Activate horizontal swipe*/
+  .lh-tabs-nav {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px !important;
+    scrollbar-width: none;
+  }
+  .lh-tabs-nav::-webkit-scrollbar {
+    display: none !important;
+  }
+  .lh-tab {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+/* ==========================================================================
+   HORIZONTAL SCROLL AUTHORIZATION FOR DATA TABLES
+   ========================================================================== */
+.lh-table-card {
+  width: 100% !important;
+  overflow-x: auto !important; /* Enable horizontal scrolling for the table */
+  -webkit-overflow-scrolling: touch;
+  margin-top: 16px;
+  box-sizing: border-box !important;
+}
+
+.lh-table-card table {
+  min-width: 800px !important;
 }

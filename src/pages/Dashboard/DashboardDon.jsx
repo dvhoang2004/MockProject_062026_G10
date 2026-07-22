@@ -1,5 +1,6 @@
 import React from "react";
 import "./DashboardDon.css";
+import NurseSidebar from "../../components/Sidebar/NurseSidebar";
 import {
   MdNotificationsNone,
   MdHelpOutline,
@@ -27,56 +28,8 @@ import { Link } from "react-router-dom";
 const DashboardDon = () => {
   return (
     <div className="don-layout-wrapper">
-      {/* 1. SIDEBAR ĐỘC LẬP */}
-      <aside className="don-sidebar-container">
-        <div className="don-brand-logo-block">
-          <MdMenu size={24} className="don-menu-toggle-icon" />
-          <div className="don-brand-text-group">
-            <strong className="don-brand-title">NHMS</strong>
-            <span className="don-brand-subtitle"></span>
-          </div>
-        </div>
-
-        <nav className="don-sidebar-menu-list">
-          <div className="don-menu-item active">
-            <Link to="/dashboard-don" className="menu-link">
-              <MdDashboard size={22} /> <span>Dashboard</span>
-            </Link>
-          </div>
-          <div className="don-menu-item">
-            <Link to="/resident-list" className="menu-link">
-              <MdPeople size={22} /> <span>Residents</span>
-            </Link>
-          </div>
-          <div className="don-menu-item">
-            <Link to="/careplan/list" className="menu-link">
-              <MdAssignment size={22} /> <span>Care Planning</span>
-            </Link>
-          </div>
-          <div className="don-menu-item disabled">
-            <Link to="/eMAR" className="menu-link">
-              <MdBloodtype size={22} /> <span>eMAR</span>
-              <span className="don-badge-soon">soon</span>
-            </Link>
-          </div>
-          <div className="don-menu-item">
-            <Link to="/incident-risk" className="menu-link">
-              <MdReportProblem size={22} /> <span>Incident & Risk</span>
-            </Link>
-          </div>
-          <div className="don-menu-item">
-            <Link to="/reports" className="menu-link">
-              <MdBarChart size={22} /> <span>Reports</span>
-            </Link>
-          </div>
-        </nav>
-
-        <div className="don-sidebar-footer-block">
-          <div className="don-menu-item">
-            <MdLogout size={22} /> <span>Logout</span>
-          </div>
-        </div>
-      </aside>
+      {/* 1. SIDEBAR  */}
+      <NurseSidebar />
 
       {/* 2. MAIN CONTENT AREA ĐỘC LẬP */}
       <main className="don-main-content">
@@ -180,81 +133,82 @@ const DashboardDon = () => {
                   View all
                 </a>
               </div>
-
-              <table className="don-dashboard-table">
-                <thead>
-                  <tr>
-                    <th>Resident</th>
-                    <th>Submitted By</th>
-                    <th>Submitted</th>
-                    <th>LOC Tier</th>
-                    <th>Waiting</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <strong className="don-text-dark">Mary Coleman</strong> •
-                      118A
-                    </td>
-                    <td>Anna Lee, RN</td>
-                    <td>2026-07-02</td>
-                    <td>Tier 2</td>
-                    <td>18h</td>
-                    <td>
-                      <a href="#review" className="don-table-action-link">
-                        Review
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong className="don-text-dark">Elena Ramos</strong> •
-                      106A
-                    </td>
-                    <td>Anna Lee, RN</td>
-                    <td>2026-07-01</td>
-                    <td>Tier 1</td>
-                    <td>1d 6h</td>
-                    <td>
-                      <a href="#review" className="don-table-action-link">
-                        Review
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong className="don-text-dark">Thomas Baker</strong> •
-                      220C
-                    </td>
-                    <td>Priya Nair, LPN</td>
-                    <td>2026-07-03</td>
-                    <td>Tier 3</td>
-                    <td>2h</td>
-                    <td>
-                      <a href="#review" className="don-table-action-link">
-                        Review
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong className="don-text-dark">Grace Kim</strong> •
-                      112B
-                    </td>
-                    <td>Anna Lee, RN</td>
-                    <td>2026-06-30</td>
-                    <td>Tier 4</td>
-                    <td>2d 1h</td>
-                    <td>
-                      <a href="#review" className="don-table-action-link">
-                        Review
-                      </a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <div className="table-responsive">
+                <table className="don-dashboard-table">
+                  <thead>
+                    <tr>
+                      <th>Resident</th>
+                      <th>Submitted By</th>
+                      <th>Submitted</th>
+                      <th>LOC Tier</th>
+                      <th>Waiting</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <strong className="don-text-dark">Mary Coleman</strong>{" "}
+                        • 118A
+                      </td>
+                      <td>Anna Lee, RN</td>
+                      <td>2026-07-02</td>
+                      <td>Tier 2</td>
+                      <td>18h</td>
+                      <td>
+                        <a href="#review" className="don-table-action-link">
+                          Review
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong className="don-text-dark">Elena Ramos</strong> •
+                        106A
+                      </td>
+                      <td>Anna Lee, RN</td>
+                      <td>2026-07-01</td>
+                      <td>Tier 1</td>
+                      <td>1d 6h</td>
+                      <td>
+                        <a href="#review" className="don-table-action-link">
+                          Review
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong className="don-text-dark">Thomas Baker</strong>{" "}
+                        • 220C
+                      </td>
+                      <td>Priya Nair, LPN</td>
+                      <td>2026-07-03</td>
+                      <td>Tier 3</td>
+                      <td>2h</td>
+                      <td>
+                        <a href="#review" className="don-table-action-link">
+                          Review
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong className="don-text-dark">Grace Kim</strong> •
+                        112B
+                      </td>
+                      <td>Anna Lee, RN</td>
+                      <td>2026-06-30</td>
+                      <td>Tier 4</td>
+                      <td>2d 1h</td>
+                      <td>
+                        <a href="#review" className="don-table-action-link">
+                          Review
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
             {/* Khối Grid 2 cột dưới cùng (Census và Billing) */}

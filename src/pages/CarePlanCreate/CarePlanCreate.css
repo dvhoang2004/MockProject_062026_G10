@@ -3,7 +3,7 @@
    ========================================================================== */
 .cp-create-layout {
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-color: #f8fafc;
   overflow: hidden;
@@ -168,6 +168,7 @@
   padding: 32px;
   max-width: 1440px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 .breadcrumb {
   font-size: 13px;
@@ -228,7 +229,8 @@
    ========================================================================== */
 .cp-create-grid {
   display: grid;
-  grid-template-columns: 1fr 360px;
+  /*Use minmax(0, 1fr) instead of 1fr to suppress Grid's "rebellion" */
+  grid-template-columns: minmax(0, 1fr) 360px;
   gap: 32px;
 }
 
@@ -515,4 +517,157 @@
 }
 .btn-confirm:hover {
   background-color: #1d4ed8;
+}
+/* ==========================================================================
+   RESPONSIVE: CARE PLAN CREATE
+   ========================================================================== */
+
+/* 1.TABLET  & MOBILE (Under 768px) */
+@media (max-width: 768px) {
+  .cp-create-main,
+  .cp-create-workspace,
+  .cp-create-container {
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  .cp-create-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin: 0 auto !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* Header  */
+  .cp-create-header-top {
+    padding: 0 16px !important;
+  }
+  .cp-create-header-top .user-info {
+    display: none !important;
+  }
+
+  /* =========================================================
+     FIX GRID OVERFLOW ERROR: Force it down to a single column and control the size
+     ========================================================= */
+  .cp-create-grid {
+    display: grid !important;
+    /* Use minmax so the column never swells larger than the screen */
+    grid-template-columns: minmax(0, 100%) !important;
+    gap: 20px !important;
+  }
+
+  .left-column,
+  .right-column,
+  .care-area-card,
+  .side-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Text automatically wraps to the next line; it must not break the right margin. */
+  .card-body,
+  .cp-create-grid p {
+    word-break: break-word !important;
+    white-space: normal !important;
+  }
+
+  /* Alert Banner */
+  .alert-success {
+    align-items: flex-start !important;
+  }
+}
+
+/* 2. MOBILE (Under 480px) */
+@media (max-width: 480px) {
+  .title-row {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+  .page-header-block h1 {
+    font-size: 22px !important;
+  }
+
+  /* Care Area Card Header */
+  .care-area-card .card-header {
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+
+  /* =========================================================
+     HORIZONTAL ROLL AUTHORIZATION FOR ASSIGNED TASKS
+     ========================================================= */
+  .tasks-section .table-card {
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box !important;
+  }
+  .tasks-table {
+    min-width: 500px !important;
+  }
+  .tasks-table td {
+    word-break: break-word !important;
+    white-space: normal !important;
+  }
+
+  /* =========================================================
+     FOOTER ON MOBILE:
+     ========================================================= */
+  .cp-create-action-footer {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    box-shadow: none !important;
+    background: transparent !important;
+
+    display: flex !important;
+    flex-direction: column-reverse !important; /*  Submit  */
+    align-items: center !important;
+    padding: 24px 16px 16px 16px !important;
+    gap: 12px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    border-top: none !important;
+  }
+
+  .footer-right-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 12px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Force React Router's Link tag into a block and limit its width. */
+  .cp-create-action-footer a {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    text-decoration: none !important;
+  }
+
+  /* Tối ưu kích thước nút bấm */
+  .cp-create-action-footer button {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    border-radius: 6px !important;
+  }
 }

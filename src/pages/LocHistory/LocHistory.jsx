@@ -1,80 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import NurseSidebar from "../../components/Sidebar/NurseSidebar";
 import "./LocHistory.css";
 import {
   MdNotificationsNone,
   MdHelpOutline,
   MdAccountCircle,
   MdArrowDropDown,
-  MdMenu,
-  MdDashboard,
-  MdPeople,
-  MdAssignment,
-  MdBloodtype,
-  MdReportProblem,
-  MdBarChart,
-  MdLogout,
 } from "react-icons/md";
 
 const LocHistory = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="loc-hist-layout">
+    <div className="lh-layout">
       {/* SIDEBAR */}
-      <aside className="loc-hist-sidebar">
-        <div className="loc-hist-brand">
-          <MdMenu size={24} className="icon-menu" />
-          <div className="brand-text">
-            <strong>NHMS</strong>
-            <span></span>
-          </div>
-        </div>
-        <nav className="loc-hist-menu">
-          <div className="menu-item">
-            <Link to="/dashboard-don" className="menu-link">
-              <MdDashboard size={22} /> <span>Dashboard</span>
-            </Link>
-          </div>
-          <div className="menu-item active">
-            <Link to="/resident-list" className="menu-link">
-              <MdPeople size={22} /> <span>Residents</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/care-planning" className="menu-link">
-              <MdAssignment size={22} /> <span>Care Planning</span>
-            </Link>
-          </div>
-          <div className="menu-item disabled">
-            <Link to="/eMAR" className="menu-link">
-              <MdBloodtype size={22} /> <span>eMAR</span>
-              <span className="badge-soon">soon</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/incident-risk" className="menu-link">
-              <MdReportProblem size={22} /> <span>Incident & Risk</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/reports" className="menu-link">
-              <MdBarChart size={22} /> <span>Reports</span>
-            </Link>
-          </div>
-        </nav>
-        <div className="loc-hist-footer-menu">
-          <div className="menu-item">
-            <div className="menu-link">
-              {" "}
-              <MdLogout size={18} /> Logout
-            </div>
-          </div>
-        </div>
-      </aside>
+      <NurseSidebar />
 
       {/* MAIN CONTENT */}
-      <main className="loc-hist-main">
-        {/* HEADER TOP (Profile đổi thành Denise Carter - DON) */}
-        <header className="loc-hist-header-top">
+      <main className="lh-main">
+        {/* HEADER TOP */}
+        <header className="lh-header-top">
           <div className="header-left"></div>
           <div className="header-right">
             <MdNotificationsNone className="icon-action" size={26} />
@@ -91,21 +37,79 @@ const LocHistory = () => {
         </header>
 
         {/* WORKSPACE */}
-        <div className="loc-hist-workspace">
-          <div className="loc-hist-container">
-            <div className="breadcrumb">
+        <div className="lh-workspace">
+          <div className="lh-container">
+            <div className="lh-breadcrumb">
               Residents &gt; Robert Hayes &gt; LOC
             </div>
 
-            {/* PAGE TITLE */}
-            <div className="page-header-block">
-              <h1>LOC History — Robert Hayes</h1>
-              <p>3 classification events · sorted newest first</p>
+            {/* PROFILE HEADER */}
+            <div className="lh-profile-header">
+              <div className="lh-profile-left">
+                <div className="lh-avatar">RH</div>
+                <div className="lh-profile-info">
+                  <h1>Robert Hayes</h1>
+                  <p className="lh-meta-text">
+                    DOB 04/15/1943 · Room 204B · Resident ID RES-00089
+                  </p>
+                  <div className="lh-badges-row">
+                    <span className="lh-badge badge-green-outline">Active</span>
+                    <span className="lh-badge badge-green-outline">No DNR</span>
+                    <span className="lh-badge badge-yellow-outline">
+                      Level 3
+                    </span>
+                    <span className="lh-badge badge-gray-outline">
+                      Medicaid
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* BẢNG LỊCH SỬ LOC */}
-            <div className="table-card">
-              <table className="loc-hist-table">
+            {/* TABS NAVIGATION  */}
+            <div className="lh-tabs-nav">
+              <div
+                className="lh-tab"
+                onClick={() => navigate("/resident/detail")}
+              >
+                Overview
+              </div>
+              <div
+                className="lh-tab"
+                onClick={() => navigate("/assessment/history")}
+              >
+                Assessments
+              </div>
+              <div
+                className="lh-tab"
+                onClick={() => navigate("/careplan/detail")}
+              >
+                Care Plan
+              </div>
+              <div className="lh-tab disabled">
+                eMAR <span className="tab-badge-soon">soon</span>
+              </div>
+              <div
+                className="lh-tab lh-tab-active"
+                onClick={() => navigate("/loc/classification")}
+              >
+                LOC
+              </div>
+              <div className="lh-tab disabled">
+                Audit <span className="tab-badge-soon">soon</span>
+              </div>
+            </div>
+
+            {/* PAGE TITLE */}
+            <div className="lh-page-header-block">
+              <span className="lh-record-count">
+                3 classification events · sorted newest first
+              </span>
+            </div>
+
+            {/* LOC HISTORT */}
+            <div className="lh-table-card">
+              <table className="lh-table">
                 <thead>
                   <tr>
                     <th>Date ▼</th>
@@ -117,15 +121,15 @@ const LocHistory = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {/* Dòng 1 */}
+                  {/*  */}
                   <tr>
-                    <td className="text-muted-dark">2026-04-05</td>
+                    <td className="text-muted-dark">04/05/2026</td>
                     <td className="fw-bold text-blue">Confirmed</td>
                     <td>
-                      <span className="badge-tier level-3">Level 3</span>
+                      <span className="lh-badge-tier level-3">Level 3</span>
                     </td>
                     <td>
-                      <span className="badge-tier level-3">Level 3</span>
+                      <span className="lh-badge-tier level-3">Level 3</span>
                     </td>
                     <td className="text-muted-dark">Anna Lee, RN</td>
                     <td className="text-muted">No change — reassessment v3</td>
@@ -133,13 +137,13 @@ const LocHistory = () => {
 
                   {/* Dòng 2 */}
                   <tr>
-                    <td className="text-muted-dark">2026-01-08</td>
+                    <td className="text-muted-dark">01/08/2026</td>
                     <td className="fw-bold text-blue">Confirmed</td>
                     <td>
-                      <span className="badge-tier level-2">Level 2</span>
+                      <span className="lh-badge-tier level-2">Level 2</span>
                     </td>
                     <td>
-                      <span className="badge-tier level-3">Level 3</span>
+                      <span className="lh-badge-tier level-3">Level 3</span>
                     </td>
                     <td className="text-muted-dark">Anna Lee, RN</td>
                     <td className="text-muted">Suggested tier accepted</td>
@@ -147,13 +151,13 @@ const LocHistory = () => {
 
                   {/* Dòng 3 */}
                   <tr>
-                    <td className="text-muted-dark">2025-11-02</td>
+                    <td className="text-muted-dark">11/02/2025</td>
                     <td className="fw-bold text-blue">Overridden</td>
                     <td>
-                      <span className="badge-tier level-1">Level 1</span>
+                      <span className="lh-badge-tier level-1">Level 1</span>
                     </td>
                     <td>
-                      <span className="badge-tier level-2">Level 2</span>
+                      <span className="lh-badge-tier level-2">Level 2</span>
                     </td>
                     <td className="fw-bold text-dark">Denise Carter, DON</td>
                     <td className="text-muted">
@@ -165,8 +169,8 @@ const LocHistory = () => {
             </div>
 
             {/* AUDIT LOG NOTE */}
-            <div className="audit-note-card">
-              <p className="fw-bold text-dark mb-4">
+            <div className="lh-audit-note-card">
+              <p className="fw-bold text-dark lh-mb-4">
                 Every LOC confirm/override event is immutable and timestamped
                 (audit log).
               </p>

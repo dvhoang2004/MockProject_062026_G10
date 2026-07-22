@@ -1,7 +1,7 @@
 /* ==========================================================================
-   LAYOUT & SIDEBAR & HEADER (Kế thừa chuẩn 1440px)
+   LAYOUT 
    ========================================================================== */
-.loc-class-layout {
+.lc-layout {
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -10,113 +10,15 @@
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
-
-.loc-class-sidebar {
-  width: 260px;
-  background: #ffffff;
-  border-right: none;
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-}
-.loc-class-brand {
-  height: 64px !important;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 0 24px !important;
-  border-bottom: 1px solid #e2e8f0 !important;
-  box-sizing: border-box !important;
-}
-.brand-text {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-}
-.brand-text strong {
-  font-size: 18px;
-  color: #264ba0;
-}
-.brand-text span {
-  font-size: 12px;
-  color: #64748b;
-  border-left: 1px solid #cbd5e1;
-  padding-left: 8px;
-}
-
-.loc-class-menu {
-  padding: 16px 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.loc-class-footer-menu {
-  border-top: none;
-  padding: 16px 0;
-}
-.menu-item {
-  margin: 0px 16px 0px 0 !important;
-  border-radius: 0 24px 24px 0 !important;
-  border: 1px solid transparent;
-  border-left: 4px solid transparent;
-  transition: all 0.2s ease;
-}
-.menu-item:hover:not(.disabled):not(.active) {
-  background-color: #f8fafc !important;
-}
-.menu-item .menu-link {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  gap: 12px !important;
-  width: 100% !important;
-  padding: 8px 16px !important;
-  text-decoration: none !important;
-  color: #475569 !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  cursor: pointer;
-}
-.menu-item:hover:not(.disabled):not(.active) .menu-link {
-  color: #2563eb !important;
-}
-.menu-item.active {
-  background: #f0f8ff !important;
-  border: 1px solid #bbf7d0 !important;
-  border-left: 4px solid #2563eb !important;
-}
-.menu-item.active .menu-link {
-  color: #2563eb !important;
-  font-weight: 600 !important;
-}
-.menu-item svg {
-  flex-shrink: 0 !important;
-  display: block !important;
-}
-.menu-item span {
-  display: inline-block !important;
-  line-height: 1 !important;
-  transform: translateY(1px);
-}
-.badge-soon {
-  background: #f1f5f9;
-  color: #94a3b8;
-  font-size: 10px;
-  padding: 2px 6px;
-  border-radius: 10px;
-  margin-left: auto !important;
-  font-weight: 600;
-  transform: translateY(0) !important;
-}
-
-.loc-class-main {
+.lc-main {
   flex: 1;
   display: flex;
   flex-direction: column;
   position: relative;
 }
-.loc-class-header-top {
+
+/* HEADER TOP */
+.lc-header-top {
   height: 64px;
   background: #ffffff;
   border-bottom: 1px solid #e2e8f0;
@@ -125,6 +27,7 @@
   align-items: center;
   padding: 0 32px;
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 .header-right {
   display: flex;
@@ -139,6 +42,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 .user-info {
   display: flex;
@@ -157,288 +61,526 @@
   margin-top: 2px;
 }
 
-/* WORKSPACE - Phóng to lên 1440px */
-.loc-class-workspace {
+/* WORKSPACE CONTAINER */
+.lc-workspace {
   flex: 1;
   overflow-y: auto;
   padding-bottom: 60px;
 }
-.loc-class-container {
+.lc-container {
   padding: 32px;
   max-width: 1440px;
   margin: 0 auto;
 }
-.breadcrumb {
+.lc-breadcrumb {
   font-size: 13px;
   color: #64748b;
-  margin-bottom: 16px;
-}
-
-/* PAGE TITLE */
-.page-title-block {
   margin-bottom: 24px;
-}
-.page-title-block h1 {
-  font-size: 24px;
-  color: #0f172a;
-  margin: 0 0 8px 0;
-  font-weight: 700;
-}
-.page-title-block p {
-  font-size: 13px;
-  color: #64748b;
-  margin: 0;
 }
 
 /* ==========================================================================
-   THÀNH PHẦN NỘI DUNG CHÍNH (CARDS & GRIDS)
+   PROFILE HEADER 
    ========================================================================== */
-.content-card {
+.lc-profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.lc-profile-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.lc-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #475569;
+  background-color: #f8fafc;
+}
+.lc-profile-info h1 {
+  margin: 0 0 4px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+}
+.lc-meta-text {
+  margin: 0 0 12px 0;
+  font-size: 13px;
+  color: #64748b;
+}
+.lc-badges-row {
+  display: flex;
+  gap: 8px;
+}
+
+.lc-badge {
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #ffffff;
+}
+.badge-green-outline {
+  border: 1px solid #86efac;
+  color: #16a34a;
+  background-color: #f0fdf4;
+}
+.badge-yellow-outline {
+  border: 1px solid #fde047;
+  color: #ca8a04;
+  background-color: #fefce8;
+}
+.badge-gray-outline {
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  background-color: #f8fafc;
+}
+
+/* ==========================================================================
+   TABS NAVIGATION
+   ========================================================================== */
+.lc-tabs-nav {
+  display: flex;
+  gap: 32px;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 32px;
+}
+.lc-tab {
+  padding: 0 4px 12px 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.lc-tab:hover:not(.disabled) {
+  color: #0f172a;
+}
+.lc-tab.lc-tab-active {
+  color: #2563eb !important;
+  border-bottom: 2px solid #2563eb;
+  background-color: transparent;
+}
+.lc-tab.disabled {
+  color: #cbd5e1;
+  cursor: not-allowed;
+}
+.tab-badge-soon {
+  background: #f1f5f9;
+  color: #94a3b8;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+/* ==========================================================================
+   PAGE TITLE & SUMMARY CARDS
+   ========================================================================== */
+.lc-page-title-block {
+  margin-bottom: 24px;
+}
+.lc-page-title-block h2 {
+  margin: 0 0 4px 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+}
+.lc-page-title-block p {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.lc-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.lc-score-card,
+.lc-suggestion-card {
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lc-score-card {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.lc-suggestion-card {
+  background-color: #fefce8;
+  border-color: #fde047;
+  box-shadow: 0 1px 2px rgba(253, 224, 71, 0.2);
+}
+
+.lc-card-label {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+.lc-card-label-highlight {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  color: #ca8a04;
+  font-weight: 600;
+}
+.lc-score-value {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+}
+.lc-suggestion-value {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ca8a04;
+}
+
+/* ==========================================================================
+   BREAKDOWN TABLE
+   ========================================================================== */
+.lc-content-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   padding: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
-.content-card h3 {
-  margin: 0 0 20px 0;
+.lc-section-title {
+  margin: 0 0 16px 0;
   font-size: 15px;
   font-weight: 700;
   color: #0f172a;
 }
 
-/* TOP SUMMARY CARDS (Score & Suggestion) */
-.loc-summary-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 24px;
-}
-.score-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 24px;
-}
-.suggestion-card {
-  background: #fefce8;
-  border: 1px solid #fde047;
-  border-radius: 8px;
-  padding: 24px;
-}
-
-.card-label {
-  font-size: 13px;
-  color: #64748b;
-  font-weight: 600;
-  margin: 0 0 8px 0;
-}
-.card-label-highlight {
-  font-size: 13px;
-  color: #a16207;
-  font-weight: 600;
-  margin: 0 0 8px 0;
-}
-.score-value {
-  font-size: 28px;
-  font-weight: 700;
-  color: #0f172a;
-  margin: 0;
-}
-.suggestion-value {
-  font-size: 20px;
-  font-weight: 700;
-  color: #b45309;
-  margin: 0;
-}
-
-/* ADL TABLE */
-.table-responsive {
+.lc-table-responsive {
   width: 100%;
   overflow-x: auto;
 }
-.breakdown-table {
+.lc-breakdown-table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
 }
-.breakdown-table th {
+.lc-breakdown-table th {
   padding: 12px 16px;
   font-size: 13px;
   font-weight: 600;
   color: #64748b;
   border-bottom: 1px solid #e2e8f0;
-  background: #f8fafc;
+  background-color: #f8fafc;
 }
-.breakdown-table td {
-  padding: 12px 16px;
+.lc-breakdown-table td {
+  padding: 14px 16px;
   font-size: 13px;
-  color: #334155;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid #f1f5f9;
 }
-.breakdown-table tr:last-child td {
+.lc-breakdown-table tr:last-child td {
   border-bottom: none;
+}
+.text-dark-medium {
+  color: #334155;
 }
 .fw-bold {
   font-weight: 600;
 }
 .text-dark {
-  color: #0f172a !important;
+  color: #0f172a;
 }
-.text-muted {
+.text-muted-italic {
   color: #94a3b8;
+  font-style: italic;
 }
 
-/* LOC LEVEL REFERENCE CARDS */
-.section-title-inline {
-  margin: 0 0 16px 0 !important;
+/* ==========================================================================
+   LOC LEVEL REFERENCE 
+   ========================================================================== */
+.border-none {
+  border: none;
+  background: transparent;
+  padding: 0;
 }
-.title-note {
+.lc-section-title-inline {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #334155;
+}
+.lc-title-note {
   font-size: 13px;
-  font-weight: normal;
+  font-weight: 400;
   color: #64748b;
   font-style: italic;
-  margin-left: 8px;
 }
 
-.loc-ref-grid {
+.lc-ref-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
-.ref-box {
+.lc-ref-box {
   padding: 16px;
   border-radius: 6px;
   display: flex;
   flex-direction: column;
   gap: 4px;
-  border: 1px solid transparent;
+  border: 1px solid;
 }
-.ref-box strong {
+.lc-ref-box strong {
   font-size: 14px;
+  font-weight: 700;
 }
-.ref-box span {
+.lc-ref-box span {
   font-size: 12px;
 }
 
+/* Các màu cấp độ */
 .level-1 {
-  background-color: #dcfce3;
+  background-color: #f0fdf4;
   border-color: #86efac;
-  color: #166534;
-  opacity: 0.6;
+  color: #16a34a;
 }
 .level-2 {
   background-color: #eff6ff;
   border-color: #bfdbfe;
-  color: #1d4ed8;
-  opacity: 0.6;
+  color: #2563eb;
 }
 .level-3 {
   background-color: #fefce8;
   border-color: #fde047;
-  color: #b45309;
-} /* Level 3 là thẻ chính nên đậm màu */
+  color: #ca8a04;
+}
 .level-4 {
   background-color: #fef2f2;
   border-color: #fca5a5;
-  color: #b91c1c;
-  opacity: 0.6;
+  color: #dc2626;
 }
 
-/* Nhấn mạnh thẻ đang active */
-.active-ref {
-  opacity: 1;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+/* ==========================================================================
+   ESTIMATED RATE & ACTIONS
+   ========================================================================== */
+.lc-rate-section {
+  margin-bottom: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
 }
-
-/* RATE SECTION */
-.card-label-dark {
+.lc-rate-label {
+  margin: 0 0 4px 0;
   font-size: 13px;
-  color: #334155;
-  font-weight: 600;
-  margin: 0 0 8px 0;
+  color: #64748b;
 }
-.rate-value {
-  font-size: 18px;
+.lc-rate-value {
+  margin: 0;
+  font-size: 16px;
   font-weight: 700;
   color: #0f172a;
-  margin: 0;
 }
-.rate-note {
+.lc-rate-note {
   font-size: 14px;
-  font-weight: normal;
-  color: #64748b;
-  margin-left: 8px;
+  font-weight: 600;
+  color: #475569;
 }
 
-/* ACTIONS */
-.action-row {
+.lc-action-row {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin: 24px 0;
+  margin-bottom: 24px;
 }
-.btn-confirm-loc {
+.lc-btn-confirm {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   background-color: #2563eb;
   color: #ffffff;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 24px;
   border-radius: 6px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: 0.2s;
 }
-.btn-confirm-loc:hover {
+.lc-btn-confirm:hover {
   background-color: #1d4ed8;
 }
-.btn-override {
+.lc-btn-override {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   background-color: #ffffff;
   color: #475569;
   border: 1px solid #cbd5e1;
-  padding: 10px 20px;
+  padding: 10px 16px;
   border-radius: 6px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: 0.2s;
 }
-.btn-override:hover {
-  background-color: #f1f5f9;
+.lc-btn-override:hover {
+  background-color: #f8fafc;
 }
-.view-history-link {
+.lc-view-history-link {
   color: #2563eb;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
-  margin-left: auto;
 }
-.view-history-link:hover {
+.lc-view-history-link:hover {
   text-decoration: underline;
 }
 
-/* FOOTER LOG */
-.confirmation-log {
-  background: #ffffff;
+/* ==========================================================================
+   CONFIRMATION LOG
+   ========================================================================== */
+.lc-confirmation-log {
+  background-color: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   padding: 16px 20px;
-  margin-top: 24px;
 }
-.log-main {
-  font-size: 13px;
-  color: #0f172a;
+.lc-log-main {
   margin: 0 0 4px 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
 }
-.log-sub {
+.lc-log-sub {
+  margin: 0;
   font-size: 13px;
   color: #64748b;
-  margin: 0;
+}
+/* ==========================================================================
+   RESPONSIVE: LOC CLASSIFICATION
+   ========================================================================== */
+
+/* 1. SMALLLAPTOP  & TABLET (Under 1200px) */
+@media (max-width: 1200px) {
+  .lc-ref-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px;
+  }
+}
+
+/* 2.  TABLET & MOBILE  (Under768px) */
+@media (max-width: 768px) {
+  .lc-main,
+  .lc-workspace,
+  .lc-container {
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  .lc-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Narrow the header margins and hide Nurse account details */
+  .lc-header-top {
+    padding: 0 16px !important;
+  }
+  .lc-header-top .user-info {
+    display: none !important;
+  }
+
+  /* Avatar & Meta info */
+  .lc-profile-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    height: auto !important;
+  }
+
+  /* Badges */
+  .lc-badges-row {
+    flex-wrap: wrap !important;
+  }
+
+  /*Score & hints block: Dropped into 1 column */
+  .lc-summary-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+/* 3. MOBILE (Under 480px) */
+@media (max-width: 480px) {
+  /* TABS*/
+  .lc-tabs-nav {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px !important;
+    scrollbar-width: none; /* Firefox */
+  }
+  .lc-tabs-nav::-webkit-scrollbar {
+    display: none !important; /* Chrome/Safari */
+  }
+  .lc-tab {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* HORIZONTAL SCROLL AUTHORIZATION FOR ADL BREAKDOWN TABLE*/
+  .lc-table-responsive {
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .lc-breakdown-table {
+    min-width: 500px !important;
+  }
+
+  /* Level: It fell completely in a single vertical column. */
+  .lc-ref-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ACTION (Confirm, Override, View History) */
+  .lc-action-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  /* Press all components in the row of buttons to 100% horizontal width. */
+  .lc-action-row .action-link,
+  .lc-action-row button,
+  .lc-action-row .lc-view-history-link {
+    width: 100% !important;
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* padding  */
+  .lc-confirmation-log {
+    padding: 16px !important;
+  }
 }

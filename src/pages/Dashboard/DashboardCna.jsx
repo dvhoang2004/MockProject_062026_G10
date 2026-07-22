@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./DashboardCna.css";
+import NurseSidebar from "../../components/Sidebar/NurseSidebar";
 import {
   MdNotificationsNone,
   MdHelpOutline,
@@ -24,56 +25,7 @@ const DashboardCna = () => {
   return (
     <div className="dash-cna-layout">
       {/* SIDEBAR */}
-      <aside className="dash-cna-sidebar">
-        <div className="dash-cna-brand">
-          <MdMenu size={24} className="icon-menu" />
-          <div className="brand-text">
-            <strong>NHMS</strong>
-            <span></span>
-          </div>
-        </div>
-        <nav className="dash-cna-menu">
-          <div className="menu-item active">
-            <Link to="/dashboard-cna" className="menu-link">
-              <MdDashboard size={22} /> <span>Dashboard</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/resident-list" className="menu-link">
-              <MdPeople size={22} /> <span>Residents</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/care-planning" className="menu-link">
-              <MdAssignment size={22} /> <span>Care Planning</span>
-            </Link>
-          </div>
-          <div className="menu-item disabled">
-            <Link to="/eMAR" className="menu-link">
-              <MdBloodtype size={22} /> <span>eMAR</span>
-              <span className="badge-soon">soon</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/incident-risk" className="menu-link">
-              <MdReportProblem size={22} /> <span>Incident & Risk</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/reports" className="menu-link">
-              <MdBarChart size={22} /> <span>Reports</span>
-            </Link>
-          </div>
-        </nav>
-        <div className="dash-cna-footer-menu">
-          <div className="menu-item">
-            <div className="menu-link">
-              {" "}
-              <MdLogout size={22} /> Logout
-            </div>
-          </div>
-        </div>
-      </aside>
+      <NurseSidebar />
 
       {/* MAIN CONTENT */}
       <main className="dash-cna-main">
@@ -157,62 +109,65 @@ const DashboardCna = () => {
                 Go to Daily Task List
               </a>
             </div>
-
-            <div className="table-card">
-              <table className="dash-cna-table">
-                <thead>
-                  <tr>
-                    <th>Resident</th>
-                    <th>Task</th>
-                    <th>Due</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="fw-bold text-dark">Susan Wright · 114B</td>
-                    <td>Bedside Vitals</td>
-                    <td>08:00 AM</td>
-                    <td>
-                      <span className="badge-status badge-done">Done</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="fw-bold text-dark">James Porter · 210B</td>
-                    <td>Repositioning (2h)</td>
-                    <td>08:30 AM</td>
-                    <td>
-                      <span className="badge-status badge-done">Done</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="fw-bold text-dark">Robert Hayes · 204B</td>
-                    <td>Bathing Assistance</td>
-                    <td>09:15 AM</td>
-                    <td>
-                      <span className="badge-status badge-missed">Missed</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="fw-bold text-dark">David Nguyen · 222A</td>
-                    <td>Bedside Vitals — abnormal SpO2 flagged</td>
-                    <td>10:00 AM</td>
-                    <td>
-                      <span className="badge-status badge-done">Done</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="fw-bold text-dark">Mary Coleman · 118A</td>
-                    <td>Ambulation Assist</td>
-                    <td>11:00 AM</td>
-                    <td>
-                      <span className="badge-status badge-pending">
-                        Pending
-                      </span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <div className="table-responsive">
+              <div className="table-card">
+                <table className="dash-cna-table">
+                  <thead>
+                    <tr>
+                      <th>Resident</th>
+                      <th>Task</th>
+                      <th>Due</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="fw-bold text-dark">Susan Wright · 114B</td>
+                      <td>Bedside Vitals</td>
+                      <td>08:00 AM</td>
+                      <td>
+                        <span className="badge-status badge-done">Done</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="fw-bold text-dark">James Porter · 210B</td>
+                      <td>Repositioning (2h)</td>
+                      <td>08:30 AM</td>
+                      <td>
+                        <span className="badge-status badge-done">Done</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="fw-bold text-dark">Robert Hayes · 204B</td>
+                      <td>Bathing Assistance</td>
+                      <td>09:15 AM</td>
+                      <td>
+                        <span className="badge-status badge-missed">
+                          Missed
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="fw-bold text-dark">David Nguyen · 222A</td>
+                      <td>Bedside Vitals — abnormal SpO2 flagged</td>
+                      <td>10:00 AM</td>
+                      <td>
+                        <span className="badge-status badge-done">Done</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="fw-bold text-dark">Mary Coleman · 118A</td>
+                      <td>Ambulation Assist</td>
+                      <td>11:00 AM</td>
+                      <td>
+                        <span className="badge-status badge-pending">
+                          Pending
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>

@@ -10,16 +10,6 @@
   box-sizing: border-box !important;
 }
 
-.don-sidebar-container {
-  width: 260px;
-  height: 100%;
-  background-color: #ffffff;
-  border-right: none;
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-}
-
 .don-main-content {
   flex: 1;
   display: flex;
@@ -30,7 +20,7 @@
 }
 
 /* ==========================================================================
-   2. SIDEBAR DETAILS & LOGO ĐẦU MỤC (THẲNG HÀNG, KHÔNG TÁCH RỜI)
+   2. SIDEBAR DETAILS & LOGO 
    ========================================================================== */
 .don-brand-logo-block {
   display: flex !important;
@@ -68,14 +58,6 @@
 .don-menu-toggle-icon {
   color: #475569;
   flex-shrink: 0;
-}
-
-.don-sidebar-menu-list {
-  flex: 1;
-  padding: 16px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
 }
 
 .don-menu-item {
@@ -135,11 +117,6 @@
   margin-left: auto;
 }
 
-.don-sidebar-footer-block {
-  padding: 16px 0;
-  border-top: 1px solid #e2e8f0;
-}
-
 .don-menu-item .menu-link {
   display: flex !important;
   flex-direction: row !important;
@@ -154,7 +131,7 @@
   margin-left: auto !important;
 }
 /* ==========================================================================
-   3. TOP HEADER (PHÓNG TO ICON & ÉP CHỨC VỤ XUỐNG DÒNG)
+   3. TOP HEADER 
    ========================================================================== */
 .don-top-header {
   height: 64px;
@@ -170,7 +147,7 @@
 .don-header-right-actions {
   display: flex !important;
   align-items: center !important;
-  gap: 24px !important; /* Giãn rộng khoảng cách header */
+  gap: 24px !important;
 }
 
 .don-btn-report-incident {
@@ -206,7 +183,7 @@
 
 .don-user-meta-data {
   display: flex !important;
-  flex-direction: column !important; /* Ép chữ DON xuống dưới tên */
+  flex-direction: column !important;
   justify-content: center !important;
   align-items: flex-start !important;
 }
@@ -236,7 +213,7 @@
 
 .don-workspace-container {
   padding: 32px;
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -529,4 +506,91 @@
 .don-billing-simulated-notice {
   font-size: 12px;
   color: #94a3b8;
+}
+/* ==========================================================================
+   RESPONSIVE: DASHBOARD DON
+   ========================================================================== */
+
+/* 1. SMALL  LAPTOP & TABLET (Under 1200px) */
+@media (max-width: 1200px) {
+  /* Khối 4 thẻ KPI rớt xuống thành 2 hàng, mỗi hàng 2 thẻ */
+  .don-kpi-cards-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px;
+  }
+}
+
+/* 2. TABLET & MOBILE (Under 768px) */
+@media (max-width: 768px) {
+  .don-top-header {
+    padding: 0 16px !important;
+  }
+  .don-user-meta-data {
+    display: none !important;
+  }
+
+  .don-workspace-container {
+    padding: 16px !important;
+  }
+
+  .don-bottom-two-columns-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+/* 3. MOBILE (Under 480px ) */
+@media (max-width: 480px) {
+  .don-kpi-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* 
+    Trick to hide the text for the "+ Report Incident" button:
+     Make the text transparent and overlay a fake "+" sign.
+  */
+  .don-btn-report-incident {
+    width: 36px;
+    height: 36px;
+    padding: 0 !important;
+    color: transparent !important;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px !important;
+  }
+  .don-btn-report-incident::after {
+    content: "+";
+    color: #ffffff;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -54%);
+  }
+
+  .don-page-main-heading {
+    font-size: 22px !important;
+  }
+
+  .don-global-alert-banner {
+    font-size: 13px !important;
+    align-items: flex-start !important;
+  }
+}
+
+/* ==========================================================================
+   Shared class for horizontal table scrolling on mobile
+   ========================================================================== */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 16px;
+}
+
+.table-responsive table {
+  min-width: 700px;
 }

@@ -36,14 +36,14 @@ import AdmissionForm from "../../pages/AdmissionForm/AdmissionForm";
 import CarePlanAcknow from "../../pages/CarePlanAcknowledgment/CarePlanAcknowledgment";
 import ReportIncident from "../../pages/ReportIncident/ReportIncident";
 import DashboardCna from "../../pages/Dashboard/DashboardCna";
-import Incidentdetail from"../../pages/Incidentdetail/Incidentdetail"
+import Incidentdetail from "../../pages/Incidentdetail/Incidentdetail";
 import LocGate from "../../pages/LocGate/LocGate";
 import CarePlanDetail from "../../pages/CarePlanDetail/CarePlanDetail";
 import CarePlanCreate from "../../pages/CarePlanCreate/CarePlanCreate";
 import CarePlanList from "../../pages/CarePlanList/CarePlanList";
 import LocHistory from "../../pages/LocHistory/LocHistory";
 import LocClassification from "../../pages/LocClassification/LocClassification";
-import ChartLock from"../../pages/ChartLockConfirmation/ChartLockConfirmation"
+import ChartLock from "../../pages/ChartLockConfirmation/ChartLockConfirmation";
 import AssessmentHistory from "../../pages/AssessmentHistory/AssessmentHistory";
 import IncidentdetailNurse from"../../pages/IncidentdetailNurse/IncidentdetailNurse"
 import IncidentDetailunlock from "../../pages/incidentdetailunlocked/IncidentDetailUnlocked"
@@ -81,13 +81,13 @@ const Routing = () => {
       <Route path="/ReportIncident" element={<ReportIncident />} />
       <Route path="/dashboard-cna" element={<DashboardCna />} />
       <Route path="/Incidentdetail" element={<Incidentdetail />} />
-      <Route path="/loc-gate" element={<LocGate />} />
+      <Route path="/gate" element={<LocGate />} />
       <Route path="/careplan/detail" element={<CarePlanDetail />} />
       <Route path="/careplan/create" element={<CarePlanCreate />} />
       <Route path="/careplan/list" element={<CarePlanList />} />
       <Route path="/loc/history" element={<LocHistory />} />
       <Route path="/loc/classification" element={<LocClassification />} />
-       <Route path="/ChartLock" element={<ChartLock />} />
+      <Route path="/ChartLock" element={<ChartLock />} />
       <Route path="/IncidentdetailNurse" element={<IncidentdetailNurse />} />
       <Route path="/IncidentDetailunlock" element={<IncidentDetailunlock />} />
       <Route path="/IncidentList" element={<IncidentList />} />

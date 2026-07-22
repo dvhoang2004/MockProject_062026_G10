@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import NurseSidebar from "../../components/Sidebar/NurseSidebar";
 import "./CarePlanCreate.css";
 import {
   MdNotificationsNone,
@@ -28,56 +29,7 @@ const CarePlanCreate = () => {
   return (
     <div className="cp-create-layout">
       {/* SIDEBAR (Đã tối ưu khoảng cách khít nhau) */}
-      <aside className="cp-create-sidebar">
-        <div className="cp-create-brand">
-          <MdMenu size={24} className="icon-menu" />
-          <div className="brand-text">
-            <strong>NHMS</strong>
-            <span></span>
-          </div>
-        </div>
-        <nav className="cp-create-menu">
-          <div className="menu-item">
-            <Link to="/dashboard-nurse" className="menu-link">
-              <MdDashboard size={22} /> <span>Dashboard</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/resident-list" className="menu-link">
-              <MdPeople size={22} /> <span>Residents</span>
-            </Link>
-          </div>
-          <div className="menu-item active">
-            <Link to="/careplan/list" className="menu-link">
-              <MdAssignment size={22} /> <span>Care Planning</span>
-            </Link>
-          </div>
-          <div className="menu-item disabled">
-            <Link to="/eMAR" className="menu-link">
-              <MdBloodtype size={22} /> <span>eMAR</span>
-              <span className="badge-soon">soon</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/incident-risk" className="menu-link">
-              <MdReportProblem size={22} /> <span>Incident & Risk</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/reports" className="menu-link">
-              <MdBarChart size={22} /> <span>Reports</span>
-            </Link>
-          </div>
-        </nav>
-        <div className="cp-create-footer-menu">
-          <div className="menu-item">
-            <div className="menu-link">
-              {" "}
-              <MdLogout size={22} /> Logout
-            </div>
-          </div>
-        </div>
-      </aside>
+      <NurseSidebar />
 
       {/* MAIN CONTENT */}
       <main className="cp-create-main">
@@ -317,7 +269,9 @@ const CarePlanCreate = () => {
           <div className="footer-left-actions"></div>
           <div className="footer-right-actions">
             <button className="btn-save-draft">Save Draft</button>
-            <button className="btn-confirm">Submit for Review</button>
+            <Link to="/gate">
+              <button className="btn-confirm">Submit for Review</button>
+            </Link>
           </div>
         </footer>
       </main>

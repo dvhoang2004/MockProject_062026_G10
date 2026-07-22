@@ -1,82 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import NurseSidebar from "../../components/Sidebar/NurseSidebar";
 import "./LocClassification.css";
 import {
   MdNotificationsNone,
   MdHelpOutline,
   MdAccountCircle,
   MdArrowDropDown,
-  MdMenu,
-  MdDashboard,
-  MdPeople,
-  MdAssignment,
-  MdBloodtype,
-  MdReportProblem,
-  MdBarChart,
   MdCheck,
   MdEdit,
-  MdLogout,
 } from "react-icons/md";
 
 const LocClassification = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="loc-class-layout">
-      {/* SIDEBAR (Đã tối ưu khoảng cách và thẻ Link) */}
-      <aside className="loc-class-sidebar">
-        <div className="loc-class-brand">
-          <MdMenu size={24} className="icon-menu" />
-          <div className="brand-text">
-            <strong>NHMS</strong>
-            <span></span>
-          </div>
-        </div>
-        <nav className="loc-class-menu">
-          <div className="menu-item">
-            <Link to="/dashboard-nurse" className="menu-link">
-              <MdDashboard size={22} /> <span>Dashboard</span>
-            </Link>
-          </div>
-          <div className="menu-item active">
-            <Link to="/resident-list" className="menu-link">
-              <MdPeople size={22} /> <span>Residents</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/care-planning" className="menu-link">
-              <MdAssignment size={22} /> <span>Care Planning</span>
-            </Link>
-          </div>
-          <div className="menu-item disabled">
-            <Link to="/eMAR" className="menu-link">
-              <MdBloodtype size={22} /> <span>eMAR</span>
-              <span className="badge-soon">soon</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/incident-risk" className="menu-link">
-              <MdReportProblem size={22} /> <span>Incident & Risk</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/reports" className="menu-link">
-              <MdBarChart size={22} /> <span>Reports</span>
-            </Link>
-          </div>
-        </nav>
-        <div className="loc-class-footer-menu">
-          <div className="menu-item">
-            <div className="menu-link">
-              {" "}
-              <MdLogout size={18} /> Logout
-            </div>
-          </div>
-        </div>
-      </aside>
+    <div className="lc-layout">
+      {/* SIDEBAR  */}
+      <NurseSidebar />
 
       {/* MAIN CONTENT */}
-      <main className="loc-class-main">
+      <main className="lc-main">
         {/* HEADER TOP */}
-        <header className="loc-class-header-top">
+        <header className="lc-header-top">
           <div className="header-left"></div>
           <div className="header-right">
             <MdNotificationsNone className="icon-action" size={26} />
@@ -93,37 +39,90 @@ const LocClassification = () => {
         </header>
 
         {/* WORKSPACE */}
-        <div className="loc-class-workspace">
-          <div className="loc-class-container">
-            <div className="breadcrumb">
+        <div className="lc-workspace">
+          <div className="lc-container">
+            {/* BREADCRUMB */}
+            <div className="lc-breadcrumb">
               Residents &gt; Robert Hayes &gt; LOC
             </div>
 
+            {/* PROFILE HEADER BLOCK (Đã thêm vào) */}
+            <div className="lc-profile-header">
+              <div className="lc-profile-left">
+                <div className="lc-avatar">RH</div>
+                <div className="lc-profile-info">
+                  <h1>Robert Hayes</h1>
+                  <p className="lc-meta-text">
+                    DOB 04/15/1943 · Room 204B · Resident ID RES-00089
+                  </p>
+                  <div className="lc-badges-row">
+                    <span className="lc-badge badge-green-outline">Active</span>
+                    <span className="lc-badge badge-green-outline">No DNR</span>
+                    <span className="lc-badge badge-yellow-outline">
+                      Level 3
+                    </span>
+                    <span className="lc-badge badge-gray-outline">
+                      Medicaid
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* TABS NAVIGATION */}
+            <div className="lc-tabs-nav">
+              <div
+                className="lc-tab"
+                onClick={() => navigate("/resident/detail")}
+              >
+                Overview
+              </div>
+              <div
+                className="lc-tab"
+                onClick={() => navigate("/assessment/history")}
+              >
+                Assessments
+              </div>
+              <div
+                className="lc-tab"
+                onClick={() => navigate("/careplan/detail")}
+              >
+                Care Plan
+              </div>
+              <div className="lc-tab disabled">
+                eMAR <span className="tab-badge-soon">soon</span>
+              </div>
+              <div className="lc-tab lc-tab-active">LOC</div>
+              <div className="lc-tab disabled">
+                Audit <span className="tab-badge-soon">soon</span>
+              </div>
+            </div>
+
             {/* TITLE */}
-            <div className="page-title-block">
-              <h1>LOC Classification Result — Robert Hayes</h1>
-              <p>From Assessment v3 · 2026-04-05</p>
+            <div className="lc-page-title-block">
+              <h2>Classification Result</h2>
+              <p>From Assessment v3 · 04/05/2026</p>
             </div>
 
             {/* SCORE & SUGGESTION CARDS */}
-            <div className="loc-summary-grid">
-              <div className="score-card">
-                <p className="card-label">ADL Score</p>
-                <h2 className="score-value">20 / 32</h2>
+            <div className="lc-summary-grid">
+              <div className="lc-score-card">
+                <p className="lc-card-label">ADL Score</p>
+                <h3 className="lc-score-value">20 / 32</h3>
               </div>
-              <div className="suggestion-card">
-                <p className="card-label-highlight">Suggested LOC</p>
-                <h2 className="suggestion-value">
+              <div className="lc-suggestion-card">
+                <p className="lc-card-label-highlight">Suggested LOC</p>
+                <h3 className="lc-suggestion-value">
                   Level 3 — Extensive Assistance
-                </h2>
+                </h3>
               </div>
             </div>
 
             {/* ADL ITEM BREAKDOWN TABLE */}
-            <section className="content-card">
-              <h3>ADL Item Breakdown</h3>
-              <div className="table-responsive">
-                <table className="breakdown-table">
+            <section className="lc-content-card">
+              <h4 className="lc-section-title">ADL Item Breakdown</h4>
+              <div className="lc-table-responsive">
+                <table className="lc-breakdown-table">
                   <thead>
                     <tr>
                       <th>Activity</th>
@@ -143,9 +142,11 @@ const LocClassification = () => {
                       { act: "Bathing", score: "3 / 4" },
                     ].map((row, idx) => (
                       <tr key={idx}>
-                        <td>{row.act}</td>
+                        <td className="text-dark-medium">{row.act}</td>
                         <td className="fw-bold text-dark">{row.score}</td>
-                        <td className="text-muted">Initial Assessment v3</td>
+                        <td className="text-muted-italic">
+                          Initial Assessment v3
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -153,26 +154,28 @@ const LocClassification = () => {
               </div>
             </section>
 
-            {/* LOC LEVEL REFERENCE */}
-            <section className="content-card">
-              <h3 className="section-title-inline">
+            {/* LOC LEVEL REFERENCE  */}
+            <section className="lc-content-card border-none">
+              <h4 className="lc-section-title-inline">
                 LOC Level Reference{" "}
-                <span className="title-note">(fixed — not editable here)</span>
-              </h3>
-              <div className="loc-ref-grid">
-                <div className="ref-box level-1">
+                <span className="lc-title-note">
+                  (fixed — not editable here)
+                </span>
+              </h4>
+              <div className="lc-ref-grid">
+                <div className="lc-ref-box level-1">
                   <strong>Level 1</strong>
                   <span>0-8 · Independent</span>
                 </div>
-                <div className="ref-box level-2">
+                <div className="lc-ref-box level-2">
                   <strong>Level 2</strong>
                   <span>9-16 · Limited Assist.</span>
                 </div>
-                <div className="ref-box level-3 active-ref">
+                <div className="lc-ref-box level-3 active-ref">
                   <strong>Level 3</strong>
                   <span>17-24 · Extensive Assist.</span>
                 </div>
-                <div className="ref-box level-4">
+                <div className="lc-ref-box level-4">
                   <strong>Level 4</strong>
                   <span>25-32 · Total Assistance</span>
                 </div>
@@ -180,36 +183,45 @@ const LocClassification = () => {
             </section>
 
             {/* ESTIMATED DAILY RATE */}
-            <section className="content-card">
-              <p className="card-label-dark">Estimated Daily Rate (Level 3)</p>
-              <p className="rate-value">
+            <section className="lc-rate-section">
+              <p className="lc-rate-label">Estimated Daily Rate (Level 3)</p>
+              <p className="lc-rate-value">
                 $248.00 / day{" "}
-                <span className="rate-note">
+                <span className="lc-rate-note">
                   (from LOC Rate Table, read-only)
                 </span>
               </p>
             </section>
 
             {/* ACTIONS */}
-            <div className="action-row">
-              <button className="btn-confirm-loc">
-                <MdCheck size={18} /> Confirm LOC
-              </button>
-              <button className="btn-override">
+            <div className="lc-action-row">
+              <span
+                className="action-link"
+                onClick={() => navigate("/careplan/create")}
+                style={{ cursor: "pointer" }} // Đảm bảo chuột biến thành hình bàn tay khi trỏ vào
+              >
+                <button className="lc-btn-confirm">
+                  <MdCheck size={18} /> Confirm LOC
+                </button>
+              </span>
+              <button className="lc-btn-override">
                 <MdEdit size={16} /> Override
               </button>
-              <span className="view-history-link">View LOC History →</span>
+              <span
+                className="lc-view-history-link"
+                onClick={() => navigate("/loc/history")}
+              >
+                View LOC History &rarr;
+              </span>
             </div>
 
             {/* CONFIRMATION FOOTER */}
-            <div className="confirmation-log">
-              <p className="log-main">
-                <strong>
-                  Confirmed by: Anna Lee, RN · 2026-04-05 10:12 · Action: LOC
-                  Confirmed (Level 3)
-                </strong>
+            <div className="lc-confirmation-log">
+              <p className="lc-log-main">
+                Confirmed by: Anna Lee, RN · 04/05/2026 10:12 · Action: LOC
+                Confirmed (Level 3)
               </p>
-              <p className="log-sub">
+              <p className="lc-log-sub">
                 Next step: Care Plan reassessment link (M2-US-07) available from
                 this tier change.
               </p>

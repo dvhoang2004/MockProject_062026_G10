@@ -1,27 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import NurseSidebar from "../../components/Sidebar/NurseSidebar";
+import "./ResidentList.css";
 import {
+  MdNotificationsNone,
+  MdHelpOutline,
+  MdAccountCircle,
+  MdArrowDropDown,
   MdSearch,
   MdTableView,
   MdAdd,
-  MdMenu,
-  MdNotificationsNone,
-  MdHelpOutline,
-  MdDashboard,
-  MdPeopleOutline,
-  MdAssignment,
-  MdShield,
-  MdBarChart,
-  MdLogout,
-  MdGroups,
-  MdPersonOutline,
+  MdOutlinePeopleAlt,
+  MdOutlinePersonOutline,
+  MdOutlinePersonOff,
   MdAccessTime,
-  MdArrowDropDown,
-  MdBloodtype,
-  MdAccountCircle,
-  MdReportProblem,
+  MdCheck,
 } from "react-icons/md";
-import "./ResidentList.css";
-import { Link } from "react-router-dom";
 
 const ResidentList = () => {
   const residentsData = [
@@ -29,8 +23,7 @@ const ResidentList = () => {
       name: "Elena Ramos",
       room: "106-A",
       status: "Pending",
-      dob: "03/12/1948",
-      age: 78,
+      dob: "03/12/1948 (78)",
       payer: "—",
       source: "Sunrise Regional Hosp.",
     },
@@ -38,8 +31,7 @@ const ResidentList = () => {
       name: "David Nguyen",
       room: "222-A",
       status: "Active",
-      dob: "11/02/1951",
-      age: 74,
+      dob: "11/02/1951 (74)",
       payer: "Medicaid",
       source: "Private",
     },
@@ -47,8 +39,7 @@ const ResidentList = () => {
       name: "Mary Coleman",
       room: "118-A",
       status: "Active",
-      dob: "06/19/1944",
-      age: 82,
+      dob: "06/19/1944 (82)",
       payer: "Medicare",
       source: "Family",
     },
@@ -56,8 +47,7 @@ const ResidentList = () => {
       name: "James Porter",
       room: "210-B",
       status: "Active",
-      dob: "09/08/1939",
-      age: 86,
+      dob: "09/08/1939 (86)",
       payer: "Private Pay",
       source: "Self",
     },
@@ -65,8 +55,7 @@ const ResidentList = () => {
       name: "Susan Wright",
       room: "114-B",
       status: "Active",
-      dob: "01/27/1946",
-      age: 80,
+      dob: "01/27/1946 (80)",
       payer: "Medicare",
       source: "Valley General Hosp.",
     },
@@ -74,233 +63,173 @@ const ResidentList = () => {
       name: "Robert Hayes",
       room: "204-B",
       status: "Active",
-      dob: "04/15/1943",
-      age: 83,
+      dob: "04/15/1943 (83)",
       payer: "Medicaid",
       source: "Sunrise Regional Hosp.",
     },
   ];
 
   return (
-    <div className="nhms-container">
-      {/* HEADER TOP */}
-      <header className="nhms-header">
-        <div className="header-left">
-          <button className="menu-btn">
-            <MdMenu />
-          </button>
-          <div className="logo-area">
-            <span className="logo-bold">NHMS</span>
-            <span className="logo-sub">Nursing Home Management System</span>
-          </div>
-        </div>
-        <div className="header-right">
-          <span className="header-icon">
-            <MdNotificationsNone />
-          </span>
-          <span className="header-icon">
-            <MdHelpOutline />
-          </span>
-          <div className="user-profile">
-            <MdAccountCircle className="avatar" />
-            <div className="user-info">
-              <span className="user-name">Anna Lee</span>
-              <span className="user-role">Nurse</span>
-            </div>
-            <span className="profile-arrow">
-              <MdArrowDropDown />
-            </span>
-          </div>
-        </div>
-      </header>
+    <div className="rl-layout">
+      {/* 1. SIDEBAR  */}
+      <NurseSidebar />
 
-      <div className="nhms-workspace">
-        {/* SIDEBAR TRÁI */}
-        <aside className="nhms-sidebar">
-          <ul className="sidebar-menu">
-            <Link to="/dashboard-nurse" className="menu-link">
-              <li className="menu-item">
-                <div className="menu-item-content">
-                  <MdDashboard size={20} /> Dashboard
-                </div>
-              </li>
-            </Link>
-            <Link to="/resident-list" className="menu-link">
-              <li className="menu-item active">
-                <div className="menu-item-content">
-                  <MdPeopleOutline size={18} /> Residents
-                </div>
-              </li>
-            </Link>
-            <Link to="/careplan/list" className="menu-link">
-              <li className="menu-item">
-                <div className="menu-item-content">
-                  <MdAssignment size={18} /> Care Planning
-                </div>
-              </li>
-            </Link>
-            <Link to="/eMAR" className="menu-link">
-              <li className="menu-item disabled">
-                <div className="menu-item-content">
-                  <MdBloodtype size={18} /> eMAR
-                </div>
-                <span className="badge-soon">soon</span>
-              </li>
-            </Link>
-            <Link to="/incident-risk" className="menu-link">
-              <li className="menu-item">
-                <div className="menu-item-content">
-                  <MdReportProblem size={18} /> Incident & Risk
-                </div>
-              </li>
-            </Link>
-            <Link to="/reports" className="menu-link">
-              <li className="menu-item">
-                <div className="menu-item-content">
-                  <MdBarChart size={18} /> Reports
-                </div>
-              </li>
-            </Link>
-          </ul>
-          <div className="sidebar-footer">
-            <span className="menu-item">
-              <div className="menu-item-content">
-                <MdLogout size={18} /> Logout
+      {/* 2. MAIN CONTENT  */}
+      <main className="rl-main">
+        {/* HEADER TOP */}
+        <header className="rl-header-top">
+          <div className="header-left"></div>
+          <div className="header-right">
+            <MdNotificationsNone className="icon-action" size={26} />
+            <MdHelpOutline className="icon-action" size={26} />
+            <div className="user-profile">
+              <MdAccountCircle size={34} color="#94a3b8" />
+              <div className="user-info">
+                <span className="user-name">Anna Lee</span>
+                <span className="user-role">Nurse</span>
               </div>
-            </span>
+              <MdArrowDropDown size={20} color="#475569" />
+            </div>
           </div>
-        </aside>
+        </header>
 
-        {/* NỘI DUNG CHÍNH BÊN PHẢI */}
-        <main className="nhms-main-content">
-          <div className="page-header-title">
-            <span className="breadcrumb">Residents &gt; List</span>
-            <h2>Residents</h2>
-          </div>
-
-          {/* THANH TÌM KIẾM & BỘ LỌC */}
-          <div className="filter-toolbar">
-            <div className="search-box-wrapper">
-              <span className="search-icon">
-                <MdSearch />
-              </span>
-              <input
-                type="text"
-                placeholder="Search by name, room, or resident ID..."
-                className="search-input"
-              />
+        {/* WORKSPACE  */}
+        <div className="rl-workspace">
+          <div className="rl-container">
+            {/* TITLE & BREADCRUMB */}
+            <div className="rl-page-title">
+              <span className="breadcrumb">Residents &gt; List</span>
+              <h1>Residents</h1>
+              <p className="subtitle-text">
+                24 residents · sorted by Date Added (newest first)
+              </p>
             </div>
 
-            <div className="dropdown-filter">
-              <label>Status:</label>
-              <div className="dropdown-value">
-                All <MdArrowDropDown size={20} />
+            {/* TOOLBAR */}
+            <div className="rl-toolbar">
+              <div className="rl-search-box">
+                <MdSearch size={20} className="search-icon" />
+                <input
+                  type="text"
+                  placeholder="Search by name, room, or resident ID..."
+                />
               </div>
-            </div>
 
-            <div className="dropdown-filter">
-              <label>Referral:</label>
-              <div className="dropdown-value">
-                All <MdArrowDropDown size={20} />
+              <div className="rl-dropdown">
+                <span>Status: All</span>
+                <MdArrowDropDown size={20} />
               </div>
-            </div>
 
-            <button className="btn-secondary">
-              <MdTableView size={18} /> Table
-            </button>
-            <Link to="/resident/create" className="menu-link">
-              <button className="btn-primary">
-                <MdAdd size={18} /> Add New Resident
+              <div className="rl-dropdown">
+                <span>Referral: All</span>
+                <MdArrowDropDown size={20} />
+              </div>
+
+              <button className="rl-btn-table">
+                <MdTableView size={18} /> Table
               </button>
-            </Link>
+
+              <div className="rl-add-btn-wrapper">
+                <button className="rl-btn-add-disabled" disabled>
+                  <MdAdd size={18} />{" "}
+                  <Link to="/pre-admission" className="">
+                    Add New Resident
+                  </Link>
+                </button>
+                <span className="btn-note">
+                  Visible to Admission Staff only (view-only for Nurse)
+                </span>
+              </div>
+            </div>
+
+            {/* STATS CARDS */}
+            <div className="rl-stats-grid">
+              <div className="rl-stat-card">
+                <div className="icon-circle bg-blue-light text-blue">
+                  <MdOutlinePeopleAlt size={22} />
+                </div>
+                <div className="stat-info">
+                  <span className="stat-label">Total Residents</span>
+                  <strong className="stat-value">24</strong>
+                </div>
+              </div>
+
+              <div className="rl-stat-card active-card">
+                <div className="icon-circle bg-green-light text-green">
+                  <MdOutlinePersonOutline size={22} />
+                </div>
+                <div className="stat-info">
+                  <span className="stat-label">Active</span>
+                  <strong className="stat-value">18</strong>
+                </div>
+                <MdCheck size={18} className="check-icon" />
+              </div>
+
+              <div className="rl-stat-card">
+                <div className="icon-circle bg-gray-light text-gray">
+                  <MdOutlinePersonOff size={22} />
+                </div>
+                <div className="stat-info">
+                  <span className="stat-label">Discharged</span>
+                  <strong className="stat-value">4</strong>
+                </div>
+              </div>
+
+              <div className="rl-stat-card">
+                <div className="icon-circle bg-yellow-light text-yellow">
+                  <MdAccessTime size={22} />
+                </div>
+                <div className="stat-info">
+                  <span className="stat-label">Pending</span>
+                  <strong className="stat-value">2</strong>
+                </div>
+              </div>
+            </div>
+
+            {/* DATA TABLE */}
+            <div className="table-responsive">
+              <div className="rl-table-card">
+                <table className="rl-table">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Room</th>
+                      <th>Status</th>
+                      <th>DOB (Age)</th>
+                      <th>Payer Source</th>
+                      <th>Referral Source</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {residentsData.map((resident, idx) => (
+                      <tr key={idx}>
+                        <td className="fw-bold">{resident.name}</td>
+                        <td>{resident.room}</td>
+                        <td>
+                          <span
+                            className={`rl-badge badge-${resident.status.toLowerCase()}`}
+                          >
+                            {resident.status}
+                          </span>
+                        </td>
+                        <td>{resident.dob}</td>
+                        <td>{resident.payer}</td>
+                        <td>{resident.source}</td>
+                        <td>
+                          <Link to="/resident/detail" className="rl-link-view">
+                            View
+                          </Link>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
-
-          {/* KHỐI THỐNG KÊ (4 CARDS) */}
-          <div className="stats-grid">
-            <div className="stat-card">
-              <div className="stat-icon bg-blue text-blue">
-                <MdGroups size={24} />
-              </div>
-              <div className="stat-info">
-                <div className="stat-label">Total Residents</div>
-                <div className="stat-value">24</div>
-              </div>
-            </div>
-
-            <div className="stat-card">
-              <div className="stat-icon bg-green text-green">
-                <MdPersonOutline size={24} />
-              </div>
-              <div className="stat-info">
-                <div className="stat-label">Active</div>
-                <div className="stat-value text-green">18</div>
-              </div>
-            </div>
-
-            <div className="stat-card">
-              <div className="stat-icon bg-gray text-gray">
-                <MdPersonOutline size={24} />
-              </div>
-              <div className="stat-info">
-                <div className="stat-label">Discharged</div>
-                <div className="stat-value">4</div>
-              </div>
-            </div>
-
-            <div className="stat-card">
-              <div className="stat-icon bg-yellow text-yellow">
-                <MdAccessTime size={24} />
-              </div>
-              <div className="stat-info">
-                <div className="stat-label">Pending</div>
-                <div className="stat-value text-yellow">2</div>
-              </div>
-            </div>
-          </div>
-
-          {/* BẢNG DỮ LIỆU CƯ DÂN */}
-          <div className="table-wrapper">
-            <table className="residents-table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Room</th>
-                  <th>Status</th>
-                  <th>DOB (Age)</th>
-                  <th>Payer Source</th>
-                  <th>Referral Source</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                {residentsData.map((resident, idx) => (
-                  <tr key={idx}>
-                    <td className="font-semibold">{resident.name}</td>
-                    <td>{resident.room}</td>
-                    <td>
-                      <span
-                        className={`status-badge ${resident.status.toLowerCase()}`}
-                      >
-                        {resident.status}
-                      </span>
-                    </td>
-                    <td>
-                      {resident.dob} ({resident.age})
-                    </td>
-                    <td>{resident.payer}</td>
-                    <td>{resident.source}</td>
-                    <td>
-                      <Link to="/resident/detail" className="view-link-wrapper">
-                        <button className="btn-view">View</button>
-                      </Link>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </main>
-      </div>
+        </div>
+      </main>
     </div>
   );
 };

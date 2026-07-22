@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import NurseSidebar from "../../components/Sidebar/NurseSidebar";
 import "./LocGate.css";
 import {
   MdNotificationsNone,
@@ -20,60 +22,11 @@ import {
 } from "react-icons/md";
 
 const CarePlanLocked = () => {
+  const navigate = useNavigate();
   return (
     <div className="cp-locked-layout">
       {/* SIDEBAR */}
-      <aside className="cp-locked-sidebar">
-        <div className="cp-locked-brand">
-          <MdMenu size={24} className="icon-menu" />
-          <div className="brand-text">
-            <strong>NHMS</strong>
-            <span></span>
-          </div>
-        </div>
-        <nav className="cp-locked-menu">
-          <div className="menu-item">
-            <Link to="/dashboard-nurse" className="menu-link">
-              <MdDashboard size={22} /> <span>Dashboard</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/resident-list" className="menu-link">
-              <MdPeople size={22} /> <span>Residents</span>
-            </Link>
-          </div>
-          <div className="menu-item active">
-            <Link to="/careplan/list" className="menu-link">
-              <MdAssignment size={22} /> <span>Care Planning</span>
-            </Link>
-          </div>
-          <div className="menu-item disabled">
-            <Link to="/eMAR" className="menu-link">
-              <MdBloodtype size={22} /> <span>eMAR</span>
-              <span className="badge-soon">soon</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/incident-risk" className="menu-link">
-              <MdReportProblem size={22} /> <span>Incident & Risk</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/reports" className="menu-link">
-              <MdBarChart size={22} /> <span>Reports</span>
-            </Link>
-          </div>
-        </nav>
-        <div className="cp-locked-footer-menu">
-          <div className="menu-item">
-            <div className="menu-link">
-              {" "}
-              <MdLogout size={18} /> Logout
-            </div>
-          </div>
-        </div>
-      </aside>
-
+      <NurseSidebar />
       {/* MAIN CONTENT */}
       <main className="cp-locked-main">
         {/* HEADER TOP */}
@@ -144,9 +97,15 @@ const CarePlanLocked = () => {
                 </div>
 
                 {/* Nút chuyển hướng */}
-                <button className="btn-redirect">
-                  Go to LOC Classification <MdArrowForward size={16} />
-                </button>
+                <span
+                  className="rpd-link-action"
+                  onClick={() => navigate("/loc/classification")}
+                  style={{ cursor: "pointer" }}
+                >
+                  <button className="btn-redirect">
+                    Go to LOC Classification <MdArrowForward size={16} />
+                  </button>
+                </span>
               </div>
             </div>
           </div>

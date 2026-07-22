@@ -1,0 +1,201 @@
+/* Sidebar.css */
+.global-sidebar {
+  width: 260px;
+  background-color: #ffffff;
+  border-right: none;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  transition:
+    width 0.3s ease,
+    transform 0.3s ease;
+}
+.mobile-toggle-btn {
+  display: none;
+}
+.global-brand {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 24px;
+  border-bottom: none;
+  box-sizing: border-box;
+}
+.brand-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.brand-text strong {
+  font-size: 18px;
+  color: #0f172a;
+}
+.brand-text span {
+  font-size: 12px;
+  color: #64748b;
+  border-left: 1px solid #cbd5e1;
+  padding-left: 8px;
+}
+
+.global-menu {
+  padding: 16px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.global-footer-menu {
+  border-top: none;
+  padding: 16px 0;
+}
+
+.menu-item {
+  margin: 0px 16px 0px 0;
+  border-radius: 0 24px 24px 0;
+  border: 1px solid transparent;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
+}
+.menu-item:hover:not(.disabled):not(.active) {
+  background-color: #f8fafc;
+}
+.menu-item .menu-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 0px 16px;
+  text-decoration: none;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.menu-item:hover:not(.disabled):not(.active) .menu-link {
+  color: #2563eb;
+}
+.menu-item.active {
+  background: #f0f8ff;
+  border: 1px solid #bbf7d0;
+  border-left: 4px solid #2563eb;
+}
+.menu-item.active .menu-link {
+  color: #2563eb;
+  font-weight: 600;
+}
+.menu-item svg {
+  flex-shrink: 0;
+  display: block;
+}
+.badge-soon {
+  background: #f1f5f9;
+  color: #94a3b8;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin-left: auto;
+  font-weight: 600;
+}
+/* ==========================================================================
+1: SMALL LAPTOP & TABLET  (under 1200px)
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .global-sidebar {
+    width: 80px;
+  }
+
+  .brand-text,
+  .global-menu .menu-link span,
+  .global-footer-menu .menu-link span {
+    display: none !important;
+  }
+
+  .global-brand {
+    justify-content: center;
+  }
+  .menu-link {
+    justify-content: center;
+    padding: 12px 0;
+  }
+}
+
+/* ==========================================================================
+   MỐC 2: TABLET  & MOBILE  (Under 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .global-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 260px;
+    z-index: 1000;
+    transform: translateX(-100%);
+  }
+
+  .global-sidebar.open {
+    transform: translateX(0);
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .global-sidebar.open .brand-text,
+  .global-sidebar.open .menu-link span,
+  .global-sidebar.open .global-footer-menu .menu-link span {
+    display: block !important;
+  }
+  .global-sidebar.open .menu-link {
+    justify-content: flex-start;
+    padding: 12px 20px;
+  }
+
+  .mobile-toggle-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 12px;
+    left: 16px;
+    z-index: 998;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 23, 42, 0.4);
+    z-index: 999;
+    animation: fadeIn 0.3s ease;
+  }
+}
+
+/* ==========================================================================
+   MỐC 3: MOBILE (Under 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .global-sidebar {
+    width: 85%;
+    max-width: 320px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

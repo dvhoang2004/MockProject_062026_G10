@@ -1,80 +1,64 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import NurseSidebar from "../../components/Sidebar/NurseSidebar";
 import "./AssessmentHistory.css";
 import {
   MdNotificationsNone,
   MdHelpOutline,
   MdAccountCircle,
   MdArrowDropDown,
-  MdMenu,
-  MdDashboard,
-  MdPeople,
-  MdAssignment,
-  MdBloodtype,
-  MdReportProblem,
-  MdBarChart,
-  MdLogout,
+  MdAdd,
 } from "react-icons/md";
 
 const AssessmentHistory = () => {
-  return (
-    <div className="assess-hist-layout">
-      {/* SIDEBAR */}
-      <aside className="assess-hist-sidebar">
-        <div className="assess-hist-brand">
-          <MdMenu size={24} className="icon-menu" />
-          <div className="brand-text">
-            <strong>NHMS</strong>
-            <span></span>
-          </div>
-        </div>
-        <nav className="assess-hist-menu">
-          <div className="menu-item">
-            <Link to="/dashboard-nurse" className="menu-link">
-              <MdDashboard size={22} /> <span>Dashboard</span>
-            </Link>
-          </div>
-          <div className="menu-item active">
-            <Link to="/resident-list" className="menu-link">
-              <MdPeople size={22} /> <span>Residents</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/care-planning" className="menu-link">
-              <MdAssignment size={22} /> <span>Care Planning</span>
-            </Link>
-          </div>
-          <div className="menu-item disabled">
-            <Link to="/eMAR" className="menu-link">
-              <MdBloodtype size={22} /> <span>eMAR</span>
-              <span className="badge-soon">soon</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/incident-risk" className="menu-link">
-              <MdReportProblem size={22} /> <span>Incident & Risk</span>
-            </Link>
-          </div>
-          <div className="menu-item">
-            <Link to="/reports" className="menu-link">
-              <MdBarChart size={22} /> <span>Reports</span>
-            </Link>
-          </div>
-        </nav>
-        <div className="assess-hist-footer-menu">
-          <div className="menu-item">
-            <div className="menu-link">
-              {" "}
-              <MdLogout /> Logout
-            </div>
-          </div>
-        </div>
-      </aside>
+  const [activeTab, setActiveTab] = useState("Assessments");
+  const navigate = useNavigate();
 
-      {/* MAIN CONTENT */}
-      <main className="assess-hist-main">
+  const assessmentsData = [
+    {
+      version: "v3",
+      type: "Reassessment",
+      typeColor: "purple",
+      date: "04/05/2026",
+      author: "Anna Lee, RN",
+      score: "20 / 32",
+      loc: "Level 3",
+      locColor: "yellow-outline",
+      action: "Current · View",
+    },
+    {
+      version: "v2",
+      type: "Reassessment",
+      typeColor: "purple",
+      date: "01/08/2026",
+      author: "Anna Lee, RN",
+      score: "17 / 32",
+      loc: "Level 3",
+      locColor: "yellow-outline",
+      action: "View · Compare",
+    },
+    {
+      version: "v1",
+      type: "Initial",
+      typeColor: "blue",
+      date: "11/02/2025",
+      author: "Anna Lee, RN",
+      score: "14 / 32",
+      loc: "Level 2",
+      locColor: "blue-outline",
+      action: "View · Compare",
+    },
+  ];
+
+  return (
+    <div className="ah-layout">
+      {/* 1. SIDEBAR DÙNG CHUNG */}
+      <NurseSidebar />
+
+      {/* 2. MAIN CONTENT */}
+      <main className="ah-main">
         {/* HEADER TOP */}
-        <header className="assess-hist-header-top">
+        <header className="ah-header-top">
           <div className="header-left"></div>
           <div className="header-right">
             <MdNotificationsNone className="icon-action" size={26} />
@@ -91,27 +75,87 @@ const AssessmentHistory = () => {
         </header>
 
         {/* WORKSPACE */}
-        <div className="assess-hist-workspace">
-          <div className="assess-hist-container">
-            <div className="breadcrumb">
+        <div className="ah-workspace">
+          <div className="ah-container">
+            {/* BREADCRUMB */}
+            <div className="ah-breadcrumb">
               Residents &gt; Robert Hayes &gt; Assessments
             </div>
 
-            {/* PAGE TITLE & ACTIONS */}
-            <div className="page-header-flex">
-              <div className="title-section">
-                <h1>Assessment History — Robert Hayes</h1>
-                <p>3 assessments on record · sorted newest first</p>
-              </div>
-              <div className="action-section">
-                <button className="btn-secondary">Select 2 to Compare</button>
-                <button className="btn-primary">+ New</button>
+            {/* PROFILE HEADER BLOCK (Khôi phục lại phần bị thiếu) */}
+            <div className="ah-profile-header">
+              <div className="ah-profile-left">
+                <div className="ah-avatar">RH</div>
+                <div className="ah-profile-info">
+                  <h1>Robert Hayes</h1>
+                  <p className="ah-meta-text">
+                    DOB 04/15/1943 · Room 204B · Resident ID RES-00089
+                  </p>
+                  <div className="ah-badges-row">
+                    <span className="ah-badge badge-green-outline">Active</span>
+                    <span className="ah-badge badge-green-outline">No DNR</span>
+                    <span className="ah-badge badge-yellow-outline">
+                      Level 3
+                    </span>
+                    <span className="ah-badge badge-gray-outline">
+                      Medicaid
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* BẢNG LỊCH SỬ (TABLE) */}
-            <div className="table-card">
-              <table className="assess-table">
+            {/* TABS NAVIGATION (Khôi phục lại phần bị thiếu) */}
+            <div className="ah-tabs-nav">
+              <div
+                className={`ah-tab ${activeTab === "Overview" ? "ah-tab-active" : ""}`}
+                onClick={() => navigate("/resident/detail")}
+              >
+                Overview
+              </div>
+
+              <div
+                className={`ah-tab ${activeTab === "Assessments" ? "ah-tab-active" : ""}`}
+                onClick={() => setActiveTab("Assessments")}
+              >
+                Assessments
+              </div>
+              <div
+                className={`ah-tab ${activeTab === "Care Plan" ? "ah-tab-active" : ""}`}
+                onClick={() => navigate("/careplan/detail")}
+              >
+                Care Plan
+              </div>
+              <div className="ah-tab disabled">
+                eMAR <span className="tab-badge-soon">soon</span>
+              </div>
+              <div
+                className={`ah-tab ${activeTab === "LOC" ? "ah-tab-active" : ""}`}
+                onClick={() => navigate("/loc/classification")}
+              >
+                LOC
+              </div>
+              <div className="ah-tab disabled">
+                Audit <span className="tab-badge-soon">soon</span>
+              </div>
+            </div>
+
+            {/* CÔNG CỤ TOOLBAR BẢNG */}
+            <div className="ah-table-toolbar">
+              <span className="ah-record-count">
+                3 assessments on record · sorted newest first
+              </span>
+              <div className="ah-toolbar-actions">
+                <button className="ah-btn-outline">Select 2 to Compare</button>
+                <button className="ah-btn-primary">
+                  <MdAdd size={18} /> New
+                </button>
+              </div>
+            </div>
+
+            {/* BẢNG DỮ LIỆU LỊCH SỬ */}
+            <div className="ah-table-card">
+              <table className="ah-table">
                 <thead>
                   <tr>
                     <th>Version</th>
@@ -124,73 +168,40 @@ const AssessmentHistory = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {/* Dòng 1: v3 */}
-                  <tr>
-                    <td className="fw-bold">v3</td>
-                    <td>
-                      <span className="badge-type reassessment">
-                        Reassessment
-                      </span>
-                    </td>
-                    <td>2026-04-05</td>
-                    <td>Anna Lee, RN</td>
-                    <td>20 / 32</td>
-                    <td>
-                      <span className="badge-tier level-3">Level 3</span>
-                    </td>
-                    <td className="text-right">
-                      <span className="action-link current">
-                        Current · View
-                      </span>
-                    </td>
-                  </tr>
-
-                  {/* Dòng 2: v2 */}
-                  <tr>
-                    <td className="fw-bold">v2</td>
-                    <td>
-                      <span className="badge-type reassessment">
-                        Reassessment
-                      </span>
-                    </td>
-                    <td>2026-01-08</td>
-                    <td>Anna Lee, RN</td>
-                    <td>17 / 32</td>
-                    <td>
-                      <span className="badge-tier level-3">Level 3</span>
-                    </td>
-                    <td className="text-right">
-                      <span className="action-link">View · Compare</span>
-                    </td>
-                  </tr>
-
-                  {/* Dòng 3: v1 */}
-                  <tr>
-                    <td className="fw-bold">v1</td>
-                    <td>
-                      <span className="badge-type initial">Initial</span>
-                    </td>
-                    <td>2025-11-02</td>
-                    <td>Anna Lee, RN</td>
-                    <td>14 / 32</td>
-                    <td>
-                      <span className="badge-tier level-2">Level 2</span>
-                    </td>
-                    <td className="text-right">
-                      <span className="action-link">View · Compare</span>
-                    </td>
-                  </tr>
+                  {assessmentsData.map((item, idx) => (
+                    <tr key={idx}>
+                      <td className="fw-bold">{item.version}</td>
+                      <td>
+                        <span className={`ah-badge-solid bg-${item.typeColor}`}>
+                          {item.type}
+                        </span>
+                      </td>
+                      <td>{item.date}</td>
+                      <td>{item.author}</td>
+                      <td>{item.score}</td>
+                      <td>
+                        <span className={`ah-badge badge-${item.locColor}`}>
+                          {item.loc}
+                        </span>
+                      </td>
+                      <td className="text-right">
+                        <Link to="#" className="ah-link-action">
+                          {item.action}
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
 
-            {/* GHI CHÚ BÊN DƯỚI */}
-            <div className="cadence-note-card">
-              <p className="fw-bold text-dark">
+            {/* THÔNG TIN HƯỚNG DẪN BÊN DƯỚI */}
+            <div className="ah-info-card">
+              <h4>
                 Reassessment cadence: every 90 days (BR-03) or on Significant
                 Change flag (BR-05).
-              </p>
-              <p className="text-muted">
+              </h4>
+              <p>
                 Starting a reassessment opens the Initial Assessment form
                 pre-filled from version v3.
               </p>
